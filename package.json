@@ -1,0 +1,23 @@
+{
+  "name": "adtilcsl",
+  "version": "1.0.0",
+  "description": "ADTILCSL official website.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "code && gulp & parcel index.html --open",
+    "resume": "gulp & parcel index.html --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "gulp": "^4.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
+    "nunjucks": "^3.2.0",
+    "sass": "^1.20.1"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}

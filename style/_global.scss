@@ -1,0 +1,45 @@
+//@media sizes
+$small: 37.5em; //600px
+$medium: 55em;  //880px
+$large: 75em;  //1200px
+$xl: 112.5em;  //1800px
+
+:root {
+    box-sizing: border-box;
+    --text-color: #241c15;
+    --hero-background: #b1e5f8;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+html, body {
+    font-family: Helvetica, sans-serif;
+    color: var(--text-color, #241c15);
+    margin: 0;
+    padding: 0;
+}
+html {font-size: 0.625em;}
+body {font-size: 1.6rem;}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', arial, sans-serif;
+}
+h1 {font-size: 4rem;}
+h2 {font-size: 3.5rem;}
+h3 {font-size: 3rem;}
+p {font-size: 1.8rem;}
+img, object {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+a, a:active {
+    outline: none;
+    font-size: 1.8rem;
+}
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 12px;
+    justify-items: center;
+    align-items: center;
+}

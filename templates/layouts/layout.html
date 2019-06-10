@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <link rel="stylesheet" type="text/css" href="./style/index.scss" />
+    <link rel="icon" type="image/png" href="#" sizes="16x16" />
+    <link rel="icon" type="image/png" href="#" sizes="32x32" />
+    <link rel="icon" type="image/png" href="#" sizes="96x96" />
+    <script defer src="./js/index.js"></script>
+    <link rel="canonical" href="{{ pageURL }}" />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="{{ pageURL }}" />
+    <meta property="og:image" content="{{ ogImage }}" />
+    <meta property="og:image:alt" content="{{ ogImageAlt }}" />
+</head>
+<body>
+
+    {% include '_header.html' %}
+    {% block content %}{% endblock %}
+    {% include '_footer.html' %}
+    
+</body>
+</html>

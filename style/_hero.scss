@@ -1,0 +1,43 @@
+.hero {
+    min-height: 100vh;
+    background-color: var(--hero-background, #b1e5f8);
+}
+.hero__img {
+    grid-column: 3 /12;
+    grid-row: 2;
+    box-shadow: 0.2px 0.5px 0.6px #241c15, -0.5px 0px 0.6px #241c15;
+    border-radius: 2px;
+    margin-bottom: 7rem;
+    @media(min-width: $medium) {
+        grid-column: 8 / 12;
+        grid-row: 1;
+    }
+    @media(min-width: $large) {
+        grid-column: 8 /12;
+    }
+}
+.hero__text {
+    grid-column: 3 / 12;
+    grid-row: 1;
+    @media(min-width: $medium) {
+        grid-column: 2 / 8;
+    }
+    @media(min-width: $large) {
+        grid-column: 3 / 8;
+    }
+}
+.hero__heading {
+    font-size: 6rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    @media(min-width: $small) {
+        font-size: 7rem;
+    }
+}
+.hero__p {
+    font-size: 2.5rem;
+    margin-top: 0.5em;
+    @media(min-width: $small) {
+        font-size: 3rem;
+    }
+}
