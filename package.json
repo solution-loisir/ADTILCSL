@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "code && gulp & parcel index.html --open",
-    "resume": "gulp & parcel index.html --open"
+    "resume": "gulp & parcel index.html --open",
+    "build": "parcel build index.html --no-content-hash --out-dir docs"
   },
   "author": "",
   "license": "ISC",
