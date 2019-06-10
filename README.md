@@ -1,4 +1,3 @@
-#Testing nunjucks to build a static website
-The big selling point for using an html preprocessor, at least for me, is to
-gain the ability to generate html dynamiclly, store the result in a variable
-and then compile that variable into static html through a template.
+# Site web de l'ADTILCSL
+Le site web de l'Association des diplômés de la Techniques en gestion et intervention en loisir du Cégep de Saint-Laurent est un site qui présente l'association, ses réalisations, ses services.
+# Comment collaborer
