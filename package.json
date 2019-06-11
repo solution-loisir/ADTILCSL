@@ -5,9 +5,9 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "code && gulp & parcel index.html --open",
-    "resume": "gulp & parcel index.html --open",
-    "build": "parcel build index.html --no-content-hash --out-dir docs"
+    "start": "gulp & parcel index.html --open",
+    "code": "code && gulp & parcel index.html --open",
+    "build": "parcel build index.html --no-content-hash --out-dir docs --public-url ./ADTILCSL/"
   },
   "author": "",
   "license": "ISC",
