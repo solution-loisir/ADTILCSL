@@ -1,9 +1,9 @@
 .card-section { 
-    margin: 1.5em;
-    grid-gap: 1.5em;
+    margin: 1.5em; 
+    grid-gap: 1.5em; 
     @media(min-width: $small) {
-        margin: 2em;
-        grid-gap: 2em;
+        margin: 2em; 
+        grid-gap: 2em; 
     }
 }
 .card {
@@ -59,8 +59,6 @@
 }
 .card-svg {
     width: 50%;
-    padding: 0;
-    margin: 0;
     @media(min-width: $large) {
         width: 35%;
     }
