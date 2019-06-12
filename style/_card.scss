@@ -24,9 +24,6 @@
             font-size: 3.2rem;
         }
     }
-    @media(min-width: $medium) {
-        min-height: 100%;
-    }
 }
 .sejour-card {
     grid-column: 1 / 13;
@@ -62,6 +59,8 @@
 }
 .card-svg {
     width: 50%;
+    padding: 0;
+    margin: 0;
     @media(min-width: $large) {
         width: 35%;
     }
