@@ -1,4 +1,6 @@
 {% extends 'layout.njk' %}
+
+
 {% from 'hero.njk' import hero %}
 {% from 'card.njk' import card %}
 
@@ -8,15 +10,13 @@
 d'intervention en loisir du Cégep de Saint-Laurent..." %}
 {% set pageURL = '' %}
 {% set ogImage = '' %}
-{% set ogImageAlt = '' %}
+{% set ogImageAlt = '' %}   
 
-<!--<a href="#">page Facebook</a>-->
-    
-{% block content %}
+{% block content %}    
 <main>
     {{  
         hero(
-            imgSrc="../images/hero.jpg",
+            imgSrc="./images/hero.jpg",
             imgAlt="Hero image", 
             h1="Une association au service de ses diplômés.", 
             p="Une équipe dévouée vous offre services, accompagnement, conseils et plus encore!"
@@ -26,7 +26,7 @@ d'intervention en loisir du Cégep de Saint-Laurent..." %}
         {{
             card(
                 class="sejour-card",
-                svg="../images/forest.svg",
+                svg="./images/forest.svg",
                 svgText="Séjour plein air",
                 title="Séjour plein air",
                 text="Le Séjour plein air a lieu à chaque année au mois d'octobre.
@@ -38,7 +38,7 @@ d'intervention en loisir du Cégep de Saint-Laurent..." %}
         {{
             card(
                 class="tools-card",
-                svg="../images/tools.svg",
+                svg="./images/tools.svg",
                 svgText="Outils",
                 title="Outils",
                 text="Nous mettons régulièrement des outils de gestion, formations et astuces
@@ -50,11 +50,11 @@ d'intervention en loisir du Cégep de Saint-Laurent..." %}
         {{
             card(
                 class="project-card",
-                svg="../images/start-up.svg",
+                svg="./images/start-up.svg",
                 svgText="Projets",
                 title="Projets",
-                text="Nous mettons en oeuvres des projets variés destinés èa améliorer la visibilité
-                et les conditions d'emploi des Technicien en loisir d'aujourd'hui et
+                text="Nous mettons en oeuvres des projets variés destinés à améliorer la visibilité
+                et les conditions d'emploi des Techniciens en loisir d'aujourd'hui et
                 de demain!",
                 link="#"
             )

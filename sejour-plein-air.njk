@@ -1,0 +1,25 @@
+{% extends 'layout.njk' %}
+
+{% from 'sejour.njk' import sejour %}
+
+{% set title = 'ADTILCSL | Séjour plein air' %}
+{% set description = "Le Séjour plein air de la Techniques de gestion et d'intervention en loisir
+du Cégep de Saint-Laurent." %}
+{% set pageURL = '' %}
+{% set ogImage = '' %}
+{% set ogImageAlt = '' %}
+
+{% block content %}
+    {{
+        sejour(
+            activite="Nom de l'activité",
+            animateur1="Nom de l'animateur 1",
+            animateur2="Nom de l'animateur 2",
+            rencontre="Lieu du point de rencontre",
+            dateJour1="Date du jour 1",
+            dateJour2="Date du jour 2",
+            horaireJour1="Horaire du jour 1",
+            horaireJour2="Horaire du jour 2" 
+        )
+    }}
+{% endblock %}

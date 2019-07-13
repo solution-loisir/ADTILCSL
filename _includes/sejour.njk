@@ -1,0 +1,12 @@
+{% macro sejour(activite="", animateur1="", animateur2="", rencontre="", dateJour1="", dateJour2="", horaireJour1="", horaireJour2="") %}
+    <section>
+        <h2>{{ activite }}</h2>
+        <ul>
+            <% if animateur1 == true %><li>Animateur : {{ animateur1 }}</li><% endif %>
+            <% if animateur2 == true %><li>Animateur : {{ animateur2 }}</li><% endif %>
+            <li>Point de rencontre : {{ rencontre }}</li>
+            <li>Horaire du {{ dateJour1 }} : {{ horaireJour1 }}</li>
+            <li>Horaire du {{ dateJour2 }} : {{ horaireJour2 }}</li>
+        </ul>
+    </section>
+{% endmacro %}
