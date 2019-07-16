@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="origin" />
-    <link rel="stylesheet" type="text/css" href="style/index.scss" />
+    <link rel="stylesheet" type="text/css" href="../style/index.css" />
     <link rel="icon" type="image/png" href="#" sizes="16x16" />
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
     <link rel="icon" type="image/png" href="#" sizes="96x96" />
-    <script defer src="js/index.js"></script>
+    <script defer src="../js/index.js"></script>
     <link rel="canonical" href="" />
     <title>ADTILCSL | Séjour plein air</title>
     <meta name="description" content="Le Séjour plein air de la Techniques de gestion et d&#39;intervention en loisir
@@ -31,7 +31,7 @@ du Cégep de Saint-Laurent." />
     <nav class="header__nav" id="main-nav">
         <ul class="header__nav--ul">
             <li><a href="/" >Accueil</a></li>
-            <li><a href="sejour-plein-air">Séjour plein air</a></li>
+            <li><a href="/sejour-plein-air">Séjour plein air</a></li>
             <li><a href="#">Outils</a></li>
             <li><a href="#">Projets</a></li>
             <li><a href="#">Administration</a></li>
@@ -39,18 +39,20 @@ du Cégep de Saint-Laurent." />
     </nav>
 </header>
     
+<main>
     
     <section>
         <h2>Nom de l&#39;activité</h2>
         <ul>
-            <% if animateur1 == true %><li>Animateur : Nom de l&#39;animateur 1</li><% endif %>
-            <% if animateur2 == true %><li>Animateur : Nom de l&#39;animateur 2</li><% endif %>
+            <li>Animateur : Nom de l&#39;animateur 1</li>
+            <li>Animateur : Nom de l&#39;animateur 2</li>
             <li>Point de rencontre : Lieu du point de rencontre</li>
             <li>Horaire du Date du jour 1 : Horaire du jour 1</li>
             <li>Horaire du Date du jour 2 : Horaire du jour 2</li>
         </ul>
     </section>
 
+</main>
 
     <footer>
     <h1>Footer</h1>
