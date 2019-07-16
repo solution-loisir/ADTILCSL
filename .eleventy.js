@@ -31,7 +31,8 @@ module.exports = config => {
     });
     return {
         dir: {
-            output: 'docs'
+            output: 'docs',
+            pathPrefix: './'
         }
     }
 }
