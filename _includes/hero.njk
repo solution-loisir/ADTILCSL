@@ -6,7 +6,7 @@
             <p class="hero__p">{{ p }}</p>
         </section>
 
-        <img src="{{ imgSrc }}" alt="{{ imgAlt }}" class="hero__img" width="320" />
+        <img src="{{ imgSrc | url }}" alt="{{ imgAlt }}" class="hero__img" width="320" />
 
     </section>
 {% endmacro %}
