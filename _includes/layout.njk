@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="origin" />
-    <link rel="stylesheet" type="text/css" href={% if title === 'ADTILCSL | Accueil' %}"{{ ./style/index.css | url }}"{% else %}"{{ ./style/index.css | url }}"{% endif %} />
+    <link rel="stylesheet" type="text/css" href={% if title === 'ADTILCSL | Accueil' %}"{{ /style/index.css | url }}"{% else %}"{{ /style/index.css | url }}"{% endif %} />
     <link rel="icon" type="image/png" href="#" sizes="16x16" />
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
     <link rel="icon" type="image/png" href="#" sizes="96x96" />
     <script defer src={% if title === 'ADTILCSL | Accueil' %}"js/index.js"{% else %}"/js/index.js"{% endif %}></script>
     <link rel="canonical" href="{{ pageURL | url }}" />
+    <base href="/ADTILCSL/" />
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}" />
     <meta property="og:title" content="{{ title }}" />
