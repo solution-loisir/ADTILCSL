@@ -32,7 +32,7 @@ module.exports = config => {
     return {
         dir: {
             output: 'docs',
-            pathPrefix: 'https://solution-loisir.github.io/ADTILCSL'
+            pathPrefix: '/ADTILCSL/'
         },
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
