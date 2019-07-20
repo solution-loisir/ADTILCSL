@@ -1,10 +1,7 @@
 <header class="header">
-        <a href="#" class="logo"><img src={%- if title === 'ADTILCSL | Accueil' %}"./images/logo.jpg"{% else %}"../images/logo.jpg"{% endif %} alt="logo" /></a>
+        <a href="#" class="logo"><img src="{{ '/images/logo.jpg' | url }}" alt="logo" /></a>
         <button class="header-btn" id="header-btn">Menu</button>
     
-    
-    {% set sejourURL = "/sejour-plein-air" %}
-    {% set homeURL = "/" %}
     <nav class="header__nav" id="main-nav">
         <ul class="header__nav--ul">
             <li><a href="{{ '/' | url }}" {% if title === 'ADTILCSL | Accueil' %}hidden{% endif %}>Accueil</a></li>
