@@ -7,8 +7,8 @@
     {% set homeURL = "/" %}
     <nav class="header__nav" id="main-nav">
         <ul class="header__nav--ul">
-            <li><a href="{{ homeURL | url }}" {% if title === 'ADTILCSL | Accueil' %}hidden{% endif %}>Accueil</a></li>
-            <li><a href="{{ sejourURL | url }}">Séjour plein air</a></li>
+            <li><a href="{{ '/' | url }}" {% if title === 'ADTILCSL | Accueil' %}hidden{% endif %}>Accueil</a></li>
+            <li><a href="{{ '/sejour-plein-air' | url }}">Séjour plein air</a></li>
             <li><a href="#">Outils</a></li>
             <li><a href="#">Projets</a></li>
             <li><a href="#">Administration</a></li>
