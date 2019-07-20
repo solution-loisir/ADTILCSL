@@ -33,6 +33,7 @@ module.exports = config => {
         dir: {
             output: 'docs'
         },
+        pathPrefix: '/ADTILCSL/',
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk',
