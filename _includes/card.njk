@@ -1,8 +1,0 @@
-{% macro card(class="", svg="", svgText="", title="", text="", link="") %}
-    <section class="card {{ class }}">
-        <object type="image/svg+xml" data="{{ svg }}" class="card-svg">{{ svgText }}</object>
-        <h1>{{ title }}</h1>
-        <p>{{ text }}</p>
-        <a href="{{ link }}">En savoir plus!</a>
-    </section>
-{% endmacro %}

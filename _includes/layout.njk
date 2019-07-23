@@ -20,11 +20,8 @@
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
 </head>
 <body>
-
     {% include '_header.njk' %}
-    {% block content %}{% endblock %}
-    {% include '_footer.njk' %}
-    
-    
+    {{ content | safe }}
+    {% include '_footer.njk' %} 
 </body>
 </html>

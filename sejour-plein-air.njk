@@ -1,15 +1,14 @@
-{% extends 'layout.njk' %}
+---
+layout: layout.njk
+title: ADTILCSL | Séjour plein air
+description: Le Séjour plein air de la Techniques de gestion et d'intervention en loisir du Cégep de Saint-Laurent.
+pageURL: https://solution-loisir.github.io/ADTILCSL/sejour-plein-air/
+ogImage:
+ogImageAlt:
+---
 
 {% from 'sejour.njk' import sejour %}
 
-{% set title = 'ADTILCSL | Séjour plein air' %}
-{% set description = "Le Séjour plein air de la Techniques de gestion et d'intervention en loisir
-du Cégep de Saint-Laurent." %}
-{% set pageURL = 'https://solution-loisir.github.io/ADTILCSL/sejour-plein-air/' %}
-{% set ogImage = '' %}
-{% set ogImageAlt = '' %}
-
-{% block content %}
 <main>
     {{
         sejour(
@@ -24,4 +23,3 @@ du Cégep de Saint-Laurent." %}
         )
     }}
 </main>
-{% endblock %}
