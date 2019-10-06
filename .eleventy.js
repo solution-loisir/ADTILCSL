@@ -1,8 +1,4 @@
-const sass = require('sass');
-const fs = require('fs');
-const scssFile = './style/index.scss';
-const cssFile =  './docs/style/index.css';
-const missingDir = './docs/style';
+const sass = require('./config/sass-process');
 const assets = [
     'images',
     'fonts',
@@ -33,25 +29,11 @@ module.exports = config => {
     );
     
     //Watching for modificaions in style directory
-    fs.watch('./style', () => {
-        //Returning css from scssFile
-        const result = sass.renderSync({file: scssFile});
-        //Then writing result to cssFile
-        fs.writeFile(cssFile, result.css.toString(), err => {
-            if(err) {
-                //Creates ./docs/style if it's missing
-                if(err.code === 'ENOENT') {
-                    fs.mkdir(missingDir, err => {
-                     console.error(`mkdir failed with : ${err}`);
-                    })
-                }
-                console.error(`writeFile failed with : ${err}`);
-            }
-        })
-    });
+    sass('./style/index.scss', './docs/style/index.css');
 
     return {
         dir: {
+            input: '_src',
             output: 'docs'
         },
         pathPrefix: '/ADTILCSL/',

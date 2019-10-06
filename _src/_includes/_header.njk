@@ -1,0 +1,12 @@
+<header class="header">
+        <a href="#" class="logo"><img src="{{ '/images/logo.jpg' | url }}" alt="logo" /></a>
+        <button class="header-btn" id="header-btn">Menu</button>
+    
+    <nav class="header__nav" id="main-nav">
+        <ul>
+            {% for h in collections.all %}
+            <li><a href="{{ h.url | url }}">{{ h.data.title }}</a></li>
+            {% endfor %}
+        </ul>     
+    </nav>
+</header>
