@@ -153,6 +153,12 @@ a, a:active {
 .header__nav a:hover {
   text-decoration: underline;
 }
+.header__nav a.active {
+  text-decoration: underline;
+}
+.header__nav a.active:hover {
+  text-decoration: none;
+}
 
 .display-main-nav {
   display: block;

@@ -50,6 +50,12 @@
         &:hover {
             text-decoration: underline;
         }
+        &.active {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
 .display-main-nav {
