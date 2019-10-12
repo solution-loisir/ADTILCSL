@@ -185,27 +185,27 @@ a, a:active {
   background-color: var(--hero-background, #b1e5f8);
 }
 
-.hero__img, .hero__img-container {
-  grid-column: 3/12;
-  grid-row: 2;
+.hero__img {
   border-radius: 2.3px;
-  margin-bottom: 7rem;
-}
-@media (min-width: 55em) {
-  .hero__img, .hero__img-container {
-    grid-column: 8/12;
-    grid-row: 1;
-  }
-}
-@media (min-width: 75em) {
-  .hero__img, .hero__img-container {
-    grid-column: 8/12;
-  }
 }
 
 .hero__img-container {
   height: 0;
   padding-bottom: 196.875px;
+  grid-column: 3/12;
+  grid-row: 2;
+  margin-bottom: 7rem;
+}
+@media (min-width: 55em) {
+  .hero__img-container {
+    grid-column: 8/12;
+    grid-row: 1;
+  }
+}
+@media (min-width: 75em) {
+  .hero__img-container {
+    grid-column: 8/12;
+  }
 }
 
 .hero__text {
