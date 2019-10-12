@@ -5,15 +5,9 @@ description: L'Association des diplômés de la Techniques de gestion et d'inter
 ogImage:
 ogImageAlt:
 date: 2019-07-01
+tags: pages
 ---
-    {%
-        hero
-        imgSrc="./images/hero.jpg",
-        imgAlt="Hero image", 
-        h1="Une association au service de ses diplômés.", 
-        p="Une équipe dévouée vous offre services, accompagnement, conseils et plus encore!"
-    %}
-<main class="grid-12 card-section">
+<section class="grid-12 card-section">
     {%
         card
         class="sejour-card",
@@ -23,7 +17,7 @@ date: 2019-07-01
         text="Le Séjour plein air a lieu à chaque année au mois d'octobre.
         c'est l'occasion pour les étudiants du cours l'Adulte le sport et le plein air
         de réaliser leurs projets.",
-        link="#"
+        link=('/sejour-plein-air/' | url)
     %}
     {%
         card
@@ -34,7 +28,7 @@ date: 2019-07-01
         text="Nous mettons régulièrement des outils de gestion, formations et astuces
         à votre disposition sur notre. Visitez-nous
         fréquemment afin de rester au courant!",
-        link="#"
+        link=('/outils/' | url)
     %}
     {%
         card
@@ -45,6 +39,6 @@ date: 2019-07-01
         text="Nous mettons en oeuvres des projets variés destinés à améliorer la visibilité
         et les conditions d'emploi des Techniciens en loisir d'aujourd'hui et
         de demain!",
-        link="#"  
+        link=('/projets/' | url)  
     %}
-</main>
+</section>

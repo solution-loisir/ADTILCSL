@@ -1,0 +1,13 @@
+---
+layout: layout.njk
+---
+<h1>{{ title }}</h1>
+<p>Accédez à l'information spécifique pour l'année de déploiement :</p>
+<ul>
+{#{% set sejourPleinAir = '/sejour-plein-air/' %}
+{% if page.url not sejourPleinAir %}<li><a href="{{ '/sejour-plein-air/' | url }}" class="sejour-nav">Information générale</a></li>{% else %}{% endif %}#}
+{% for sejour in collections.sejours %}
+<li><a href="{{ sejour.url | url }}" class="sejour-nav">{{ sejour.data.year }}</a></li>
+{% endfor %}
+</ul>
+{{ content | safe }}
