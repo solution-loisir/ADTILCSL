@@ -1,24 +1,17 @@
 const sass = require('./config/sass-process');
-const assets = [
-    'images',
-    'fonts',
-    'js'
-]
+const hero = require('./shortcode/hero');
 
 module.exports = config => {
+    const assets = [
+        'images',
+        'fonts',
+        'js'
+    ]
     //Passing assets as is to docs directory
     assets.forEach(asset => config.addPassthroughCopy(asset));
 
     //Shortcodes
-    config.addNunjucksShortcode('hero', hero => 
-        `<section class="grid-12 hero">
-            <section class="hero__text">
-                <h1 class="hero__heading">${hero.h1}</h1>
-                <p class="hero__p">${hero.p}</p>
-            </section>
-            <img src="${hero.imgSrc}" alt="${hero.imgAlt}" class="hero__img" width="320" />
-        </section>`
-    );
+    config.addShortcode('hero', hero);
     config.addNunjucksShortcode('card', card =>
         `<section class="card ${card.class}">
             <object type="image/svg+xml" data="${card.svg}" class="card-svg">${card.svgText}</object>

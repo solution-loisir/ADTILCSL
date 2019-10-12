@@ -2,11 +2,10 @@
     min-height: 100vh;
     background-color: var(--hero-background, #b1e5f8);
 }
-.hero__img {
+.hero__img, .hero__img-container {
     grid-column: 3 /12;
     grid-row: 2;
-    box-shadow: 0.2px 0.5px 0.6px #241c15, -0.5px 0px 0.6px #241c15;
-    border-radius: 2px;
+    border-radius: 2.3px;
     margin-bottom: 7rem;
     @media(min-width: $medium) {
         grid-column: 8 / 12;
@@ -15,6 +14,10 @@
     @media(min-width: $large) {
         grid-column: 8 /12;
     }
+}
+.hero__img-container {
+    height: 0;
+    padding-bottom: 9 / 16 * 350px;
 }
 .hero__text {
     grid-column: 3 / 12;

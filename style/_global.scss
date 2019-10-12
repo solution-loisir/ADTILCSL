@@ -43,3 +43,6 @@ a, a:active {
     justify-items: center;
     align-items: center;
 }
+.shadow {
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
+}
