@@ -1,0 +1,16 @@
+---
+layout: base-layout.njk
+title: Blog
+description: Blog de l'Association des diplômés en loisir du Cégep de Saint-Laurent
+ogImage:
+ogImageAlt:
+date: 2019-07-22
+tags: pages
+---
+{% for post in collections.posts %}
+<div>
+<h1>{{ post.data.title }}</h1>
+<p>Publié le : {{ post.date | timeFormat }}</p>
+<a href="{{ post.url | url }}">Lire</a>
+</div>
+{% endfor %}

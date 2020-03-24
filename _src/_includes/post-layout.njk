@@ -1,0 +1,11 @@
+---
+layout: base-layout.njk
+---
+<main class="post-layout">
+<h1>{{ title }}</h1>
+<p>
+    Publié le : {{ page.date | timeFormat }}<br />
+    Édité le : {{ updated | timeFormat }}
+</p>
+{{ content | safe }}
+</main>

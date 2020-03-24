@@ -1,5 +1,6 @@
 const sass = require('./config/sass-process');
 const hero = require('./shortcode/hero');
+const timeFormat = require('./filters/readable-time');
 
 module.exports = config => {
     const assets = [
@@ -20,7 +21,10 @@ module.exports = config => {
             <a href="${card.link}">En savoir plus!</a>
         </section>`
     );
-    
+    //Filters
+    config.addFilter('timeFormat', timeFormat);
+    //Custom collections
+    config.addCollection('posts', collection => collection.getFilteredByGlob('_src/_posts/*.md'));
     //Watching for modificaions in style directory
     sass('./style/index.scss', './docs/style/index.css');
 

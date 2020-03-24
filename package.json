@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx @11ty/eleventy --serve",
-    "code": "code && npx @11ty/eleventy --serve"
+    "code": "code && npx @11ty/eleventy --serve",
+    "clean": "if [ -d docs ]; then trash docs; fi && npx @11ty/eleventy --serve",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
   },
   "author": "Mathieu Huot",
   "license": "ISC",
