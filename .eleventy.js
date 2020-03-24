@@ -24,7 +24,7 @@ module.exports = config => {
     //Filters
     config.addFilter('timeFormat', timeFormat);
     //Custom collections
-    config.addCollection('posts', collection => collection.getFilteredByGlob('_src/_posts/*.md'));
+    config.addCollection('posts', collection => collection.getFilteredByGlob('_src/posts/*.md'));
     //Watching for modificaions in style directory
     sass('./style/index.scss', './docs/style/index.css');
 
