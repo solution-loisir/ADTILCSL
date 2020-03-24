@@ -1,6 +1,6 @@
-module.exports = date => {
-    const dateTime = date
+module.exports = date => date
     .toLocaleString('fr-CA', {timeZone: 'utc', year: 'numeric' , month: 'long', day: 'numeric'})
+    .replace(/([0-9]{4}) (M[0-9]{2}) ([0-9]{2})/, '$3 $2 $1')
     .replace(/M01/, 'jan.')
     .replace(/M02/, 'févr.')
     .replace(/M03/, 'mars')
@@ -13,8 +13,3 @@ module.exports = date => {
     .replace(/M10/, 'oct.')
     .replace(/M11/, 'nov.')
     .replace(/M12/, 'déc.');
-    const year = dateTime.match(/^\d\d\d\d/g);
-    const month = dateTime.match(/\b\D+\b/g);
-    const day = dateTime.match(/\d\d$|\d$/g);
-    return `${day[0]} ${month[0]} ${year[0]}`;
-}
