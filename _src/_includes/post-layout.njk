@@ -1,11 +1,13 @@
 ---
 layout: base-layout.njk
 ---
-<main class="post-layout">
-<h1>{{ title }}</h1>
-<p>
-    Publié le : {{ page.date | timeFormat }}<br />
-    Édité le : {{ updated | timeFormat }}
-</p>
-{{ content | safe }}
+<main class="post-layout" style="background-color:{{- postBackground -}};">
+    <article class="post-article" style="background-color:{{- articleColor -}};">
+        <h1 class="post-title">{{ title }}</h1>
+        <p>
+            Publié le : {{ page.date | timeFormat }}<br />
+            Édité le : {{ updated | timeFormat }}
+        </p>
+        {{ content | safe }}
+    </article>
 </main>

@@ -47,6 +47,10 @@ body {
   font-size: 1.6rem;
 }
 
+main {
+  display: block;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", arial, sans-serif;
 }
@@ -242,6 +246,16 @@ a, a:active {
   .hero__p {
     font-size: 3rem;
   }
+}
+
+.post-title {
+  margin-top: 0;
+}
+
+.post-article {
+  padding: 1em 1.2em;
+  width: 66%;
+  margin: auto;
 }
 
 .card-section {
