@@ -7,6 +7,8 @@
 .post-article {
     padding: 1em 1.2em;
     //background-color: #f1e1cb;
-    width: 66%;
-    margin: auto;
+    @media(min-width: $medium) {
+        width: 66%;
+        margin: auto;
+    }
 }

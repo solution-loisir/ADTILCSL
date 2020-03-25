@@ -254,8 +254,12 @@ a, a:active {
 
 .post-article {
   padding: 1em 1.2em;
-  width: 66%;
-  margin: auto;
+}
+@media (min-width: 55em) {
+  .post-article {
+    width: 66%;
+    margin: auto;
+  }
 }
 
 .card-section {
