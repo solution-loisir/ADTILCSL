@@ -1,13 +1,19 @@
 ---
 layout: base-layout.njk
 ---
-<main class="post-layout" style="background-color:{{- postBackground -}};">
-    <article class="post-article" style="background-color:{{- articleColor -}};">
-        <h1 class="post-title">{{ title }}</h1>
+<main class="post-layout dark-pink-theme">
+    <article>
+        <h1>{{ title }}</h1>
         <p>
+            Écrit par : {{ author[writer].name }}<br />
             Publié le : {{ page.date | timeFormat }}<br />
             Édité le : {{ updated | timeFormat }}
         </p>
         {{ content | safe }}
     </article>
+    <div class="author-card">
+        <img src="{{ author.mathieuhuot.img }}" alt="Image de l'auteur" />
+        <p><strong>{{ author[writer].name }}</strong></p>
+        <p class="author-bio">{{ author[writer].bio }}</p>
+    </div>
 </main>
