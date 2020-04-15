@@ -8,12 +8,14 @@
     "start": "npx @11ty/eleventy --serve",
     "code": "code && npx @11ty/eleventy --serve",
     "clean": "if [ -d docs ]; then trash docs; fi && npx @11ty/eleventy --serve",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "refresh-youtube": "node youtube-refresh.js"
   },
   "author": "Mathieu Huot",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "dotenv": "^8.2.0",
     "fs-extra": "^8.1.0",
     "sass": "^1.26.3"
   }
