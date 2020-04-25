@@ -1,10 +1,13 @@
 {
- "kind": "youtube#searchListResponse",
- "etag": "\"tnVOtk4NeGU6nDncDTE5m9SmuHc/jWQW1JAKZKSaIRDUlxL9j0MBHKM\"",
- "regionCode": "CA",
- "pageInfo": {
-  "totalResults": 0,
-  "resultsPerPage": 20
- },
- "items": []
+ "error": {
+  "errors": [
+   {
+    "domain": "usageLimits",
+    "reason": "keyInvalid",
+    "message": "Bad Request"
+   }
+  ],
+  "code": 400,
+  "message": "Bad Request"
+ }
 }

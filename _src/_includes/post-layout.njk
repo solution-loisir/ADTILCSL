@@ -4,11 +4,11 @@ layout: base-layout.njk
 <main class="post-layout dark-pink-theme">
     <article>
         <h1>{{ title }}</h1>
-        <p>
+        <p><small>
             Écrit par : {{ author[writer].name }}<br />
             Publié le : {{ page.date | timeFormat }}<br />
             Édité le : {{ updated | timeFormat }}
-        </p>
+        </small></p>
         {{ content | safe }}
     </article>
     <div class="author-card">

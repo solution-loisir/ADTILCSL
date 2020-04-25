@@ -10,7 +10,7 @@ tags: pages
 {% for post in collections.posts %}
 <div>
 <h1>{{ post.data.title }}</h1>
-<p>Publié le : {{ post.date | timeFormat }}</p>
+<p><small>Publié le : {{ post.date | timeFormat }}</small></p>
 <a href="{{ post.url | url }}">Lire</a>
 </div>
 {% endfor %}
