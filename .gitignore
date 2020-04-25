@@ -2,8 +2,6 @@
 *.map
 *.sass-cache
 node_modules
-dist
 .cache
 .vscode/
-notes.txt
 .env
