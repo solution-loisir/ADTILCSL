@@ -1,7 +1,6 @@
 const sass = require('sass');
 const fs = require('fs-extra');
 const path = require('path');
-require('dotenv').config();
 
 module.exports = (scssPath, cssPath) => {
     //If cssPath directory doesn't exist...
