@@ -9,7 +9,8 @@
     "code": "code && npx @11ty/eleventy --serve",
     "clean": "if [ -d docs ]; then trash docs; fi && npx @11ty/eleventy --serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "refresh-youtube": "node youtube-refresh.js"
+    "refresh-youtube": "node youtube-refresh.js",
+    "prod": "ELEVENTY_PROD npx @11ty/eleventy"
   },
   "author": "Mathieu Huot",
   "license": "ISC",
