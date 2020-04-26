@@ -3,8 +3,12 @@
         margin-top: 0;
     }
     article {
-        padding: 1em 1.2em;
+        padding: 1em 1em;
+        @media(min-width: $small) {
+            padding: 1em 1.5em;
+        }
         @media(min-width: $medium) {
+            padding: 1em 2em;
             width: 66%;
             margin: auto;
         }
@@ -27,9 +31,6 @@
         padding: 1em 2em;
         width: 66%;
     }
-    .blog-description {
-        font-size: 1.8rem;
-    }
 }
 .author-card {
     display: flex;
@@ -39,17 +40,17 @@
     width: 350 / 16 * 1em;
     margin: 1em auto;
     padding: 1em 1.5em;
-    background-color: #fff;
+    background-color: rgb(233, 233, 233);
+    background: linear-gradient(15deg, rgba(243, 243, 243, 0.5) 0%, rgba(233, 233, 233, 0.4) 100%);
     border-radius: 2.3px;
     img {
-        width: 275px;
+        width: 220px;
         border-radius: 50%;
     }
     .author-bio {
         width: 100%;
         padding: 0.6em;
         border-radius: 2.3px;
-        background-color: rgba(233, 233, 233, 0.8);
     }
 }
 .dark-pink-theme {
@@ -59,9 +60,8 @@
     }
 }
 .default-blog-theme {
-    background-color: rgb(243, 243, 243);
+    background-color: #fff;
     article {
         background-color: #fff;
-        //box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
     }
 }

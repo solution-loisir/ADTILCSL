@@ -11,7 +11,7 @@ tags: pages
 <div class="blog-list">
 <h1>{{ post.data.title }}</h1>
 <p><small>Publié le : {{ post.date | timeFormat }}</small></p>
-<p class="blog-description">{{ post.data.description }}..</p>
+<p>{{ post.data.description }}..</p>
 <a href="{{ post.url | url }}">Lire</a>
 </div>
 {% endfor %}

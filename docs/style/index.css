@@ -56,11 +56,19 @@ h3 {
   font-size: 3rem;
 }
 
-body {
+nav, article {
   font-size: 2rem;
 }
 
-main, img, object {
+body {
+  font-size: 1.8rem;
+}
+
+button {
+  font-size: 1.4rem;
+}
+
+main, img, object, svg {
   display: block;
 }
 
@@ -177,8 +185,8 @@ a, a:active {
 }
 
 .hero {
-  min-height: 100vh;
-  background-color: var(--hero-background, #b1e5f8);
+  min-height: 80vh;
+  background: #84d3e2;
 }
 
 .hero__img {
@@ -244,10 +252,16 @@ a, a:active {
   margin-top: 0;
 }
 .post-layout article {
-  padding: 1em 1.2em;
+  padding: 1em 1em;
+}
+@media (min-width: 37.5em) {
+  .post-layout article {
+    padding: 1em 1.5em;
+  }
 }
 @media (min-width: 55em) {
   .post-layout article {
+    padding: 1em 2em;
     width: 66%;
     margin: auto;
   }
@@ -277,9 +291,6 @@ a, a:active {
     width: 66%;
   }
 }
-.blog-list .blog-description {
-  font-size: 1.8rem;
-}
 
 .author-card {
   display: flex;
@@ -289,18 +300,18 @@ a, a:active {
   width: 21.875em;
   margin: 1em auto;
   padding: 1em 1.5em;
-  background-color: #fff;
+  background-color: #e9e9e9;
+  background: linear-gradient(15deg, rgba(243, 243, 243, 0.5) 0%, rgba(233, 233, 233, 0.4) 100%);
   border-radius: 2.3px;
 }
 .author-card img {
-  width: 275px;
+  width: 220px;
   border-radius: 50%;
 }
 .author-card .author-bio {
   width: 100%;
   padding: 0.6em;
   border-radius: 2.3px;
-  background-color: rgba(233, 233, 233, 0.8);
 }
 
 .dark-pink-theme {
@@ -311,7 +322,7 @@ a, a:active {
 }
 
 .default-blog-theme {
-  background-color: #f3f3f3;
+  background-color: #fff;
 }
 .default-blog-theme article {
   background-color: #fff;
