@@ -1,5 +1,5 @@
 ---
-layout: base-layout.njk
+layout: base-layout
 title: Accueil
 description: L'Association des diplômés de la Techniques de gestion et d'intervention en loisir du Cégep de Saint-Laurent...
 ogImage:
@@ -18,7 +18,7 @@ tags: pages
 <section class="grid-12 card-section">
     {%
         card
-        class="sejour-card",
+        cardClass="sejour-card",
         svg="./images/forest.svg",
         svgText="Séjour plein air",
         title="Séjour plein air",
@@ -29,18 +29,18 @@ tags: pages
     %}
     {%
         card
-        class="tools-card",
+        cardClass="tools-card",
         svg="./images/tools.svg",
-        svgText="Outils",
-        title="Outils",
+        svgText="Formations",
+        title="Formations",
         text="Nous mettons régulièrement des outils de gestion, formations et astuces
         à votre disposition sur notre. Visitez-nous
         fréquemment afin de rester au courant!",
-        link=('/outils/' | url)
+        link=('/formations/' | url)
     %}
     {%
         card
-        class="project-card",
+        cardClass="project-card",
         svg="./images/start-up.svg",
         svgText="Blog",
         title="Blog",

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr-CA">
+<html lang="fr-CA" id="top">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="referrer" content="origin" />
     <link rel="stylesheet" type="text/css" href="{{ '/style/index.css' | url }}" />
     <link rel="icon" type="image/png" href="#" sizes="16x16" />
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
     <link rel="icon" type="image/png" href="#" sizes="96x96" />
     <script defer src="{{ '/js/index.js' | url }}"></script>
-    <link rel="canonical" href="{{ page.url | url }}" />
+    <link rel="canonical" href="st-loisir.netlify.app{{ page.url | url }}" />
     <title>ADTILCSL | {{ title }}</title>
     <meta name="description" content="{{ description }}" />
     <meta property="og:title" content="{{ title }}" />
@@ -20,8 +19,8 @@
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
 </head>
 <body>
-    {% include '_header.njk' %}
+    {% include 'partials/_header.njk' %}
     {{ content | safe }}
-    {% include '_footer.njk' %}
+    {% include 'partials/_footer.njk' %}
 </body>
 </html>

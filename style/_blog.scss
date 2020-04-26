@@ -10,6 +10,27 @@
         }
     }
 }
+.blog-list {
+    border: 2px dashed #000;
+    border-radius: 3px;
+    padding: 1em 1em;
+    margin: 1.5em auto;
+    width: 97%;
+    @media(min-width: 500px) {
+        width: 86%;
+    }
+    @media(min-width: 600px) {
+        padding: 1em 1.5em;
+        width: 76%;
+    }
+    @media(min-width: 700px) {
+        padding: 1em 2em;
+        width: 66%;
+    }
+    .blog-description {
+        font-size: 1.8rem;
+    }
+}
 .author-card {
     display: flex;
     flex-direction: column;
@@ -41,6 +62,6 @@
     background-color: rgb(243, 243, 243);
     article {
         background-color: #fff;
-        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
+        //box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
     }
 }

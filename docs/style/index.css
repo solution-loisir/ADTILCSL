@@ -24,6 +24,7 @@
 }
 :root {
   box-sizing: border-box;
+  font-size: 0.625em;
   --text-color: #241c15;
   --hero-background: #b1e5f8;
 }
@@ -37,18 +38,6 @@ html, body {
   color: var(--text-color, #241c15);
   margin: 0;
   padding: 0;
-}
-
-html {
-  font-size: 0.625em;
-}
-
-body {
-  font-size: 1.6rem;
-}
-
-main {
-  display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,19 +56,21 @@ h3 {
   font-size: 3rem;
 }
 
-p {
-  font-size: 1.8rem;
+body {
+  font-size: 2rem;
+}
+
+main, img, object {
+  display: block;
 }
 
 img, object {
-  display: block;
   max-width: 100%;
   height: auto;
 }
 
 a, a:active {
   outline: none;
-  font-size: 1.8rem;
 }
 
 .grid-12 {
@@ -99,10 +90,11 @@ a, a:active {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: white;
   z-index: 999;
+  box-shadow: 0 0 2px 0px #c0c0c0;
 }
-@media (min-width: 55em) {
+@media (min-width: 50em) {
   .header {
     position: sticky;
     top: 0;
@@ -112,7 +104,7 @@ a, a:active {
 .header-btn {
   margin: 5px 20px;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 50em) {
   .header-btn {
     display: none;
   }
@@ -127,7 +119,7 @@ a, a:active {
 .header__nav {
   display: none;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 50em) {
   .header__nav {
     display: block;
   }
@@ -139,7 +131,7 @@ a, a:active {
   margin: 5px 20px;
   width: 100%;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 50em) {
   .header__nav ul {
     flex-direction: row;
     width: auto;
@@ -149,7 +141,7 @@ a, a:active {
   margin: 6px 0px;
   align-self: flex-start;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 50em) {
   .header__nav li {
     align-items: inherit;
     margin: 6px 8px;
@@ -177,7 +169,7 @@ a, a:active {
   width: 100%;
   z-index: 999;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 50em) {
   .display-main-nav {
     position: static;
     width: auto;
@@ -261,6 +253,34 @@ a, a:active {
   }
 }
 
+.blog-list {
+  border: 2px dashed #000;
+  border-radius: 3px;
+  padding: 1em 1em;
+  margin: 1.5em auto;
+  width: 97%;
+}
+@media (min-width: 500px) {
+  .blog-list {
+    width: 86%;
+  }
+}
+@media (min-width: 600px) {
+  .blog-list {
+    padding: 1em 1.5em;
+    width: 76%;
+  }
+}
+@media (min-width: 700px) {
+  .blog-list {
+    padding: 1em 2em;
+    width: 66%;
+  }
+}
+.blog-list .blog-description {
+  font-size: 1.8rem;
+}
+
 .author-card {
   display: flex;
   flex-direction: column;
@@ -295,7 +315,6 @@ a, a:active {
 }
 .default-blog-theme article {
   background-color: #fff;
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-section {

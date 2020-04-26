@@ -3,16 +3,17 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     z-index: 999;
-    @media(min-width: $medium) {
+    box-shadow: 0 0 2px 0px #c0c0c0;
+    @media(min-width: $top-nav-break) {
         position: sticky;
         top: 0;
     }
 }
 .header-btn {
     margin: 5px 20px;
-    @media(min-width: $small) {
+    @media(min-width: $top-nav-break) {
         display: none;
     }
 }
@@ -23,7 +24,7 @@
 }
 .header__nav {
     display: none;
-    @media(min-width: $small) {
+    @media(min-width: $top-nav-break) {
         display: block;
     }    
     ul {
@@ -32,7 +33,7 @@
         list-style-type: none;
         margin: 5px 20px;
         width: 100%;
-        @media(min-width: $small) {
+        @media(min-width: $top-nav-break) {
             flex-direction: row;
             width: auto;
         }
@@ -40,7 +41,7 @@
     li {
         margin: 6px 0px;
         align-self: flex-start;
-        @media(min-width: $small) {
+        @media(min-width: $top-nav-break) {
             align-items: inherit;
             margin: 6px 8px;
         }
@@ -66,7 +67,7 @@
     top: 60px;
     width: 100%;
     z-index: 999;
-    @media(min-width: $small) {
+    @media(min-width: $top-nav-break) {
         position: static;
         width: auto;
     }
