@@ -4,13 +4,13 @@
     }
     article {
         padding: 1em 1em;
+        max-width: 55ch;
+        margin: auto;
         @media(min-width: $small) {
             padding: 1em 1.5em;
         }
         @media(min-width: $medium) {
             padding: 1em 2em;
-            width: 66%;
-            margin: auto;
         }
     }
 }
@@ -19,17 +19,21 @@
     border-radius: 3px;
     padding: 1em 1em;
     margin: 1.5em auto;
-    width: 97%;
-    @media(min-width: 500px) {
-        width: 86%;
-    }
+    max-width: 55ch;
     @media(min-width: 600px) {
         padding: 1em 1.5em;
-        width: 76%;
     }
     @media(min-width: 700px) {
         padding: 1em 2em;
-        width: 66%;
+    }
+    a {
+        display: block;
+        border-radius: 3px;
+        border: 1px solid black;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
     }
 }
 .author-card {

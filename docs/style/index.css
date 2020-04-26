@@ -42,6 +42,7 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", arial, sans-serif;
+  line-height: 1.25;
 }
 
 h1 {
@@ -56,16 +57,16 @@ h3 {
   font-size: 3rem;
 }
 
+p {
+  line-height: 1.5;
+}
+
 nav, article {
   font-size: 2rem;
 }
 
-body {
+body, button {
   font-size: 1.8rem;
-}
-
-button {
-  font-size: 1.4rem;
 }
 
 main, img, object, svg {
@@ -186,7 +187,7 @@ a, a:active {
 
 .hero {
   min-height: 80vh;
-  background: #84d3e2;
+  background: #7ed3ed85;
 }
 
 .hero__img {
@@ -253,6 +254,8 @@ a, a:active {
 }
 .post-layout article {
   padding: 1em 1em;
+  max-width: 55ch;
+  margin: auto;
 }
 @media (min-width: 37.5em) {
   .post-layout article {
@@ -262,8 +265,6 @@ a, a:active {
 @media (min-width: 55em) {
   .post-layout article {
     padding: 1em 2em;
-    width: 66%;
-    margin: auto;
   }
 }
 
@@ -272,24 +273,26 @@ a, a:active {
   border-radius: 3px;
   padding: 1em 1em;
   margin: 1.5em auto;
-  width: 97%;
-}
-@media (min-width: 500px) {
-  .blog-list {
-    width: 86%;
-  }
+  max-width: 55ch;
 }
 @media (min-width: 600px) {
   .blog-list {
     padding: 1em 1.5em;
-    width: 76%;
   }
 }
 @media (min-width: 700px) {
   .blog-list {
     padding: 1em 2em;
-    width: 66%;
   }
+}
+.blog-list a {
+  display: block;
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .author-card {
@@ -343,7 +346,7 @@ a, a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ecece8;
+  background-color: #ecece84d;
   min-height: 100%;
   padding: 1.5em;
   border-radius: 2px;

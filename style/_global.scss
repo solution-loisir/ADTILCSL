@@ -22,13 +22,14 @@ html, body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', arial, sans-serif;
+    line-height: 1.25;
 }
 h1 {font-size: 4rem;}
 h2 {font-size: 3.5rem;}
 h3 {font-size: 3rem;}
+p {line-height: 1.5;}
 nav, article {font-size: 2rem;}
-body {font-size: 1.8rem;}
-button {font-size: 1.4rem;}
+body, button {font-size: 1.8rem;}
 main, img, object, svg {display: block;}
 img, object {
     max-width: 100%;
