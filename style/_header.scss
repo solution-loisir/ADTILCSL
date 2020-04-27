@@ -28,24 +28,9 @@
     display: none;
     @media(min-width: $top-nav-break) {
         display: block;
-    }    
-    ul {
-        //display: block;
-        //flex-direction: column;
-        list-style-type: none;
-        //margin: 5px 20px;
-        //width: 100%;
-        @media(min-width: $top-nav-break) {
-            //display: initial;
-            //flex-direction: row;
-            //width: auto;
-        }
     }
     li {
-        //margin: 6px 0px;
-        //align-self: flex-start;
         @media(min-width: $top-nav-break) {
-            //align-items: inherit;
             display: inline;
             margin: 6px 8px;
         }

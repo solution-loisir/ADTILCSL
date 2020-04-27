@@ -78,6 +78,10 @@ img, object {
   height: auto;
 }
 
+nav ul {
+  list-style-type: none;
+}
+
 a, a:active {
   outline: none;
 }
@@ -134,9 +138,6 @@ a, a:active {
   .header__nav {
     display: block;
   }
-}
-.header__nav ul {
-  list-style-type: none;
 }
 @media (min-width: 50em) {
   .header__nav li {
