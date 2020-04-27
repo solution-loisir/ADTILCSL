@@ -99,7 +99,7 @@ a, a:active {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #fff;
   z-index: 999;
   box-shadow: 0 0 2px 0px #c0c0c0;
 }
@@ -112,6 +112,7 @@ a, a:active {
 
 .header-btn {
   margin: 5px 20px;
+  padding: 0.2em 0.6em;
 }
 @media (min-width: 50em) {
   .header-btn {
@@ -120,6 +121,7 @@ a, a:active {
 }
 
 .logo {
+  display: inline-block;
   margin: 5px 20px;
   height: 0;
   padding-bottom: 50px;
@@ -134,25 +136,11 @@ a, a:active {
   }
 }
 .header__nav ul {
-  display: flex;
-  flex-direction: column;
   list-style-type: none;
-  margin: 5px 20px;
-  width: 100%;
-}
-@media (min-width: 50em) {
-  .header__nav ul {
-    flex-direction: row;
-    width: auto;
-  }
-}
-.header__nav li {
-  margin: 6px 0px;
-  align-self: flex-start;
 }
 @media (min-width: 50em) {
   .header__nav li {
-    align-items: inherit;
+    display: inline;
     margin: 6px 8px;
   }
 }
@@ -172,7 +160,7 @@ a, a:active {
 
 .display-main-nav {
   display: block;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
   position: absolute;
   top: 60px;
   width: 100%;
@@ -184,10 +172,51 @@ a, a:active {
     width: auto;
   }
 }
+.display-main-nav li, .display-main-nav a {
+  display: block;
+}
+@media (min-width: 50em) {
+  .display-main-nav li, .display-main-nav a {
+    display: initial;
+  }
+}
+.display-main-nav a {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 30%;
+  border-top: 1px solid #c0c0c0;
+  background-color: #ecece84d;
+}
+@media (min-width: 50em) {
+  .display-main-nav a {
+    padding: initial;
+    border-top: initial;
+    background-color: initial;
+  }
+}
+.display-main-nav ul:nth-last-child(1) {
+  border-bottom: 1px solid #c0c0c0;
+}
+@media (min-width: 50em) {
+  .display-main-nav ul:nth-last-child(1) {
+    border-bottom: initial;
+  }
+}
+.display-main-nav ul {
+  padding-left: 0;
+  margin-top: 5em;
+}
+@media (min-width: 50em) {
+  .display-main-nav ul {
+    margin: 6px 8px;
+    padding-left: initial;
+    margin-top: initial;
+  }
+}
 
 .hero {
   min-height: 80vh;
-  background: #7ed3ed85;
+  background-color: #7ed3ed85;
 }
 
 .hero__img {

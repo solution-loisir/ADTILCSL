@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     z-index: 999;
     box-shadow: 0 0 2px 0px #c0c0c0;
     @media(min-width: $top-nav-break) {
@@ -13,11 +13,13 @@
 }
 .header-btn {
     margin: 5px 20px;
+    padding: 0.2em 0.6em;
     @media(min-width: $top-nav-break) {
         display: none;
     }
 }
 .logo {
+    display: inline-block;
     margin: 5px 20px;
     height: 0;
     padding-bottom: 1 / 2 * 100px;
@@ -28,21 +30,23 @@
         display: block;
     }    
     ul {
-        display: flex;
-        flex-direction: column;
+        //display: block;
+        //flex-direction: column;
         list-style-type: none;
-        margin: 5px 20px;
-        width: 100%;
+        //margin: 5px 20px;
+        //width: 100%;
         @media(min-width: $top-nav-break) {
-            flex-direction: row;
-            width: auto;
+            //display: initial;
+            //flex-direction: row;
+            //width: auto;
         }
     }
     li {
-        margin: 6px 0px;
-        align-self: flex-start;
+        //margin: 6px 0px;
+        //align-self: flex-start;
         @media(min-width: $top-nav-break) {
-            align-items: inherit;
+            //align-items: inherit;
+            display: inline;
             margin: 6px 8px;
         }
     }
@@ -62,7 +66,7 @@
 }
 .display-main-nav {
     display: block;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.95);
     position: absolute;
     top: 60px;
     width: 100%;
@@ -70,5 +74,38 @@
     @media(min-width: $top-nav-break) {
         position: static;
         width: auto;
+    }
+    li, a {
+        display: block;
+        @media(min-width: $top-nav-break) {
+            display: initial;
+        }
+    }
+    a {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 30%;
+        border-top: 1px solid #c0c0c0;
+        background-color: #ecece84d;
+        @media(min-width: $top-nav-break) {
+            padding: initial;
+            border-top: initial;
+            background-color: initial;
+        }
+    }
+    & ul:nth-last-child(1) {
+        border-bottom: 1px solid #c0c0c0;
+        @media(min-width: $top-nav-break) {
+            border-bottom: initial;
+        }
+    }
+    ul {
+        padding-left: 0;
+        margin-top: 5em;
+        @media(min-width: $top-nav-break) {
+            margin: 6px 8px;
+            padding-left: initial;
+            margin-top: initial;
+        }
     }
 }
