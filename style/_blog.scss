@@ -18,9 +18,10 @@
     border: 2px dashed #000;
     border-radius: 3px;
     padding: 1em 1em;
-    margin: 1.5em auto;
+    margin: 1em 0.5em;
     max-width: 55ch;
     @media(min-width: 600px) {
+        margin: 1.5em auto;
         padding: 1em 1.5em;
     }
     @media(min-width: 700px) {
