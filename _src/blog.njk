@@ -7,11 +7,22 @@ ogImageAlt:
 date: 2019-07-22
 tags: pages
 ---
-{% for post in collections.posts %}
-<div class="blog-list">
-<h1>{{ post.data.title }}</h1>
-<p><small>Publié le : {{ post.date | timeFormat }}</small></p>
-<p>{{ post.data.description }}..</p>
-<a href="{{ post.url | url }}">Lire</a>
-</div>
-{% endfor %}
+<main>
+    <header class="content-header">
+        <h1>Le blog de l'ADTILCSL</h1>
+        <p>Tu trouveras ici plusieurs articles concernant le loisir. Les auteurs sont souvent 
+        des acteurs locaux qui parlent de leurs passions, leurs projets ou leurs spécialisations.
+        </p>
+        <hr />
+    </header>
+    <section class="card-section">
+        {% for post in collections.posts %}
+            {% card 
+            title = post.data.title,
+            text = post.data.description,
+            link = (post.url | url),
+            linkText = "Lire l'article"
+            %}
+        {% endfor %}
+    </section>
+</main>

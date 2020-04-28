@@ -1,6 +1,7 @@
 .hero {
     min-height: 80vh;
-    background-color: #00a4e042;
+    background-color: var(--main-color, #00a4e042);
+    overflow: hidden;
 }
 .hero__img-container {
     height: 0;

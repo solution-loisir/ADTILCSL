@@ -10,15 +10,15 @@ $xl: 112.5em;  //1800px
     box-sizing: border-box;
     font-size: 0.625em;
     --text-color: #241c15;
-    --hero-background: #b1e5f8;
+    --main-color: #00a4e042;
+    --white: #00a4e002;
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
-html, body {
+html {
     font-family: Helvetica, system-ui, sans-serif;
     color: var(--text-color, #241c15);
-    margin: 0;
     padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -28,11 +28,15 @@ h1, h2, h3, h4, h5, h6 {
 h1 {font-size: 6rem;}
 h2 {font-size: 4.5rem;}
 h3 {font-size: 3rem;}
-nav, article {font-size: 2rem;}
-body, button {font-size: 1.8rem;}
+body {
+    margin: 0;
+    min-height: 100%;
+    font-size: 2rem;
+    background-color: var(--white, #00a4e002);
+}
 p {line-height: 1.5;}
-main, img, object, svg, footer {display: block;}
-img, object {
+main, img, object, svg, footer, header {display: block;}
+img, object, footer, header {
     max-width: 100%;
     height: auto;
 }

@@ -25,11 +25,8 @@
     }
 }
 .blog-list {
-    border: 2px dashed #000;
-    border-radius: 3px;
-    padding: 1em 1em;
     margin: 1em 0.5em;
-    max-width: 55ch;
+    max-width: 45ch;
     @media(min-width: 600px) {
         margin: 1.5em auto;
         padding: 1em 1.5em;
@@ -39,7 +36,6 @@
     }
     a {
         display: block;
-        border-radius: 3px;
         border: 1px solid black;
         width: 100%;
         text-align: center;

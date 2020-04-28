@@ -1,4 +1,10 @@
 .main-footer {
     color: white;
     background-color: #241c15;
+    overflow: hidden;
+    p {
+        margin-top: 0;
+        margin-bottom: 1em;
+        text-align: center;
+    }
 }
