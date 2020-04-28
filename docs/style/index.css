@@ -34,31 +34,27 @@
 }
 
 html, body {
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, system-ui, sans-serif;
   color: var(--text-color, #241c15);
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Lato", arial, sans-serif;
+  font-family: "Lato", system-ui, sans-serif;
   line-height: 1.25;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
 }
 
 h3 {
   font-size: 3rem;
-}
-
-p {
-  line-height: 1.5;
 }
 
 nav, article {
@@ -69,7 +65,11 @@ body, button {
   font-size: 1.8rem;
 }
 
-main, img, object, svg {
+p {
+  line-height: 1.5;
+}
+
+main, img, object, svg, footer {
   display: block;
 }
 
@@ -89,7 +89,7 @@ a, a:active {
 .grid-12 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 12px;
+  grid-gap: 1.8rem;
   justify-items: center;
   align-items: center;
 }
@@ -217,11 +217,7 @@ a, a:active {
 
 .hero {
   min-height: 80vh;
-  background-color: #7ed3ed85;
-}
-
-.hero__img {
-  border-radius: 2.3px;
+  background-color: #00a4e042;
 }
 
 .hero__img-container {
@@ -242,6 +238,9 @@ a, a:active {
     grid-column: 8/12;
   }
 }
+.hero__img-container img {
+  border-radius: 3px;
+}
 
 .hero__text {
   grid-column: 3/12;
@@ -257,24 +256,21 @@ a, a:active {
     grid-column: 3/8;
   }
 }
-
-.hero__heading {
-  font-size: 6rem;
+.hero__text h1 {
   font-weight: 400;
   margin-bottom: 0;
 }
 @media (min-width: 37.5em) {
-  .hero__heading {
+  .hero__text h1 {
     font-size: 7rem;
   }
 }
-
-.hero__p {
+.hero__text p {
   font-size: 2.5rem;
   margin-top: 0.5em;
 }
 @media (min-width: 37.5em) {
-  .hero__p {
+  .hero__text p {
     font-size: 3rem;
   }
 }
@@ -296,6 +292,15 @@ a, a:active {
   .post-layout article {
     padding: 1em 2em;
   }
+}
+
+.article-credit img {
+  width: 50px;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+.article-credit p {
+  margin-top: 0.5em;
 }
 
 .blog-list {
@@ -326,28 +331,6 @@ a, a:active {
   padding-bottom: 0.5em;
 }
 
-.author-card {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  width: 21.875em;
-  margin: 1em auto;
-  padding: 1em 1.5em;
-  background-color: #e9e9e9;
-  background: linear-gradient(15deg, rgba(243, 243, 243, 0.5) 0%, rgba(233, 233, 233, 0.4) 100%);
-  border-radius: 2.3px;
-}
-.author-card img {
-  width: 220px;
-  border-radius: 50%;
-}
-.author-card .author-bio {
-  width: 100%;
-  padding: 0.6em;
-  border-radius: 2.3px;
-}
-
 .dark-pink-theme {
   background-color: #000;
 }
@@ -363,84 +346,26 @@ a, a:active {
 }
 
 .card-section {
-  margin: 1.5em;
-  grid-gap: 1.5em;
-}
-@media (min-width: 37.5em) {
-  .card-section {
-    margin: 2em;
-    grid-gap: 2em;
-  }
+  display: grid;
+  margin: auto;
+  max-width: 76.5em;
+  justify-content: center;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ecece84d;
+  max-width: 40ch;
   min-height: 100%;
   padding: 1.5em;
-  border-radius: 2px;
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
 }
-.card h1 {
-  margin-top: 12px;
+.card h2 {
+  margin-top: 1.8rem;
   margin-bottom: 0;
 }
-@media (min-width: 55em) {
-  .card h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 75em) {
-  .card h1 {
-    font-size: 3.2rem;
-  }
-}
-
-.sejour-card {
-  grid-column: 1/13;
-  grid-row: 1;
-}
-@media (min-width: 37.5em) {
-  .sejour-card {
-    grid-column: 2/12;
-  }
-}
-@media (min-width: 55em) {
-  .sejour-card {
-    grid-column: 5/9;
-  }
-}
-
-.tools-card {
-  grid-column: 1/13;
-  grid-row: 2;
-}
-@media (min-width: 37.5em) {
-  .tools-card {
-    grid-column: 2/12;
-  }
-}
-@media (min-width: 55em) {
-  .tools-card {
-    grid-column: 1/5;
-    grid-row: 1;
-  }
-}
-
-.project-card {
-  grid-column: 1/13;
-  grid-row: 3;
-}
-@media (min-width: 37.5em) {
-  .project-card {
-    grid-column: 2/12;
-  }
-}
-@media (min-width: 55em) {
-  .project-card {
-    grid-column: 9/13;
+@media (min-width: 76.5em) {
+  .card {
     grid-row: 1;
   }
 }
@@ -452,4 +377,31 @@ a, a:active {
   .card-svg {
     width: 35%;
   }
+}
+
+.profils-card {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  align-items: center;
+  margin: 1.8rem auto;
+  padding: 1em 1.5em;
+  max-width: 40ch;
+}
+.profils-card img {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+.profils-card h2 {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+.profils-card p {
+  margin-top: 2rem;
+}
+
+.main-footer {
+  color: white;
+  background-color: #241c15;
 }

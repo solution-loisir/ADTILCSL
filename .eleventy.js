@@ -1,5 +1,4 @@
 const sass = require('./config/sass-process');
-const hero = require('./shortcode/hero');
 const card = require('./shortcode/card');
 const timeFormat = require('./filters/readable-time');
 
@@ -13,7 +12,6 @@ module.exports = config => {
     assets.forEach(asset => config.addPassthroughCopy(asset));
 
     //Shortcodes
-    config.addShortcode('hero', hero);
     config.addShortcode('card', card);
     //Filters
     config.addFilter('timeFormat', timeFormat);

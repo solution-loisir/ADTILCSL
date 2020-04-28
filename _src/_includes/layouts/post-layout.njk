@@ -4,16 +4,14 @@ layout: base-layout
 <main class="post-layout default-blog-theme">
     <article>
         <h1>{{ title }}</h1>
-        <p><small>
-            Écrit par : {{ author[writer].name }}<br />
-            Publié le : {{ page.date | timeFormat }}<br />
-            Édité le : {{ updated | timeFormat }}
-        </small></p>
+        <div class="article-credit">
+            <img src="{{ profils[writer].img }}" alt="Photo de l'auteur" />
+            <p><small>
+                Écrit par : {{ profils[writer].name }}<br />
+                Publié le : {{ page.date | timeFormat }}<br />
+                Édité le : {{ updated | timeFormat }}
+            </small></p>
+        </div>
         {{ content | safe }}
     </article>
-    <div class="author-card shadow">
-        <img src="{{ author.mathieuhuot.img }}" alt="Image de l'auteur" />
-        <p><strong>{{ author[writer].name }}</strong></p>
-        <p class="author-bio">{{ author[writer].bio }}</p>
-    </div>
 </main>

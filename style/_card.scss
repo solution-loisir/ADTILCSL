@@ -1,60 +1,21 @@
 .card-section { 
-    margin: 1.5em; 
-    grid-gap: 1.5em; 
-    @media(min-width: $small) {
-        margin: 2em; 
-        grid-gap: 2em; 
-    }
+    display: grid;
+    margin: auto;
+    max-width: $card-break;
+    justify-content: center;
 }
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ecece84d;
+    max-width: 40ch;
     min-height: 100%;
     padding: 1.5em;
-    border-radius: 2px;
-    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
-    h1 {
-        margin-top: 12px;
+    h2 {
+        margin-top: 1.8rem;
         margin-bottom: 0;
-        @media(min-width: $medium) {
-            font-size: 3rem;
-        }
-        @media(min-width: $large) {
-            font-size: 3.2rem;
-        }
     }
-}
-.sejour-card {
-    grid-column: 1 / 13;
-    grid-row: 1;
-    @media(min-width: $small) {
-        grid-column: 2 / 12;
-    }
-    @media(min-width: $medium) {
-        grid-column: 5 / 9;
-    }
-}
-.tools-card {
-    grid-column: 1 / 13;
-    grid-row: 2;
-    @media(min-width: $small) {
-        grid-column: 2 / 12;
-    }
-    @media(min-width: $medium) {
-        grid-column: 1 / 5;
-        grid-row: 1;
-    }
-}
-.project-card {
-    grid-column: 1 / 13;
-    grid-row: 3;
-    @media(min-width: $small) {
-        grid-column: 2 / 12;
-    }
-    @media(min-width: $medium) {
-        grid-column: 9 / 13;
+    @media(min-width: $card-break) {
         grid-row: 1;
     }
 }
@@ -62,5 +23,26 @@
     width: 50%;
     @media(min-width: $large) {
         width: 35%;
+    }
+}
+.profils-card {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: center;
+    margin: 1.8rem auto;
+    padding: 1em 1.5em;
+    max-width: 40ch;
+    img {
+        width: 200px;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+    p {
+        margin-top: 2rem;
     }
 }

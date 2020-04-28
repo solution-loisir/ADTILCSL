@@ -1,8 +1,9 @@
-//@media sizes
+//@media breakpoints
 $small: 37.5em; //600px
 $top-nav-break: 50em; //800px
 $medium: 55em;  //880px
 $large: 75em;  //1200px
+$card-break: 76.5em; //1224px
 $xl: 112.5em;  //1800px
 
 :root {
@@ -15,22 +16,22 @@ $xl: 112.5em;  //1800px
     box-sizing: inherit;
 }
 html, body {
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica, system-ui, sans-serif;
     color: var(--text-color, #241c15);
     margin: 0;
     padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', arial, sans-serif;
+    font-family: 'Lato', system-ui, sans-serif;
     line-height: 1.25;
 }
-h1 {font-size: 4rem;}
-h2 {font-size: 3.5rem;}
+h1 {font-size: 6rem;}
+h2 {font-size: 4.5rem;}
 h3 {font-size: 3rem;}
-p {line-height: 1.5;}
 nav, article {font-size: 2rem;}
 body, button {font-size: 1.8rem;}
-main, img, object, svg {display: block;}
+p {line-height: 1.5;}
+main, img, object, svg, footer {display: block;}
 img, object {
     max-width: 100%;
     height: auto;
@@ -42,7 +43,7 @@ a, a:active {
 .grid-12 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 12px;
+    grid-gap: 1.8rem;
     justify-items: center;
     align-items: center;
 }

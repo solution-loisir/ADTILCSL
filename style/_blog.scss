@@ -14,6 +14,16 @@
         }
     }
 }
+.article-credit {
+    img {
+        width: 50px;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+    p {
+        margin-top: 0.5em;
+    }
+}
 .blog-list {
     border: 2px dashed #000;
     border-radius: 3px;
@@ -35,27 +45,6 @@
         text-align: center;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
-    }
-}
-.author-card {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    width: 350 / 16 * 1em;
-    margin: 1em auto;
-    padding: 1em 1.5em;
-    background-color: rgb(233, 233, 233);
-    background: linear-gradient(15deg, rgba(243, 243, 243, 0.5) 0%, rgba(233, 233, 233, 0.4) 100%);
-    border-radius: 2.3px;
-    img {
-        width: 220px;
-        border-radius: 50%;
-    }
-    .author-bio {
-        width: 100%;
-        padding: 0.6em;
-        border-radius: 2.3px;
     }
 }
 .dark-pink-theme {
