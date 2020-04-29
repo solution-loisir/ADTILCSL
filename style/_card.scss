@@ -12,11 +12,12 @@
     max-width: 30ch;
     min-height: 100%;
     h2 {
-        margin-top: 1.6rem;
+        margin-top: 1rem;
         margin-bottom: 0;
     }
     p {
-        margin-top: 1.6rem;
+        align-self: flex-start;
+        margin-top: 1rem;
         margin-bottom: 0;
     }
     a {
@@ -37,7 +38,7 @@
     flex-direction: column;
     justify-items: flex-start;
     align-items: center;
-    margin: 1.8rem auto;
+    margin: 1.6rem auto;
     padding: 1em 1.5em;
     max-width: 40ch;
     img {
@@ -46,10 +47,10 @@
         margin-bottom: 0;
     }
     h2 {
-        margin-top: 2rem;
+        margin-top: 1.6rem;
         margin-bottom: 0;
     }
     p {
-        margin-top: 2rem;
+        margin-top: 1.6rem;
     }
 }

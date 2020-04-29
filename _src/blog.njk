@@ -8,20 +8,19 @@ date: 2019-07-22
 tags: pages
 ---
 <main>
-    <header class="content-header">
-        <h1>Le blog de l'ADTILCSL</h1>
-        <p>Tu trouveras ici plusieurs articles concernant le loisir. Les auteurs sont souvent 
-        des acteurs locaux qui parlent de leurs passions, leurs projets ou leurs spécialisations.
-        </p>
-        <hr />
-    </header>
+    {% contentHeader
+    heading = "Le blog de l'ADTILCSL",
+    description = "Tu trouveras ici plusieurs articles concernant le loisir. Les auteurs sont souvent 
+        des acteurs locaux qui parlent de leurs passions, leurs projets ou leurs spécialisations."
+    %}
     <section class="card-section">
         {% for post in collections.posts %}
             {% card 
             title = post.data.title,
+            time = post.date | timeFormat,
             text = post.data.description,
-            link = (post.url | url),
-            linkText = "Lire l'article"
+            link = post.url | url,
+            linkText = "Lire l'article!"
             %}
         {% endfor %}
     </section>

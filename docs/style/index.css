@@ -57,10 +57,13 @@ h3 {
   font-size: 3rem;
 }
 
+body, button {
+  font-size: 2rem;
+}
+
 body {
   margin: 0;
   min-height: 100%;
-  font-size: 2rem;
   background-color: var(--white, #00a4e002);
 }
 
@@ -295,9 +298,6 @@ a, a:active {
   }
 }
 
-.post-layout h1 {
-  margin-top: 0;
-}
 .post-layout article {
   padding: 1em 1em;
   max-width: 55ch;
@@ -314,6 +314,14 @@ a, a:active {
   }
 }
 
+.article-header h1 {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+.article-header img {
+  margin-bottom: 1.6rem;
+}
+
 .article-credit img {
   width: 50px;
   border-radius: 50%;
@@ -321,41 +329,11 @@ a, a:active {
 }
 .article-credit p {
   margin-top: 0.5em;
-}
-
-.blog-list {
-  margin: 1em 0.5em;
-  max-width: 45ch;
-}
-@media (min-width: 600px) {
-  .blog-list {
-    margin: 1.5em auto;
-    padding: 1em 1.5em;
-  }
-}
-@media (min-width: 700px) {
-  .blog-list {
-    padding: 1em 2em;
-  }
-}
-.blog-list a {
-  display: block;
-  border: 1px solid black;
-  width: 100%;
-  text-align: center;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-.dark-pink-theme {
-  background-color: #000;
-}
-.dark-pink-theme article {
-  background-color: #f1e1cb;
+  line-height: 1.25;
 }
 
 .default-blog-theme {
-  background-color: #fff;
+  background-color: var(--white, #00a4e002);
 }
 .default-blog-theme article {
   background-color: #fff;
@@ -377,11 +355,12 @@ a, a:active {
   min-height: 100%;
 }
 .card h2 {
-  margin-top: 1.6rem;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 .card p {
-  margin-top: 1.6rem;
+  align-self: flex-start;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 .card a {
@@ -407,7 +386,7 @@ a, a:active {
   flex-direction: column;
   justify-items: flex-start;
   align-items: center;
-  margin: 1.8rem auto;
+  margin: 1.6rem auto;
   padding: 1em 1.5em;
   max-width: 40ch;
 }
@@ -417,11 +396,11 @@ a, a:active {
   margin-bottom: 0;
 }
 .profils-card h2 {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   margin-bottom: 0;
 }
 .profils-card p {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
 }
 
 .main-footer {
