@@ -4,6 +4,8 @@ const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
 //Filters
 const timeFormat = require('./filters/readable-time');
+//External
+const htmlmin = require('html-minifier');
 
 module.exports = config => {
     //Watching for modificaions in style directory
@@ -26,6 +28,17 @@ module.exports = config => {
     config.setFrontMatterParsingOptions({
         excerpt: true,
         excerpt_separator: '---excerpt---'
+    });
+    //html-minifier
+    config.addTransform('htmlmin', (content, output) => {
+        if(process.env.ELEVENTY_ENV === 'prod' && output.endsWith('.html')) {
+            return htmlmin.minify(content, {
+                useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true
+            });
+        }
+        return content
     });
     //Layout alias
     config.addLayoutAlias('base-layout', 'layouts/base-layout.njk');

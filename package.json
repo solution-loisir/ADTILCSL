@@ -20,6 +20,7 @@
     "dotenv": "^8.2.0",
     "fibers": "^5.0.0",
     "fs-extra": "^8.1.0",
+    "html-minifier": "^4.0.0",
     "sass": "^1.26.3"
   }
 }
