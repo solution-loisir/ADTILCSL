@@ -1,17 +1,20 @@
 const sass = require('./config/sass-process');
+//Shortcodes
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
+//Filters
 const timeFormat = require('./filters/readable-time');
 
 module.exports = config => {
+    //Watching for modificaions in style directory
+    sass('./style/index.scss', './docs/style/index.css');
+    //Passing assets as is to docs directory
     const assets = [
         'images',
         'fonts',
         'js'
     ]
-    //Passing assets as is to docs directory
     assets.forEach(asset => config.addPassthroughCopy(asset));
-
     //Shortcodes
     config.addShortcode('card', card);
     config.addShortcode('contentHeader', contentHeader);
@@ -19,20 +22,17 @@ module.exports = config => {
     config.addFilter('timeFormat', timeFormat);
     //Custom collections
     config.addCollection('posts', collection => collection.getFilteredByGlob('_src/posts/*.md'));
-    //Watching for modificaions in style directory
-    sass('./style/index.scss', './docs/style/index.css');
     //Set libraries
     config.setFrontMatterParsingOptions({
         excerpt: true,
-        excerpt_separator: "---excerpt---"
+        excerpt_separator: '---excerpt---'
     });
-
     //Layout alias
     config.addLayoutAlias('base-layout', 'layouts/base-layout.njk');
     config.addLayoutAlias('post-layout', 'layouts/post-layout.njk');
     config.addLayoutAlias('sejour-layout', 'layouts/sejour-layout.njk');
     config.addLayoutAlias('construction', 'layouts/construction.njk');
-
+    //Return config object
     return {
         dir: {
             input: '_src',
