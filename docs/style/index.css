@@ -347,33 +347,38 @@ a, a:active {
   gap: 6rem;
 }
 
-.card {
+.card, .card-full-anchor {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 30ch;
-  min-height: 100%;
 }
-.card h2 {
+.card h2, .card-full-anchor h2 {
   margin-top: 1rem;
   margin-bottom: 0;
 }
-.card p {
+.card p, .card-full-anchor p {
   align-self: flex-start;
   margin-top: 1rem;
   margin-bottom: 0;
 }
-.card a {
+.card .card-anchor, .card-full-anchor .card-anchor {
   margin-top: 1.6rem;
 }
 @media (min-width: 76.5em) {
-  .card {
+  .card, .card-full-anchor {
     grid-row: 1;
   }
 }
 
+.card-full-anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card-svg {
   width: 50%;
+  pointer-events: none;
 }
 @media (min-width: 75em) {
   .card-svg {

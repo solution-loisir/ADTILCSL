@@ -5,12 +5,11 @@
     justify-content: center;
     gap: 6rem;
 }
-.card {
+.card, .card-full-anchor {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 30ch;
-    min-height: 100%;
     h2 {
         margin-top: 1rem;
         margin-bottom: 0;
@@ -20,15 +19,20 @@
         margin-top: 1rem;
         margin-bottom: 0;
     }
-    a {
+    .card-anchor {
         margin-top: 1.6rem;
     }
     @media(min-width: $card-break) {
         grid-row: 1;
     }
 }
+.card-full-anchor {
+    text-decoration: none;
+    color: inherit;
+}
 .card-svg {
     width: 50%;
+    pointer-events: none;
     @media(min-width: $large) {
         width: 35%;
     }
