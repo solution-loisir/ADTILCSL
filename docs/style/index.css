@@ -222,9 +222,13 @@ a, a:active {
   margin-left: 4ch;
 }
 .content-header h1 {
-  text-align: center;
   margin-top: 1.6rem;
   margin-bottom: 0;
+}
+@media (min-width: 672px) {
+  .content-header h1 {
+    text-align: center;
+  }
 }
 .content-header p {
   max-width: 50ch;
@@ -234,6 +238,7 @@ a, a:active {
   max-width: 75ch;
   height: 0.5rem;
   border-radius: 1rem;
+  border-color: var(--text-color, #241c15);
   background-color: var(--text-color, #241c15);
 }
 
@@ -323,13 +328,15 @@ a, a:active {
 }
 
 .article-credit img {
+  display: inline-block;
   width: 50px;
   border-radius: 50%;
   margin-bottom: 0;
 }
 .article-credit p {
-  margin-top: 0.5em;
-  line-height: 1.25;
+  display: inline-block;
+  margin-bottom: 0;
+  line-height: 1;
 }
 
 .default-blog-theme {

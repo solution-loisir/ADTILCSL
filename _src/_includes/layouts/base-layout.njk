@@ -20,6 +20,9 @@
 </head>
 <body>
     {% include 'partials/_header.njk' %}
+    {% if page.url === '/' %}
+    {% include 'partials/hero.njk' %}
+    {% endif %}
     {{ content | safe }}
     {% include 'partials/_footer.njk' %}
 </body>

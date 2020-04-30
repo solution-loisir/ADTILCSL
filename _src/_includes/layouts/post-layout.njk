@@ -8,13 +8,14 @@ layout: base-layout
             <img src="{{ headerImage | url }}" alt="{{ headerImageAlt }}" />
             <div class="article-credit">
                 <img src="{{ profils[writer].img }}" alt="Photo de l'auteur" />
-                <p><small>
-                    Écrit par : {{ profils[writer].name }}<br />
-                    Publié le : {{ page.date | timeFormat }}<br />
+                <p><small><small>
+                    {{ profils[writer].name }} - {{ page.date | timeFormat }}<br />
                     Édité le : {{ updated | timeFormat }}
-                </small></p>
+                </small></small></p>
             </div>
         </header>
         {{ content | safe }}
+        <br />
+        <a href="{{ '/blog/' | url }}">⬅ Retour à la liste des articles</a>
     </article>
 </main>

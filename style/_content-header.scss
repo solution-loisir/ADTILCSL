@@ -2,9 +2,12 @@
     margin-right: 4ch;
     margin-left: 4ch;
     h1 {
-        text-align: center;
+        
         margin-top: 1.6rem;
         margin-bottom: 0;
+        @media(min-width: 672px) {
+            text-align: center;
+        }
     }
     p {
         max-width: 50ch;
@@ -14,6 +17,7 @@
         max-width: 75ch;
         height: 0.5rem;
         border-radius: 1rem;
+        border-color: var(--text-color, #241c15);
         background-color: var(--text-color, #241c15);
     }
 }
