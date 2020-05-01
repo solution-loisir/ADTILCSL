@@ -4,7 +4,7 @@ title: CoronApéro, l'apéro qui fait du bien!
 description: Le 20 mars 2020 avait lieu le premier coronApéro organisé par l'Association des diplômé(e)s en Techniques d'intervention en loisir du Cégep de Saint-Laurent.
 date: 2020-03-20
 updated: 2020-03-22
-writer: mathieuhuot
+writer: Mathieu Huot
 headerImage: /images/coronapero-affiche.png
 headerImageAlt: L'affiche du CoronApéro!
 ogImage:

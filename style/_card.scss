@@ -22,6 +22,18 @@
     .card-anchor {
         margin-top: 1.6rem;
     }
+    object {
+        width: 50%;
+        pointer-events: none;
+        @media(min-width: $large) {
+        width: 35%;
+        }
+    }
+    img {
+        border-radius: 50%;
+        width: 50%;
+        margin-top: 1.6rem;
+    }
     @media(min-width: $card-break) {
         grid-row: 1;
     }
@@ -29,32 +41,4 @@
 .card-full-anchor {
     text-decoration: none;
     color: inherit;
-}
-.card-svg {
-    width: 50%;
-    pointer-events: none;
-    @media(min-width: $large) {
-        width: 35%;
-    }
-}
-.profils-card {
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-start;
-    align-items: center;
-    margin: 1.6rem auto;
-    padding: 1em 1.5em;
-    max-width: 40ch;
-    img {
-        width: 200px;
-        border-radius: 50%;
-        margin-bottom: 0;
-    }
-    h2 {
-        margin-top: 1.6rem;
-        margin-bottom: 0;
-    }
-    p {
-        margin-top: 1.6rem;
-    }
 }

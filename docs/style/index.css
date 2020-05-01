@@ -64,6 +64,7 @@ body, button {
 body {
   margin: 0;
   min-height: 100%;
+  word-break: break-word;
   background-color: var(--white, #00a4e002);
 }
 
@@ -372,6 +373,20 @@ a, a:active {
 .card .card-anchor, .card-full-anchor .card-anchor {
   margin-top: 1.6rem;
 }
+.card object, .card-full-anchor object {
+  width: 50%;
+  pointer-events: none;
+}
+@media (min-width: 75em) {
+  .card object, .card-full-anchor object {
+    width: 35%;
+  }
+}
+.card img, .card-full-anchor img {
+  border-radius: 50%;
+  width: 50%;
+  margin-top: 1.6rem;
+}
 @media (min-width: 76.5em) {
   .card, .card-full-anchor {
     grid-row: 1;
@@ -381,38 +396,6 @@ a, a:active {
 .card-full-anchor {
   text-decoration: none;
   color: inherit;
-}
-
-.card-svg {
-  width: 50%;
-  pointer-events: none;
-}
-@media (min-width: 75em) {
-  .card-svg {
-    width: 35%;
-  }
-}
-
-.profils-card {
-  display: flex;
-  flex-direction: column;
-  justify-items: flex-start;
-  align-items: center;
-  margin: 1.6rem auto;
-  padding: 1em 1.5em;
-  max-width: 40ch;
-}
-.profils-card img {
-  width: 200px;
-  border-radius: 50%;
-  margin-bottom: 0;
-}
-.profils-card h2 {
-  margin-top: 1.6rem;
-  margin-bottom: 0;
-}
-.profils-card p {
-  margin-top: 1.6rem;
 }
 
 .main-footer {

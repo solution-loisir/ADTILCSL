@@ -7,9 +7,9 @@ layout: base-layout
             <h1>{{ title }}</h1>
             <img src="{{ headerImage | url }}" alt="{{ headerImageAlt }}" />
             <div class="article-credit">
-                <img src="{{ profils[writer].img }}" alt="Photo de l'auteur" />
+                <img src="{{ auteur[writer].img }}" alt="Photo de l'auteur" />
                 <p><small><small>
-                    {{ profils[writer].name }} - {{ page.date | timeFormat }}<br />
+                    {{ auteur[writer].name }} - {{ page.date | timeFormat }}<br />
                     Édité le : {{ updated | timeFormat }}
                 </small></small></p>
             </div>

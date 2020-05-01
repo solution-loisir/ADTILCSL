@@ -1,27 +1,24 @@
 ---
-layout: base-layout
+layout: blog-layout
 title: Blog
 description: Blog de l'Association des diplômés en loisir du Cégep de Saint-Laurent.
 ogImage:
 ogImageAlt:
 date: 2019-07-22
 tags: pages
+pagination:
+  data: collections.posts
+  size: 9
+  alias: posts
 ---
-<main>
-    {% contentHeader
-    heading = "Le blog de l'ADTILCSL",
-    description = "Tu trouveras ici plusieurs articles concernant le loisir. Les auteurs sont souvent 
-        des acteurs locaux qui parlent de leurs passions, leurs projets ou leurs spécialisations."
-    %}
-    <section class="card-section">
-        {% for post in collections.posts %}
-            {% card 
-            title = post.data.title,
-            time = post.date | timeFormat,
-            text = post.data.description,
-            link = post.url | url,
-            linkText = "Lire l'article!"
-            %}
-        {% endfor %}
-    </section>
-</main>
+<section class="card-section">
+    {% for post in posts %}
+        {% card
+        title = post.data.title,
+        detail = post.date | timeFormat,
+        text = post.data.description,
+        link = post.url | url,
+        linkText = "Lire l'article!"
+        %}
+    {% endfor %}
+</section>

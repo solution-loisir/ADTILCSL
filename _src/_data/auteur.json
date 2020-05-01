@@ -1,0 +1,6 @@
+{
+    "Mathieu Huot": {
+        "name": "Mathieu Huot",
+        "img": "{{ '/images/mathieuhuot.jpg' | url }}"
+    }
+}

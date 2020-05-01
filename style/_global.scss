@@ -32,6 +32,7 @@ body, button {font-size: 2rem;}
 body {
     margin: 0;
     min-height: 100%;
+    word-break: break-word;
     background-color: var(--white, #00a4e002);
 }
 p {line-height: 1.5;}

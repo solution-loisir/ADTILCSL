@@ -1,12 +1,13 @@
-module.exports = ({cardClass, svg, alt, title, time, text, link, linkText = 'En savoir plus!'} = {}) => {
+module.exports = ({cardClass, svg, img, alt, title, detail, text, link, linkText = 'En savoir plus!'} = {}) => {
     return ` 
 <div class="card ${cardClass}">
-${svg && link ? `<a class="card-full-anchor" href="${link}">` : ''}
-${svg ? `<object type="image/svg+xml" data="${svg}" class="card-svg">${alt}</object>` : ''}
+${link ? `<a class="card-full-anchor" href="${link}">` : ''}
+${img ? `<img src="${img}" alt="${alt}" />` : ''}
+${svg ? `<object type="image/svg+xml" data="${svg}">${alt}</object>` : ''}
 <h2>${title}</h2>
-${time ? `<p><small>${time}</small></p>` : ''}
+${detail ? `<p><small>${detail}</small></p>` : ''}
 <p>${text}</p>
 ${svg && link ? `</a>` : ''}
-<a class="card-anchor" href="${link}">${linkText}</a>
+${link ? `<a class="card-anchor" href="${link}">${linkText}</a>` : ''}
 </div>`;
 }
