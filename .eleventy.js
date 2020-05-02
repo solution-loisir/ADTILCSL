@@ -24,6 +24,18 @@ module.exports = config => {
     config.addFilter('timeFormat', timeFormat);
     //Custom collections
     config.addCollection('posts', collection => collection.getFilteredByGlob('_src/posts/*.md'));
+    config.addCollection('postsTags', collection => {
+       const posts = collection.getFilteredByGlob('_src/posts/*.md');
+       let tagSet = new Set();
+       posts.forEach(temp => {
+           if('tags' in temp.data) {
+            for(const tag of temp.data.tags) {
+                tagSet.add(tag);
+            }
+           }
+       });
+       return [...tagSet];
+    });
     //Set libraries
     config.setFrontMatterParsingOptions({
         excerpt: true,
