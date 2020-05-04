@@ -1,13 +1,44 @@
 {
- "error": {
-  "errors": [
-   {
-    "domain": "usageLimits",
-    "reason": "keyInvalid",
-    "message": "Bad Request"
+ "kind": "youtube#searchListResponse",
+ "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/33U_MlR99JQfYVtoAdHIq1kGmDA\"",
+ "regionCode": "CA",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 20
+ },
+ "items": [
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"Dn5xIderbhAnUk5TAW0qkFFir0M/HeLh6SE4BSyHI_pvt03rfD6vZnE\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "VpvX8mFr4o0"
+   },
+   "snippet": {
+    "publishedAt": "2020-05-04T14:49:31.000Z",
+    "channelId": "UCxl_ENVFqZJPHtUED_WPUPg",
+    "title": "Littératie physique",
+    "description": "La littératie physique consiste à développer les habiletés motrices fondamentales dont tous les enfants ont besoin afin de devenir des adultes physiquement ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "diplome tilcsl",
+    "liveBroadcastContent": "none"
    }
-  ],
-  "code": 400,
-  "message": "Bad Request"
- }
+  }
+ ]
 }

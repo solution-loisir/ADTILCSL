@@ -1,15 +1,23 @@
-.card-section { 
+.card-section, .listing-section { 
     display: grid;
     margin: auto;
-    max-width: $card-break;
+    padding: 2rem;
     justify-content: center;
-    gap: 6rem;
+    align-items: center;
+    gap: 2rem;
 }
-.card, .card-full-anchor {
+.card-section {
+    max-width: $card-break;
+    @media(min-width: $card-break) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.card, .listing-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 30ch;
+    text-decoration: none;
+    color: inherit;
     h2 {
         margin-top: 1rem;
         margin-bottom: 0;
@@ -34,11 +42,14 @@
         width: 50%;
         margin-top: 1.6rem;
     }
-    @media(min-width: $card-break) {
-        grid-row: 1;
-    }
 }
-.card-full-anchor {
-    text-decoration: none;
-    color: inherit;
+.card {
+    max-width: 30ch;
+}
+.listing-card {
+    max-width: 50ch;
+    align-items: flex-start;
+    .card-anchor {
+        align-self: center;
+    }
 }

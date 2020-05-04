@@ -304,6 +304,35 @@ a, a:active {
   }
 }
 
+.youtube {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+@media (min-width: 37.5em) {
+  .youtube {
+    width: 85%;
+  }
+}
+@media (min-width: 55em) {
+  .youtube {
+    width: 80%;
+  }
+}
+@media (min-width: 75em) {
+  .youtube {
+    width: 75%;
+  }
+}
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .post-layout article {
   padding: 1em 1em;
   max-width: 55ch;
@@ -347,55 +376,68 @@ a, a:active {
   background-color: #fff;
 }
 
-.card-section {
+.card-section, .listing-section {
   display: grid;
   margin: auto;
-  max-width: 76.5em;
+  padding: 2rem;
   justify-content: center;
-  gap: 6rem;
+  align-items: center;
+  gap: 2rem;
 }
 
-.card, .card-full-anchor {
+.card-section {
+  max-width: 1150px;
+}
+@media (min-width: 1150px) {
+  .card-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card, .listing-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 30ch;
+  text-decoration: none;
+  color: inherit;
 }
-.card h2, .card-full-anchor h2 {
+.card h2, .listing-card h2 {
   margin-top: 1rem;
   margin-bottom: 0;
 }
-.card p, .card-full-anchor p {
+.card p, .listing-card p {
   align-self: flex-start;
   margin-top: 1rem;
   margin-bottom: 0;
 }
-.card .card-anchor, .card-full-anchor .card-anchor {
+.card .card-anchor, .listing-card .card-anchor {
   margin-top: 1.6rem;
 }
-.card object, .card-full-anchor object {
+.card object, .listing-card object {
   width: 50%;
   pointer-events: none;
 }
 @media (min-width: 75em) {
-  .card object, .card-full-anchor object {
+  .card object, .listing-card object {
     width: 35%;
   }
 }
-.card img, .card-full-anchor img {
+.card img, .listing-card img {
   border-radius: 50%;
   width: 50%;
   margin-top: 1.6rem;
 }
-@media (min-width: 76.5em) {
-  .card, .card-full-anchor {
-    grid-row: 1;
-  }
+
+.card {
+  max-width: 30ch;
 }
 
-.card-full-anchor {
-  text-decoration: none;
-  color: inherit;
+.listing-card {
+  max-width: 50ch;
+  align-items: flex-start;
+}
+.listing-card .card-anchor {
+  align-self: center;
 }
 
 .main-footer {

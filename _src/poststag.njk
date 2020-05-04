@@ -1,18 +1,19 @@
 ---
 layout: blog-layout
-title: Post tag page
+title: Tagged Blog
 pagination:
   data: collections.postsTags
   size: 1
   alias: tag
 addAllPagesToCollections: true
-permalink: "blog/{{ tag | lower | slug }}/"
+permalink: blog/{{ tag | lower | slug }}/
 ---
-{% set posts = collections[tag] %}
+{% set posts = collections[tag] | reverse %}
 
-<section class="card-section">
+<section class="listing-section">
     {% for post in posts %}
         {% card
+        defaultClass = 'listing-card',
         title = post.data.title,
         detail = post.date | timeFormat,
         text = post.data.description,
