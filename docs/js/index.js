@@ -8,8 +8,10 @@ if(document.getElementById('header-btn')) {
     headerBtn.addEventListener('click', toggleMainNav);
     //If click on main or .hero, remove display-main-nav class from main-nav
     const main = document.querySelector('main');
-    const hero = document.querySelector('.hero');
     const removeDisplayMainNavClass = () => mainNav.classList.remove('display-main-nav');
     main.addEventListener('click', removeDisplayMainNavClass);
-    hero.addEventListener('click', removeDisplayMainNavClass);
+    if(document.querySelector('.hero')) {
+        const hero = document.querySelector('.hero');
+        hero.addEventListener('click', removeDisplayMainNavClass);
+    }
 }

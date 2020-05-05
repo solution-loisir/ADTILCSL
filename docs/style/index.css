@@ -309,21 +309,6 @@ a, a:active {
   overflow: hidden;
   padding-bottom: 56.25%;
 }
-@media (min-width: 37.5em) {
-  .youtube {
-    width: 85%;
-  }
-}
-@media (min-width: 55em) {
-  .youtube {
-    width: 80%;
-  }
-}
-@media (min-width: 75em) {
-  .youtube {
-    width: 75%;
-  }
-}
 .youtube iframe {
   position: absolute;
   top: 0;

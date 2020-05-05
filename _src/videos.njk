@@ -15,12 +15,10 @@ permalink: formations/{{ video.snippet.title | lower | slug }}/
             <h1>{{ video.snippet.title }}</h1>
         </header>
         <div class="youtube">
-            <iframe data-src="https://www.youtube.com/embed/{{ video.id.videoId }}?rel=0"></iframe>
+            <iframe src="https://www.youtube.com/embed/{{ video.id.videoId }}?rel=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <p>{{ video.snippet.description }}</p>
         <br />
         <a href="{{ '/formations/' | url }}">⬅ Retour à la liste des formations</a>
     </article>
 </main>
-<!--allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"-->
-<!--allowfullscreen-->

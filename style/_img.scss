@@ -2,15 +2,6 @@
     position: relative;
     overflow: hidden;
     padding-bottom: 56.25%;
-    @media(min-width: $small) {
-      width: 85%;
-    }
-    @media(min-width: $medium) {
-      width: 80%;
-    }
-    @media(min-width: $large) {
-      width: 75%;
-    }
     iframe {
       position: absolute;
       top: 0;
