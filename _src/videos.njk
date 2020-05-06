@@ -1,7 +1,6 @@
 ---
-layout: base-layout
-title: Tutoriels
 tags: videos
+id: youtube
 pagination:
   data: youtube.items
   size: 1
@@ -9,6 +8,10 @@ pagination:
 addAllPagesToCollections: true
 permalink: formations/{{ video.snippet.title | lower | slug }}/
 ---
+{% extends 'layouts/base-layout.njk' %}
+{% set title = 'Formations - ' + video.snippet.title %}
+{% set description = video.snippet.description %}
+{% block content %}
 <main class="post-layout default-blog-theme">
     <article>
         <header class="article-header">
@@ -17,17 +20,10 @@ permalink: formations/{{ video.snippet.title | lower | slug }}/
         <div class="youtube">
             <iframe src="https://www.youtube.com/embed/{{ video.id.videoId }}?rel=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p>{{ video.snippet.description }}</p>
+        <p>{{ description }}</p>
         <br />
         <a href="{{ '/formations/' | url }}">⬅ Retour à la liste des formations</a>
-        <br />
-        <section class="comments">
-            <h2><small>Commentaires</small></h2>
-            <p><small>Tous les commentaires font l'objet sont lus et modérés par nos administrateur!</small></p>
-            <hr />
-            <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v7.0"></script>
-            <div class="fb-comments" data-width="100%"></div>
-        </section>
+        {% include 'partials/comments.njk' %}
     </article>
 </main>
+{% endblock %}

@@ -350,6 +350,7 @@ a, a:active {
 }
 .article-credit p {
   display: inline-block;
+  margin-left: 0.5rem;
   margin-bottom: 0;
   line-height: 1;
 }

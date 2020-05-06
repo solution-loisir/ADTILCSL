@@ -17,7 +17,8 @@
     <meta property="og:url" content="{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
-    {% if page.url.match(r/\/formation\/*/) %}
+    {% if id === 'youtube' %}
+    <link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />
     <meta property="fb:app_id" content="1277565455782139" />
     {% endif %}
 </head>
@@ -26,7 +27,9 @@
     {% if page.url === '/' %}
     {% include 'partials/hero.njk' %}
     {% endif %}
+    {% block content %}
     {{ content | safe }}
+    {% endblock %}
     {% include 'partials/_footer.njk' %}
 </body>
 </html>

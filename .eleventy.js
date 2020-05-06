@@ -61,6 +61,7 @@ module.exports = config => {
     config.addLayoutAlias('blog-layout', 'layouts/blog-layout.njk');
     config.addLayoutAlias('formations-layout', 'layouts/formations-layout.njk');
     config.addLayoutAlias('videos-layout', 'layouts/videos-layout.njk');
+    config.addLayoutAlias('conduite-layout', 'layouts/conduite-layout.njk');
     //Return config object
     return {
         dir: {
