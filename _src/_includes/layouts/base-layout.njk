@@ -17,6 +17,9 @@
     <meta property="og:url" content="{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
+    {% if page.url.match(r/\/formation\/*/) %}
+    <meta property="fb:app_id" content="1277565455782139" />
+    {% endif %}
 </head>
 <body>
     {% include 'partials/_header.njk' %}

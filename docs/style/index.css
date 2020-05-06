@@ -361,6 +361,13 @@ a, a:active {
   background-color: #fff;
 }
 
+.comments h2 {
+  margin-bottom: 0;
+}
+.comments p {
+  margin-top: 1rem;
+}
+
 .card-section, .listing-section {
   display: grid;
   margin: auto;

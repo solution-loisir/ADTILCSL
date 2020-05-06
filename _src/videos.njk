@@ -20,5 +20,14 @@ permalink: formations/{{ video.snippet.title | lower | slug }}/
         <p>{{ video.snippet.description }}</p>
         <br />
         <a href="{{ '/formations/' | url }}">⬅ Retour à la liste des formations</a>
+        <br />
+        <section class="comments">
+            <h2><small>Commentaires</small></h2>
+            <p><small>Tous les commentaires font l'objet sont lus et modérés par nos administrateur!</small></p>
+            <hr />
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v7.0"></script>
+            <div class="fb-comments" data-width="100%"></div>
+        </section>
     </article>
 </main>
