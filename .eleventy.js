@@ -14,7 +14,8 @@ module.exports = config => {
     const assets = [
         'images',
         'fonts',
-        'js'
+        'js',
+        'politiques'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
     //Shortcodes
