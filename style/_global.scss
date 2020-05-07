@@ -10,8 +10,8 @@ $xl: 112.5em;  //1800px
     box-sizing: border-box;
     font-size: 0.625em;
     --text-color: #241c15;
-    --main-color: #00a4e042;
-    --white: #00a4e002;
+    --main-color: #bce7f7;
+    --white: #fdfefe;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -33,7 +33,7 @@ body {
     margin: 0;
     min-height: 100%;
     word-break: break-word;
-    background-color: var(--white, #00a4e002);
+    background-color: var(--white, #fdfefe);
 }
 p {line-height: 1.5;}
 main, img, object, svg, footer, header {display: block;}
