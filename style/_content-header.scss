@@ -1,11 +1,19 @@
 .content-header {
+    max-width: 50ch;
     margin-right: 2ch;
     margin-left: 2ch;
+    @media(min-width: $small) {
+        margin-right: auto;
+        margin-left: auto; 
+    }
+    @media(min-width: 966px) {
+        max-width: 70ch;
+    }
     h1 {
-        
+        max-width: 60ch;
         margin-top: 1.6rem;
         margin-bottom: 0;
-        @media(min-width: 672px) {
+        @media(min-width: 966px) {
             text-align: center;
         }
     }
@@ -14,7 +22,6 @@
         margin: 1.6rem auto;
     }
     hr {
-        max-width: 75ch;
         height: 0.5rem;
         border-radius: 1rem;
         border-color: var(--text-color, #241c15);
