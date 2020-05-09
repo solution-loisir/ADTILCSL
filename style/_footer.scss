@@ -1,4 +1,5 @@
 .main-footer {
+    position: relative;
     color: var(--white, #fdfefe);
     background-image: linear-gradient(lighten(#241c15, 10%), var(--text-color, #241c15));
     overflow: hidden;

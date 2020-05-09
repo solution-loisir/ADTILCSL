@@ -13,7 +13,7 @@ $xl: 112.5em;  //1800px
     --main-color: #bce7f7;
     --white: #fdfefe;
 }
-*, *:before, *:after {
+*, *::before, *::after {
     box-sizing: inherit;
 }
 html {
