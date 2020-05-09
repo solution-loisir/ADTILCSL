@@ -1,5 +1,5 @@
 .hero {
-    background-color: var(--main-color, #bce7f7);
+    background-image: linear-gradient(15deg, lighten(#bce7f7, 10%), darken(#bce7f7, 10%));
     overflow: hidden;
 }
 .hero__img-container {
