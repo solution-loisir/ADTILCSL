@@ -1,4 +1,4 @@
-module.exports = date => date
+module.exports = date => new Date(date)
     .toLocaleString('fr-CA', {timeZone: 'utc', year: 'numeric' , month: 'long', day: 'numeric'})
     .replace(/([0-9]{4}) (M[0-9]{2}) ([0-9]{1,2})/, '$3 $2 $1')
     .replace(/M01/, 'jan.')
