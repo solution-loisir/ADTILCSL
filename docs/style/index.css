@@ -451,6 +451,7 @@ a, a:active {
 
 .main-footer {
   position: relative;
+  z-index: 4;
   color: var(--white, #fdfefe);
   background-image: linear-gradient(#443528, var(--text-color, #241c15));
   overflow: hidden;
@@ -459,4 +460,8 @@ a, a:active {
   margin-top: 0;
   margin-bottom: 1em;
   text-align: center;
+}
+.main-footer svg {
+  fill: #fdfefe;
+  fill-opacity: 1;
 }
