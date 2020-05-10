@@ -37,6 +37,7 @@ body {
 }
 p {line-height: 1.5;}
 main, img, object, svg, footer, header {display: block;}
+svg {stroke: none;}
 img, object, footer, header {
     max-width: 100%;
     height: auto;
