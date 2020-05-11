@@ -1,6 +1,5 @@
 .main-footer {
     position: relative;
-    z-index: 4;
     color: var(--white, #fdfefe);
     background-image: linear-gradient(lighten(#241c15, 10%), var(--text-color, #241c15));
     overflow: hidden;
@@ -10,7 +9,9 @@
         text-align: center;
     }
     svg {
-        box-sizing: content-box;
+        margin-top: -4rem;
+        width: 100%;
+        height: 29rem;
         fill: #fdfefe;
         fill-opacity: 1;
     }
