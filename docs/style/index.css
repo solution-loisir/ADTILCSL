@@ -76,10 +76,6 @@ main, img, object, svg, footer, header {
   display: block;
 }
 
-svg {
-  stroke: none;
-}
-
 img, object, footer, header {
   max-width: 100%;
   height: auto;
@@ -462,6 +458,7 @@ a, a:active {
   text-align: center;
 }
 .main-footer svg {
+  stroke: #fdfefe;
   fill: #fdfefe;
   fill-opacity: 1;
 }
