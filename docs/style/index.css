@@ -458,7 +458,7 @@ a, a:active {
   text-align: center;
 }
 .main-footer svg {
-  stroke: #fdfefe;
+  box-sizing: content-box;
   fill: #fdfefe;
   fill-opacity: 1;
 }
