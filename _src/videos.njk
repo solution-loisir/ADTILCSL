@@ -1,4 +1,5 @@
 ---
+layout: base-layout
 tags: videos
 id: youtube
 pagination:
@@ -6,24 +7,24 @@ pagination:
   size: 1
   alias: video
 addAllPagesToCollections: true
+eleventyComputed:
+  title: Formations {{ video.snippet.title }}
+  description: "{{ video.snippet.description }}"
+  date: {{ video.snippet.publishedAt }}
 permalink: formations/{{ video.snippet.title | lower | slug }}/
 ---
-{% extends 'layouts/base-layout.njk' %}
-{% set title = 'Formations - ' + video.snippet.title %}
-{% set description = video.snippet.description %}
-{% block content %}
 <main class="post-layout default-blog-theme">
     <article>
         <header class="article-header">
             <h1>{{ video.snippet.title }}</h1>
+            <p><small>{{ video.snippet.publishedAt | timeFormat }}</small></p>
         </header>
         <div class="youtube">
             <iframe src="https://www.youtube.com/embed/{{ video.id.videoId }}?rel=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p>{{ description }}</p>
+        <p>{{ video.snippet.description }}</p>
         <br />
         <a href="{{ '/formations/' | url }}">⬅ Retour à la liste des formations</a>
         {% include 'partials/comments.njk' %}
     </article>
 </main>
-{% endblock %}

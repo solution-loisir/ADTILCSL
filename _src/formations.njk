@@ -7,7 +7,7 @@ ogImageAlt:
 date: 2019-07-16
 tags: pages
 pagination:
-  data: youtube.items
+  data: collections.videos
   size: 9
   alias: videos
   reverse: true
@@ -17,10 +17,10 @@ permalink: formations/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
   {% for video in videos %}
     {% card
     defaultClass = 'listing-card',
-    title = video.snippet.title,
-    detail = video.snippet.publishedAt | timeFormat,
-    text = video.snippet.description,
-    link = '/formations/litteratie-physique/',
+    title = video.data.title,
+    detail = video.date | timeFormat,
+    text = video.data.description,
+    link = video.url | url,
     linkText = "participe à la formation!"
     %}
   {% endfor %}      

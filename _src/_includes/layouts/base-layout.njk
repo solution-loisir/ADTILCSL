@@ -27,9 +27,7 @@
     {% if page.url === '/' %}
     {% include 'partials/hero.njk' %}
     {% endif %}
-    {% block content %}
     {{ content | safe }}
-    {% endblock %}
     {% include 'partials/_footer.njk' %}
 </body>
 </html>
