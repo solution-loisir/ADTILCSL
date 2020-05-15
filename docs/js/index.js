@@ -49,3 +49,9 @@ if(document.getElementById('header-btn')) {
         });
     } 
 })();
+if(document.querySelector('.admin-card')) {
+    document.querySelector('.admin-card').addEventListener('click', function(event) {
+        event.preventDefault();
+        this.classList.toggle('admin-card-monster');
+    });
+}

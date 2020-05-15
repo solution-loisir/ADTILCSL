@@ -401,6 +401,7 @@ a, a:active {
 
 .card, .listing-card {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
@@ -443,6 +444,21 @@ a, a:active {
 }
 .listing-card .card-anchor {
   align-self: center;
+}
+
+.admin-card {
+  cursor: pointer;
+}
+.admin-card object {
+  visibility: hidden;
+  width: 166.75px;
+  position: absolute;
+  top: 16px;
+  background-color: #fdfefe;
+}
+
+.admin-card-monster object {
+  visibility: visible;
 }
 
 .main-footer {

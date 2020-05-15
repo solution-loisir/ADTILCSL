@@ -1,3 +1,7 @@
+---
+eleventyComputed:
+  id: "{{ id }}"
+---
 <!DOCTYPE html>
 <html lang="fr-CA" id="top">
 <head>
@@ -19,6 +23,8 @@
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
     {% if id === 'youtube' %}
     <link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />
+    {% endif %}
+    {% if id === 'youtube' or id === 'article' %}
     <meta property="fb:app_id" content="1277565455782139" />
     {% endif %}
 </head>
