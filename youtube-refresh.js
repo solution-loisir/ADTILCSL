@@ -13,7 +13,7 @@ https.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=$
         if(error) {
             console.error(error.stack);
         } else {
-            console.log('Tranfering YouTube data is done!');
+            console.log('Transfering YouTube data is done!');
         }
     });  
 }).on('error', error => console.error(error.stack));
