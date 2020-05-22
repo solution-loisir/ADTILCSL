@@ -9,9 +9,7 @@ const htmlmin = require('html-minifier');
 
 module.exports = config => {
     //Watching for modificaions in style directory
-    if(process.env.ELEVENTY_ENV === 'dev') {
     sass('./style/index.scss', './docs/style/index.css');
-    }
     //Passing assets as is to docs directory
     const assets = [
         'images',
