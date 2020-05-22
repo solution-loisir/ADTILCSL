@@ -19,7 +19,7 @@ const processSass = (src, dest) => {
     });
 }
 module.exports = (scssPath, cssPath) => {
-    //If cssPath directory doesn't exist or TY_PROD environment variabe is true...
+    //If cssPath directory doesn't exist or ELEVENTY_ENV environment variabe is set to prod...
     if(!fs.existsSync(path.dirname(cssPath)) || process.env.ELEVENTY_ENV === 'prod') {
         //Create cssPath directory recursively
         fs.mkdir(path.dirname(cssPath), {recursive: true})
