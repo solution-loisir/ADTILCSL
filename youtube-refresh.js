@@ -3,7 +3,7 @@ const fs = require('fs');
 const { pipeline } = require('stream');
 require('dotenv').config();
 
-//Creating Writable stream with a file target
+//Creating Writable stream
 const OUTPUT = fs.createWriteStream('./_src/_data/youtube.json');
 
 https.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${process.env.YOUTUBE_CHANNELID}&type=video&maxResults=20&order=date&key=${process.env.YOUTUBE_KEY}`, res => {
