@@ -12,7 +12,7 @@ eleventyComputed:
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
     <link rel="icon" type="image/png" href="#" sizes="96x96" />
     <script defer src="{{ '/js/index.js' | url }}"></script>
-    <link rel="canonical" href="loisir.netlify.app{{ page.url | url }}" />
+    <link rel="canonical" href="https://loisir.netlify.app{{ page.url | url }}" />
     <title>ADTILCSL | {{ title }}</title>
     <meta name="description" content="{{ description }}" />
     <meta property="og:title" content="{{ title }}" />
@@ -21,12 +21,8 @@ eleventyComputed:
     <meta property="og:url" content="{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
-    {% if id === 'youtube' %}
-    <link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />
-    {% endif %}
-    {% if id === 'youtube' or id === 'article' %}
-    <meta property="fb:app_id" content="1277565455782139" />
-    {% endif %}
+    {{  '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe if id === 'youtube' }}
+    {{ '<meta property="fb:app_id" content="1277565455782139" />' | safe if (id === 'youtube' or id === 'article') }}
 </head>
 <body>
     {% include 'partials/_header.njk' %}

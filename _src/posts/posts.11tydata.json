@@ -1,0 +1,4 @@
+{
+    "layout": "post-layout",
+    "permalink": "blog/posts/{{ page.fileSlug }}/"
+}
