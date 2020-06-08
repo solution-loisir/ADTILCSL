@@ -7,9 +7,12 @@ layout: base-layout
     description = "Tu trouveras ici plusieurs articles concernant le loisir. Les auteurs sont souvent 
         des acteurs locaux qui parlent de leurs passions, leurs projets ou leurs spécialisations."
     %}
-    <a href="{{ '/blog/' | url }}">#tout</a>
+    <div class="tags-container">
+    <a href="{{ '/blog/' | url }}" class="article-tags tout {{ 'active' if page.url === '/blog/' | url }}">#tout</a>
     {% for tag in collections.postsTags %}
-    <a href="/blog/{{ tag | lower | slug }}/" class="article-tags {{ tag | lower | slug }}">#{{ tag | lower | slug }}</a>
+    {% set tagUrl %}/blog/{{ tag | lower | slug }}/{% endset %}
+    <a href="/blog/{{ tag | lower | slug | url }}/" class="article-tags {{ tag | lower | slug }} {{ 'active' if page.url === tagUrl | url }}">#{{ tag | lower | slug }}</a>
     {% endfor %}
+    </div>
     {{ content | safe }}
 </main>
