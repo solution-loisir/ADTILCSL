@@ -10,9 +10,7 @@ const processSass = (src, dest) => {
             file: src,
             fiber: fibers
         }, (error, result) => {
-            if(error) {
-                reject(error);
-            }
+            if(error) reject(error);
             resolve(result);
             console.log(`Writing ${dest} from ${result.stats.entry} in ${result.stats.duration}ms.`);
         });
@@ -23,7 +21,7 @@ module.exports = (scssPath, cssPath) => {
     if(!fs.existsSync(path.dirname(cssPath)) || process.env.ELEVENTY_ENV === 'prod') {
         //Create cssPath directory recursively
         fs.mkdir(path.dirname(cssPath), {recursive: true})
-        //The .then method will return a promise with the result 
+        //Return css as buffer from scssPath file... 
         .then(() => processSass(scssPath, cssPath))
         //Then write result css string to cssPath file
         .then(result => fs.writeFile(cssPath, result.css.toString()))
