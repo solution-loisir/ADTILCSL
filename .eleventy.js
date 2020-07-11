@@ -4,6 +4,7 @@ const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
 //Filters
 const timeFormat = require('./filters/readable-time');
+const textFormat = require('./filters/text-format');
 //External
 const htmlmin = require('html-minifier');
 
@@ -23,6 +24,7 @@ module.exports = config => {
     config.addShortcode('contentHeader', contentHeader);
     //Filters
     config.addFilter('timeFormat', timeFormat);
+    config.addFilter('textFormat', textFormat);
     //Custom collections
     config.addCollection('posts', collection => collection.getFilteredByGlob('_src/posts/*.md'));
     config.addCollection('postsTags', collection => {

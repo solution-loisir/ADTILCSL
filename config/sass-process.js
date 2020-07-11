@@ -17,25 +17,16 @@ const processSass = (src, dest) => {
     });
 }
 module.exports = (scssPath, cssPath) => {
-    //If cssPath directory doesn't exist or ELEVENTY_ENV environment variabe is set to prod...
     if(!fs.existsSync(path.dirname(cssPath)) || process.env.ELEVENTY_ENV === 'prod') {
-        //Create cssPath directory recursively
-        fs.mkdir(path.dirname(cssPath), {recursive: true})
-        //Return css as buffer from scssPath file... 
-        .then(() => processSass(scssPath, cssPath))
-        //Then write result css string to cssPath file
-        .then(result => fs.writeFile(cssPath, result.css.toString()))
-        .catch(error => console.error(error));
+        Promise.all([fs.mkdir(path.dirname(cssPath), {recursive: true}), processSass(scssPath, cssPath)])
+        .then(result => fs.writeFile(cssPath, result[1].css.toString()))
+        .catch(error => console.error(error.stack));
     }
-    //In development environment (default)
     if(process.env.ELEVENTY_ENV === 'dev') {
-        //Watch for changes to scssPath directory...
         fs.watch(path.dirname(scssPath), () => {
-            //Return css as buffer from scssPath file...
             processSass(scssPath, cssPath)
-            //Then turn css buffer to string and write result to cssPath file
             .then(result => fs.writeFile(cssPath, result.css.toString()))
-            .catch(error => console.error(error));
+            .catch(error => console.error(error.stack));
         });
     }
 }

@@ -1,0 +1,14 @@
+---
+eleventyExcludeFromCollections: true
+permalink: search.json
+---
+[
+    {% for search in collections.all %}
+    {
+        "title": "{{ search.data.title }}",
+        "description": "{{ search.data.description }}",
+        "url": "{{ search.url }}",
+        "content": "{{ search.templateContent | textFormat }}"
+    }{{ '' if loop.last else ',' -}}
+    {% endfor %}
+]
