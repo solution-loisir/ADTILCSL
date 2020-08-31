@@ -53,6 +53,19 @@ img, object, footer, header {
     height: auto;
 }
 nav ul {list-style-type: none;}
+nav a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    &.active {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
 a, a:active {
     outline: none;
 }
@@ -65,4 +78,13 @@ a, a:active {
 }
 .shadow {
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.content {
+    max-width: 50ch;
+    margin-right: 2ch;
+    margin-left: 2ch;
+    @media(min-width: $small) {
+        margin-right: auto;
+        margin-left: auto; 
+    }
 }

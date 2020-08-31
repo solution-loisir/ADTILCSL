@@ -35,19 +35,6 @@
             margin: 6px 8px;
         }
     }
-    a {
-        text-decoration: none;
-        color: var(--text-color, #241c15);;
-        &:hover {
-            text-decoration: underline;
-        }
-        &.active {
-            text-decoration: underline;
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
 }
 .display-main-nav {
     display: block;
