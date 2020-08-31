@@ -8,11 +8,13 @@ date: 2019-07-29
 tags: pages
 ---
 <main>
-    {% contentHeader
-    heading = "Conseil d'administration",
-    description = "Voici les membres du conseil d'administration de l'Association des diplômé-es
-     de la Techniques en gestion et intervention en loisir du Cégep de Saint-Laurent."
-    %}
+    <header class="content-header">
+        <h1 class="short-title">C.A.</h1>
+        <h1 class="long-title">Conseil d'administration</h1>
+        <p>Voici les membres du conseil d'administration (C.A.) de l'Association des diplômé-es
+     de la Techniques en gestion et intervention en loisir du Cégep de Saint-Laurent.</p>
+        <hr />
+    </header>
     <section class="card-section">
     {% for person in ca %}
     {% card

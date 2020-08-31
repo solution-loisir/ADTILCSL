@@ -27,4 +27,15 @@
         border-color: var(--text-color, #241c15);
         background-color: var(--text-color, #241c15);
     }
+    .short-title {
+        display: none;
+        @media(max-width: $long-title-break) {
+            display: initial;
+        }
+    }
+    .long-title {
+        @media(max-width: $long-title-break) {
+            display: none;
+        }
+    }
 }
