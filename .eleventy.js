@@ -39,6 +39,18 @@ module.exports = config => {
        });
        return [...tagSet];
     });
+    config.addCollection('allTags', collection => {
+        const allCollections = collection.getAll();
+        let tagSet = new Set();
+        allCollections.forEach(temp => {
+            if('tags' in temp.data) {
+                for(const tag of temp.data.tags) {
+                    tagSet.add(tag);
+                }
+            }
+        });
+        return [...tagSet];
+    });
     //Set libraries
     config.setFrontMatterParsingOptions({
         excerpt: true,
