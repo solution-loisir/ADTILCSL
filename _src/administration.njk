@@ -18,7 +18,6 @@ tags: pages
     <section class="card-section">
     {% for person in ca %}
     {% card
-    cardClass = 'admin-card',
     img = person.img | url,
     alt = person.name,
     title = person.name,
