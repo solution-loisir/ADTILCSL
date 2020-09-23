@@ -3,7 +3,7 @@ const { join, dirname, basename, extname } = require('path');
 const { pipeline } = require('stream');
 const { createReadStream } = require('fs');
 
-module.exports = async ({input, width, alt}) => {
+module.exports = ({input, width, alt}) => {
     const readable = createReadStream(`./${input}`);
     const webpPath = join(dirname(input), basename(input, extname(input)) + '.webp');
     const sharpStream = sharp();

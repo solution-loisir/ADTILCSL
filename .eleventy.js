@@ -1,3 +1,5 @@
+//Utility
+const htmlmin = require('html-minifier');
 const sass = require('./config/sass-process');
 //Shortcodes
 const card = require('./shortcode/card');
@@ -6,13 +8,11 @@ const img = require('./shortcode/img');
 //Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
-//External
-const htmlmin = require('html-minifier');
 
 module.exports = config => {
-    //Watching for modificaions in style directory
+    //Pre-processing Sass and watching for changes in dev env only.
     sass('./style/index.scss', './docs/style/index.css');
-    //Passing assets as is to docs directory
+    //Passing assets as is to docs directory.
     const assets = [
         'images',
         'fonts',
@@ -42,7 +42,7 @@ module.exports = config => {
        return [...tagSet];
     });
     config.addCollection('allTags', collection => {
-        const allCollections = collection.getAll();
+        const allCollections = collection.getAllSorted();
         let tagSet = new Set();
         allCollections.forEach(temp => {
             if('tags' in temp.data) {
@@ -78,7 +78,7 @@ module.exports = config => {
     config.addLayoutAlias('formations-layout', 'layouts/formations-layout.njk');
     config.addLayoutAlias('videos-layout', 'layouts/videos-layout.njk');
     config.addLayoutAlias('conduite-layout', 'layouts/conduite-layout.njk');
-    //Return config object
+    //Config object
     return {
         dir: {
             input: '_src',
