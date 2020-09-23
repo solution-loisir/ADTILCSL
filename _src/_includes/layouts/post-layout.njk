@@ -6,7 +6,11 @@ id: article
     <article>
         <header class="article-header">
             <h1>{{ title }}</h1>
-            <img src="{{ headerImage | url }}" alt="{{ headerImageAlt }}" />
+            {% img 
+            input = headerImage,
+            width = 400,
+            alt = headerImageAlt
+            %}
             <div class="article-credit">
                 <img src="{{ auteur[writer].img }}" alt="Photo de l'auteur" />
                 <p><small><small>

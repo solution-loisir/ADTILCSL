@@ -2,6 +2,7 @@ const sass = require('./config/sass-process');
 //Shortcodes
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
+const img = require('./shortcode/img');
 //Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
@@ -22,6 +23,7 @@ module.exports = config => {
     //Shortcodes
     config.addShortcode('card', card);
     config.addShortcode('contentHeader', contentHeader);
+    config.addNunjucksAsyncShortcode('img', img);
     //Filters
     config.addFilter('timeFormat', timeFormat);
     config.addFilter('textFormat', textFormat);
