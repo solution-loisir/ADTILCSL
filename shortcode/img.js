@@ -16,7 +16,7 @@ module.exports = ({input, width, alt}) => {
         .toFile(join('./docs', input)),
         sharpStream.clone()
         .resize(width)
-        .toFile(join('./docs', dirname(input), basename(input, extname(input)) + '.webp'))
+        .toFile(join('./docs', webpPath))
     ])
     .then(infoArray => `
 <picture>
