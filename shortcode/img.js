@@ -18,10 +18,10 @@ module.exports = ({input, width, alt}) => {
         .resize(width)
         .toFile(`./docs${webpPath}`)
     ])
-    .then(infoArray => `
+    .then(info => `
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
-<img src="${input}" alt="${alt}" width="${infoArray[0].width}" height="${infoArray[0].height}" />
+<img src="${input}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" />
 </picture>
 `
     )
