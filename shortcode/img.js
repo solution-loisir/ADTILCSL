@@ -13,10 +13,10 @@ module.exports = ({input, width, alt}) => {
     return Promise.all([
         sharpStream.clone()
         .resize(width)
-        .toFile(join('./docs', input)),
+        .toFile(`./docs${input}`),
         sharpStream.clone()
         .resize(width)
-        .toFile(join('./docs', webpPath))
+        .toFile(`./docs${webpPath}`)
     ])
     .then(infoArray => `
 <picture>
