@@ -3,7 +3,7 @@ const { join, dirname, basename, extname } = require('path');
 const { pipeline } = require('stream');
 const { createReadStream } = require('fs');
 
-module.exports = ({input, width, alt}) => {
+module.exports = ({input, width, alt, lazy}) => {
     const readable = createReadStream(join('./', input));
     const webpPath = join(dirname(input), basename(input, extname(input)) + '.webp');
     const sharpStream = sharp();
@@ -21,7 +21,7 @@ module.exports = ({input, width, alt}) => {
     .then(info => `
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
-<img src="${input}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" />
+<img ${lazy ? 'data-src' : 'src'}="${input}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" />
 </picture>
 `
     )
