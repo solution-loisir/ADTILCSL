@@ -7,22 +7,21 @@ module.exports = ({input, width, alt}) => {
     const readable = createReadStream(`./${input}`);
     const webpPath = join(dirname(input), basename(input, extname(input)) + '.webp');
     const sharpStream = sharp();
-    const clones = [
+    pipeline(readable, sharpStream, error => {
+        if(error) return console.error(error);
+    });
+    return Promise.all([
         sharpStream.clone()
         .resize(width)
         .toFile(join('./docs', input)),
         sharpStream.clone()
         .resize(width)
         .toFile(join('./docs', dirname(input), basename(input, extname(input)) + '.webp'))
-    ];
-    pipeline(readable, sharpStream, error => {
-        if(error) return console.error(error);
-    });
-    return Promise.all(clones)
+    ])
     .then(infoArray => `
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
-<img src="${input}" alt="${alt}" width="${width}" height="${infoArray[0].height}" />
+<img src="${input}" alt="${alt}" width="${infoArray[0].width}" height="${infoArray[0].height}" />
 </picture>
 `
     )
