@@ -4,7 +4,7 @@ const { pipeline } = require('stream');
 const { createReadStream } = require('fs');
 
 module.exports = ({input, width, alt}) => {
-    const readable = createReadStream(`./${input}`);
+    const readable = createReadStream(join('./', input));
     const webpPath = join(dirname(input), basename(input, extname(input)) + '.webp');
     const sharpStream = sharp();
     pipeline(readable, sharpStream, error => {
@@ -13,10 +13,10 @@ module.exports = ({input, width, alt}) => {
     return Promise.all([
         sharpStream.clone()
         .resize(width)
-        .toFile(`./docs${input}`),
+        .toFile(join('./docs', input)),
         sharpStream.clone()
         .resize(width)
-        .toFile(`./docs${webpPath}`)
+        .toFile(join('./docs', webpPath))
     ])
     .then(info => `
 <picture>
