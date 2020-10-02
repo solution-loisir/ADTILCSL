@@ -20,7 +20,7 @@ module.exports = ({input, width, alt, lazy}) => {
     ])
     .then(info => `
 <picture>
-<source type="image/webp" srcset="${webpPath}" />
+<source type="image/webp" ${lazy ? 'data-srcset' : 'srcset'}="${webpPath}" />
 <img ${lazy ? 'data-src' : 'src'}="${input}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" />
 </picture>
 ${lazy ? `<noscript><picture><source type="image/webp" srcset="${webpPath}" /><img src="${input}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" /></picture></noscript>` : ''}

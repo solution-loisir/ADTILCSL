@@ -9,3 +9,10 @@ tags: pages
 {{ description }}
 ## Comment se rendre
 *À venir...*
+
+{% img 
+input = '/images/sejour-plein-air.jpg',
+width = 555,
+alt = 'Photo de groupe au Séjour plein air 2019',
+lazy = true
+%}

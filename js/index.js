@@ -19,8 +19,11 @@
 })();
 //lazy load all images with data-src attribute
 (() => {
-    const images = document.querySelectorAll('[data-src]');
-    const setSrc = target => target.src = target.dataset.src;
+    const images = document.querySelectorAll('[data-src], [data-srcset]');
+    const setSrc = target => {
+        if(target.dataset.srcset) target.srcset = target.dataset.srcset;
+        if(target.dataset.src) target.src = target.dataset.src;
+    }
     //Detecting IntersectionObserver and calling setSrc to load images eagerly as a fallback.
     if(!'IntersectionObserver' in window) {
         return images.forEach(image => setSrc(image));
