@@ -33,7 +33,9 @@
     }
     //Options for IntersectionObserver
     const options = {
-        rootMargin: '0px, 0px, 300px, 0px'
+        root: null,
+        rootMargin: '0px 0px 300px 0px',
+        threshold: 0
     }
     //Callback function for IntersectionObserver
     const showImage = entries => {
