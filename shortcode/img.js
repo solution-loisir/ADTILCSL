@@ -19,7 +19,7 @@ module.exports = ({input, width, alt, lazy}) => {
         .toFile(join('./docs', webpPath))
     ])
     .then(info => `
-<picture>
+<picture ${lazy ? 'class="lazy"' : ''}>
 <source type="image/webp" ${lazy ? 'data-srcset' : 'srcset'}="${webpPath}" />
 <img ${lazy ? 'data-src' : 'src'}="${input}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" />
 </picture>

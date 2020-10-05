@@ -19,7 +19,10 @@
 })();
 //lazy load all images with data-src attribute
 (() => {
+    //All data-src and data-srcset elements
     const images = document.querySelectorAll('[data-src], [data-srcset]');
+    /* Utility function to set target src or srcset attribute
+    (used in IntersectionObserver constructor callback) */
     const setSrc = target => {
         if(target.dataset.srcset) target.srcset = target.dataset.srcset;
         if(target.dataset.src) target.src = target.dataset.src;
@@ -28,18 +31,17 @@
     if(!'IntersectionObserver' in window) {
         return images.forEach(image => setSrc(image));
     }
+    //Options for IntersectionObserver
     const options = {
-    root: null,
-    rootMargin: undefined,
-    threshold: 0
+        rootMargin: '0px, 0px, 300px, 0px'
     }
-    //Callback function of IntersectionObserver
-    const showImage = entries => {
+    //Callback function for IntersectionObserver
+    const showImage = (entries, observer) => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {
                 const target = entry.target;
                 setSrc(target);
-                Observer.unobserve(target);
+                observer.unobserve(target);
             }
         });
     }
