@@ -36,12 +36,12 @@
         rootMargin: '0px, 0px, 300px, 0px'
     }
     //Callback function for IntersectionObserver
-    const showImage = (entries, observer) => {
+    const showImage = entries => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {
                 const target = entry.target;
                 setSrc(target);
-                observer.unobserve(target);
+                Observer.unobserve(target);
             }
         });
     }
