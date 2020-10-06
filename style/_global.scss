@@ -48,11 +48,12 @@ body {
     background-color: var(--white, #fdfefe);
 }
 p {line-height: 1.5;}
-main, img, object, svg, footer, header {display: block;}
+main, img, object, svg, footer, header, figure {display: block;}
 img, object, footer, header {
     max-width: 100%;
     height: auto;
 }
+figure {margin: 0;}
 nav ul {list-style-type: none;}
 nav a {
     color: inherit;

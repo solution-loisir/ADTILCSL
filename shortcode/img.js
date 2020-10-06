@@ -36,12 +36,12 @@ module.exports = ({input, width, alt, lazy}) => {
         const ratio = imgHeight / imgWidth * 100;
         if(lazy) {
             return `
-<div class="lazy" style="width: 100%; height: 0; padding-bottom: ${ratio}%;">
+<figure class="lazy" style="width: 100%; height: 0; padding-bottom: ${ratio}%;">
 <picture>
 <source type="image/webp" data-srcset="${webpPath}" />
 <img data-src="${input}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
 </picture>
-</div>
+</figure>
 <noscript>
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
