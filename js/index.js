@@ -22,7 +22,7 @@
     //All data-src and data-srcset elements
     const images = document.querySelectorAll('[data-src], [data-srcset]');
     /**
-     * Utility function to set target src or srcset attribute
+     * Utility @function setSrc to set value to src or srcset attributes
      * (used in IntersectionObserver constructor callback)
      * @param {HTMLElement} target The intersecting entry
      */
@@ -41,7 +41,7 @@
         threshold: 0
     }
     /**
-     * Callback function for IntersectionObserver
+     * @callback function for IntersectionObserver
      * @param {IntersectionObserverEntry} entries List of objects
      */
     const showImage = entries => {
@@ -53,7 +53,9 @@
             }
         });
     }
-    //IntersectioObserver constructor
+    /**
+     * IntersectionObserver @constructor
+     */
     const Observer = new IntersectionObserver(showImage, options);
     //Using the Observer constructor to load images
     images.forEach(image => Observer.observe(image));
