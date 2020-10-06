@@ -21,8 +21,11 @@
 (() => {
     //All data-src and data-srcset elements
     const images = document.querySelectorAll('[data-src], [data-srcset]');
-    /* Utility function to set target src or srcset attribute
-    (used in IntersectionObserver constructor callback) */
+    /**
+     * Utility function to set target src or srcset attribute
+     * (used in IntersectionObserver constructor callback)
+     * @param {HTMLElement} target The intersecting entry
+     */
     const setSrc = target => {
         if(target.dataset.srcset) target.srcset = target.dataset.srcset;
         if(target.dataset.src) target.src = target.dataset.src;
@@ -37,7 +40,10 @@
         rootMargin: '0px 0px 300px 0px',
         threshold: 0
     }
-    //Callback function for IntersectionObserver
+    /**
+     * Callback function for IntersectionObserver
+     * @param {IntersectionObserverEntry} entries List of objects
+     */
     const showImage = entries => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {
