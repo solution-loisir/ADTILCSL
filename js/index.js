@@ -53,10 +53,7 @@
             }
         });
     }
-    /**
-     * IntersectionObserver @constructor
-     */
     const Observer = new IntersectionObserver(showImage, options);
-    //Using the Observer constructor to load images
+    //Using the Observer to load images
     images.forEach(image => Observer.observe(image));
 })();
