@@ -17,14 +17,20 @@
     hero.addEventListener('click', removeDisplayMainNavClass);
     
 })();
-//lazy load all images with data-src attribute
+//lazy load every elements that contain a data-src or a data-srcset attribute
 (() => {
-    //All data-src and data-srcset elements
+    /**
+     * @type {NodeList}
+     * @description
+     * All data-src and data-srcset elements.
+     */
     const images = document.querySelectorAll('[data-src], [data-srcset]');
     /**
-     * Utility @function setSrc to set value to src or srcset attributes
-     * (used in IntersectionObserver constructor callback)
+     * @function setSrc 
      * @param {HTMLElement} target The intersecting entry
+     * @description Utility function. 
+     * Assigns a value to src and to srcset attributes.
+     * Used in showImage callback function.
      */
     const setSrc = target => {
         if(target.dataset.srcset) target.srcset = target.dataset.srcset;
@@ -34,14 +40,20 @@
     if(!'IntersectionObserver' in window) {
         return images.forEach(image => setSrc(image));
     }
-    //Options for IntersectionObserver
+    /**
+     * @type {IntersectionObserverInit} Object
+     * @description
+     * Options object to be passed as second parameter
+     * in IntersectionObserver constructor.
+     */
     const options = {
         root: null,
         rootMargin: '0px 0px 300px 0px',
         threshold: 0
     }
     /**
-     * @callback function for IntersectionObserver
+     * @callback showImage
+     * @type {IntersectionObserverCallback}
      * @param {IntersectionObserverEntry} entries List of objects
      */
     const showImage = entries => {
@@ -53,7 +65,13 @@
             }
         });
     }
+    /**
+     * @constructor IntersectionObserver
+     * @argument {IntersectionObserverCallback} showImage 
+     * @argument {IntersectionObserverInit} options
+     * @returns {IntersectionObserver} IntersectionObserver interface
+     */
     const Observer = new IntersectionObserver(showImage, options);
-    //Using the Observer to load images
+    //Using Observer to load images
     images.forEach(image => Observer.observe(image));
 })();
