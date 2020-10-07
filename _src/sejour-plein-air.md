@@ -16,3 +16,7 @@ width = 555,
 alt = 'Photo de groupe au Séjour plein air 2019',
 lazy = true
 %}
+---
+{{ '/images/sejour-plein-air.jpg' | imgFilter(200, 'test', false) | safe }}
+---
+{{ '/images/sejour-plein-air.jpg' | imgFilter(300, 'test', false) | safe }}

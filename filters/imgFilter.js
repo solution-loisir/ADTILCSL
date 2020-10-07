@@ -5,7 +5,7 @@ const { join, dirname, basename, extname } = require('path');
 const { pipeline } = require('stream');
 const { createReadStream } = require('fs');
 
-module.exports = ({input, width, alt, lazy}) => {
+module.exports = (input, width, alt, lazy, cb) => {
     //Generate a different random number with each execution
     const randomNumber = uInt32();
     //Create readable stream from source image
@@ -40,8 +40,9 @@ module.exports = ({input, width, alt, lazy}) => {
         const imgWidth = info[0].width;
         //Aspect ratio of the image
         const ratio = imgHeight / imgWidth * 100;
+        let result = '';
         if(lazy) {
-            return `
+            result += `
 <figure class="lazy" style="width: 100%; height: 0; padding-bottom: ${ratio}%;">
 <picture>
 <source type="image/webp" data-srcset="${webpPath}" />
@@ -56,13 +57,14 @@ module.exports = ({input, width, alt, lazy}) => {
 </noscript>
 `;
         } else {
-            return `
+            result += `
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
 <img src="${originalPath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
 </picture>
 `;
         }
+        cb(null, result);
     })
     .catch(error => console.error(error));
 }

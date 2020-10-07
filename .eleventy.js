@@ -8,8 +8,9 @@ const img = require('./shortcode/img');
 //Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
+const imgFilter = require('./filters/imgFilter');
 
-module.exports = config => {
+module.exports = function(config) {
     //Pre-processing Sass and watching for changes in dev env only.
     sass('./style/index.scss', './docs/style/index.css');
     //Passing assets as is to docs directory.
@@ -27,6 +28,7 @@ module.exports = config => {
     //Filters
     config.addFilter('timeFormat', timeFormat);
     config.addFilter('textFormat', textFormat);
+    config.addNunjucksAsyncFilter('imgFilter', imgFilter);
     //Custom collections
     config.addCollection('posts', collection => collection.getFilteredByGlob('_src/posts/*.md'));
     config.addCollection('postsTags', collection => {
