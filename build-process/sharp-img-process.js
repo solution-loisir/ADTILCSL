@@ -22,9 +22,9 @@ module.exports = ({input, width, alt, lazy}) => {
     });
     /**
      * The lazy loading implementation was enclosed in an if statement
-     * in order to not write unnecessary placeholder images when
-     * eager loading images are needed (default). Triggered with
-     * the boolean value of the lazy parameter.
+     * in order to write placeholder images to output directory
+     * only when eager loading images are wanted (default).
+     * This is triggered with the boolean value of the "lazy" parameter.
      */
     if(lazy) {
         const fallbackPlaceholder = join(dirname(input), basename(input, extname(input)) + `.placeholder.${generateRandomNumber}` + extname(input));
