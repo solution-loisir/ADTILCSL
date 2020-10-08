@@ -9,15 +9,9 @@ tags: pages
 {{ description }}
 ## Comment se rendre
 *À venir...*
-
 {% img 
 input = '/images/sejour-plein-air.jpg',
-width = 300,
+width = 555,
 alt = 'Photo de groupe au Séjour plein air 2019',
 lazy = true
 %}
----
-{{ '/images/sejour-plein-air.jpg' | imgFilter(null, 'test', false) | safe }}
----
-{{ '/images/sejour-plein-air.jpg' | imgFilter(300, 'test', true) | safe }}
----
