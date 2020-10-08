@@ -12,12 +12,12 @@ tags: pages
 
 {% img 
 input = '/images/sejour-plein-air.jpg',
-width = 555,
+width = 300,
 alt = 'Photo de groupe au Séjour plein air 2019',
 lazy = true
 %}
 ---
-{{ '/images/sejour-plein-air.jpg' | imgFilter(200, 'test', true) | safe }}
+{{ '/images/sejour-plein-air.jpg' | imgFilter(null, 'test', false) | safe }}
 ---
-{{ '/images/sejour-plein-air.jpg' | imgFilter(300, 'test', false) | safe }}
+{{ '/images/sejour-plein-air.jpg' | imgFilter(300, 'test', true) | safe }}
 ---

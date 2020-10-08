@@ -14,40 +14,40 @@ module.exports = ({input, width, alt, lazy}) => {
     const originalPath = join(dirname(input), basename(input, extname(input)) + `.${randomNumber}` + extname(input));
     //webp clone image path
     const webpPath = join(dirname(input), basename(input, extname(input)) + `.${randomNumber}` + '.webp');
+    const cloneStream = () => sharpStream.clone().resize(width);
+    const processedOutput = output => cloneStream().toFile(join('./docs', output));
     //Sharp constructor
     const sharpStream = sharp();
     //Piping readable through sharp transform stream
     pipeline(readable, sharpStream, error => {
         if(error) return console.error(error);
     });
-    //These 2 promises will be fulfilled when the pipeline ends
-    return Promise.all([
-        //Cloning the stream
-        sharpStream.clone()
-        .resize(width)
-        //Writing to output directory
-        .toFile(join('./docs', originalPath)),
-        sharpStream.clone()
-        .resize(width)
-        .toFile(join('./docs', webpPath))
-    ])
-    /**
-     * The array of info objects can be consumed
-     * by the returned template literal.
-     */
-    .then(info => {
-        const imgHeight = info[0].height;
-        const imgWidth = info[0].width;
-        //Aspect ratio of the image
-        const ratio = imgHeight / imgWidth * 100;
-        if(lazy) {
+    if(lazy) {
+        //Placeholder image for input
+        const originalPlaceholder = join(dirname(input), basename(input, extname(input)) + `.placeholder.${randomNumber}` + extname(input));
+        //Placeholder image for webp
+        const webpPlaceholder = join(dirname(input), basename(input, extname(input)) + `.placeholder.${randomNumber}` + '.webp');
+        //These 2 promises will be fulfilled when the pipeline ends
+        return Promise.all([
+            processedOutput(originalPath),
+            processedOutput(webpPath),
+
+            cloneStream()
+            .jpeg({quality: 1})
+            .toFile(join('./docs', originalPlaceholder)),
+
+            cloneStream()
+            .webp({quality: 1})
+            .toFile(join('./docs', webpPlaceholder))
+        ])
+        .then(info => {
+            const imgHeight = info[0].height;
+            const imgWidth = info[0].width;
             return `
-<figure class="lazy" style="height: 0%; padding-bottom: ${ratio}%;">
-<picture>
-<source type="image/webp" data-srcset="${webpPath}" />
-<img data-src="${originalPath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
+<picture class="lazy">
+<source type="image/webp" srcset="${webpPlaceholder}" data-srcset="${webpPath}" />
+<img src="${originalPlaceholder}" data-src="${originalPath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
 </picture>
-</figure>
 <noscript>
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
@@ -55,14 +55,21 @@ module.exports = ({input, width, alt, lazy}) => {
 </picture>
 </noscript>
 `;
-        } else {
+        })
+        .catch(error => console.error(error));
+    } else {
+        return Promise.all([
+            processedOutput(originalPath),
+            processedOutput(webpPath)
+        ])
+        .then(info => {
             return `
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
-<img src="${originalPath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
+<img src="${originalPath}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" />
 </picture>
 `;
-        }
-    })
-    .catch(error => console.error(error));
+        })
+        .catch(error => console.error(error));
+    }
 }
