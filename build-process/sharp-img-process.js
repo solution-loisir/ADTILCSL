@@ -6,16 +6,18 @@ const { pipeline } = require('stream');
 const { createReadStream } = require('fs');
 
 module.exports = ({input, width, alt, lazy}) => {
-    const outputDirectory = './docs';
     const ext = {
         input: extname(input),
         webp: '.webp'
     }
+    const composeImagePath = (inputPath, extension, placeholderDifferentiator = '.') => {
+        return join(dirname(inputPath), basename(inputPath, extname(inputPath)) + `${placeholderDifferentiator}${generateRandomNumber}` + extension);
+    }
     const generateRandomNumber = uInt32();
-    const composeImagePath = (inputPath, extension, placeholderDifferentiator = '') => join(dirname(inputPath), basename(inputPath, extname(inputPath)) + `${placeholderDifferentiator}${generateRandomNumber}` + extension);
-    const readableImageInput = createReadStream(join('./', input));
+    const outputDirectory = './docs';
     const fallbackImagePath = composeImagePath(input, ext.input);
     const webpImagePath = composeImagePath(input, ext.webp);
+    const readableImageInput = createReadStream(join('./', input));
     const sharpTransform = sharp();
     const resizeImageClone = () => sharpTransform.clone().resize(width);
     const writeImageCloneToFile = outputPath => resizeImageClone().toFile(join(outputDirectory, outputPath));
