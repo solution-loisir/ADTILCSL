@@ -8,12 +8,14 @@ const { createReadStream } = require('fs');
 module.exports = ({input, width, alt, lazy}) => {
     const outputDirectory = './docs';
     const ext = {
+        input: extname(input),
         webp: '.webp'
     }
     const generateRandomNumber = uInt32();
+    const composeImagePath = (inputPath, extension, placeholderDifferentiator = '') => join(dirname(inputPath), basename(inputPath, extname(inputPath)) + `${placeholderDifferentiator}${generateRandomNumber}` + extension);
     const readableImageInput = createReadStream(join('./', input));
-    const fallbackImagePath = join(dirname(input), basename(input, extname(input)) + `.${generateRandomNumber}` + extname(input));
-    const webpImagePath = join(dirname(input), basename(input, extname(input)) + `.${generateRandomNumber}` + ext.webp);
+    const fallbackImagePath = composeImagePath(input, ext.input);
+    const webpImagePath = composeImagePath(input, ext.webp);
     const sharpTransform = sharp();
     const resizeImageClone = () => sharpTransform.clone().resize(width);
     const writeImageCloneToFile = outputPath => resizeImageClone().toFile(join(outputDirectory, outputPath));
@@ -27,8 +29,8 @@ module.exports = ({input, width, alt, lazy}) => {
      * This is triggered with the boolean value of the "lazy" parameter.
      */
     if(lazy) {
-        const fallbackPlaceholder = join(dirname(input), basename(input, extname(input)) + `.placeholder.${generateRandomNumber}` + extname(input));
-        const webpPlaceholder = join(dirname(input), basename(input, extname(input)) + `.placeholder.${generateRandomNumber}` + ext.webp);
+        const fallbackPlaceholder = composeImagePath(input, ext.input, '.placeholder.');
+        const webpPlaceholder = composeImagePath(input, ext.webp, '.placeholder.');
         return Promise.all([
             writeImageCloneToFile(fallbackImagePath),
             writeImageCloneToFile(webpImagePath),
