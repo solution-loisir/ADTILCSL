@@ -1,6 +1,6 @@
 //Utility
 const htmlmin = require('html-minifier');
-const sass = require('./config/sass-process');
+const sass = require('./build-process/sass-process');
 //Shortcodes
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
