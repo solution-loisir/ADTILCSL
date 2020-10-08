@@ -14,6 +14,7 @@ module.exports = ({input, width, alt, lazy}) => {
     const originalPath = join(dirname(input), basename(input, extname(input)) + `.${randomNumber}` + extname(input));
     //webp clone image path
     const webpPath = join(dirname(input), basename(input, extname(input)) + `.${randomNumber}` + '.webp');
+    //Utility functions
     const cloneStream = () => sharpStream.clone().resize(width);
     const processedOutput = output => cloneStream().toFile(join('./docs', output));
     //Sharp constructor
