@@ -1,6 +1,6 @@
 'use strict';
 
-// Showing and hiding main-nav on small screen
+// Responsive main navigation
 (() => {
     if(!document.getElementById('header-btn')) return;
 
@@ -21,7 +21,7 @@
     
 })();
 
-// Lazy loading images with the IntersectionObserver API.
+// Lazy loading images
 (() => {
     const dataSrcAndDataSrcsetElements = document.querySelectorAll('[data-src], [data-srcset]');
 
