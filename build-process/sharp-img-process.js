@@ -30,22 +30,30 @@ module.exports = ({input, width, alt, lazy}) => {
      * only when eager loading images are wanted (default).
      * This is triggered with the boolean value of the "lazy" parameter.
      */
-    if(lazy) {
-        const fallbackPlaceholder = composeImagePath(input, ext.input, '.placeholder.');
-        const webpPlaceholder = composeImagePath(input, ext.webp, '.placeholder.');
+    const writeFilesConditional = () => {
+        if(lazy) {
+            const fallbackPlaceholder = composeImagePath(input, ext.input, '.placeholder.');
+            const webpPlaceholder = composeImagePath(input, ext.webp, '.placeholder.');
+            return Promise.all([
+                writeImageCloneToFile(fallbackImagePath),
+                writeImageCloneToFile(webpImagePath),
+    
+                resizeImageClone()
+                .jpeg({quality: 1})
+                .toFile(join(outputDirectory, fallbackPlaceholder)),
+    
+                resizeImageClone()
+                .webp({quality: 1})
+                .toFile(join(outputDirectory, webpPlaceholder))
+            ])
+        }
         return Promise.all([
             writeImageCloneToFile(fallbackImagePath),
-            writeImageCloneToFile(webpImagePath),
-
-            resizeImageClone()
-            .jpeg({quality: 1})
-            .toFile(join(outputDirectory, fallbackPlaceholder)),
-
-            resizeImageClone()
-            .webp({quality: 1})
-            .toFile(join(outputDirectory, webpPlaceholder))
+            writeImageCloneToFile(webpImagePath)
         ])
-        .then(info => {
+    }
+    writeFilesConditional()
+    .then(info => {
             const imgHeight = info[0].height;
             const imgWidth = info[0].width;
             return `
@@ -64,10 +72,7 @@ module.exports = ({input, width, alt, lazy}) => {
         .catch(error => console.error(error));
     }
     // Eager loading image implementation (default).
-    return Promise.all([
-        writeImageCloneToFile(fallbackImagePath),
-        writeImageCloneToFile(webpImagePath)
-    ])
+    
     .then(info => {
         return `
 <picture>
