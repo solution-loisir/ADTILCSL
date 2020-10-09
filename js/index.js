@@ -1,77 +1,58 @@
 'use strict';
 
-//Showing and hiding main-nav on small screen
+// Showing and hiding main-nav on small screen
 (() => {
     if(!document.getElementById('header-btn')) return;
-    //Toggle display-main-nav class when menu header-btn is clicked
-    const mainNav = document.getElementById('main-nav');
-    const toggleMainNav = () =>  mainNav.classList.toggle('display-main-nav');
-    const headerBtn = document.getElementById('header-btn');
-    headerBtn.addEventListener('click', toggleMainNav);
-    //If click on main or .hero, remove display-main-nav class from main-nav
+
     const main = document.querySelector('main');
+    const headerBtn = document.getElementById('header-btn');
+    const mainNav = document.getElementById('main-nav');
+
+    const toggleMainNavId = () =>  mainNav.classList.toggle('display-main-nav');
     const removeDisplayMainNavClass = () => mainNav.classList.remove('display-main-nav');
+
+    headerBtn.addEventListener('click', toggleMainNavId);
     main.addEventListener('click', removeDisplayMainNavClass);
+
     if(!document.querySelector('.hero')) return;
+
     const hero = document.querySelector('.hero');
     hero.addEventListener('click', removeDisplayMainNavClass);
     
 })();
-//lazy load every elements that contain a data-src or a data-srcset attribute
+
+// Lazy loading images with the IntersectionObserver API.
 (() => {
-    /**
-     * @type {NodeList}
-     * @description
-     * All data-src and data-srcset elements.
-     */
-    const images = document.querySelectorAll('[data-src], [data-srcset]');
-    /**
-     * @function setSrc 
-     * @param {HTMLElement} target The intersecting entry
-     * @description Utility function. 
-     * Assigns a value to src and to srcset attributes.
-     * Used in showImage callback function.
-     */
-    const setSrc = target => {
-        if(target.dataset.srcset) target.srcset = target.dataset.srcset;
+    const dataSrcAndDataSrcsetElements = document.querySelectorAll('[data-src], [data-srcset]');
+
+    const setSrcFromDataSrc = target => {
         if(target.dataset.src) target.src = target.dataset.src;
     }
-    //Detecting IntersectionObserver and calling setSrc to load images eagerly as a fallback.
-    if(!'IntersectionObserver' in window) {
-        return images.forEach(image => setSrc(image));
+    const setSrcsetFromDataSrcset = target => {
+        if(target.dataset.srcset) target.srcset = target.dataset.srcset;
     }
-    /**
-     * @type {IntersectionObserverInit} Object
-     * @description
-     * Options object to be passed as second parameter
-     * in IntersectionObserver constructor.
-     */
+    if(!'IntersectionObserver' in window) {
+        return dataSrcAndDataSrcsetElements.forEach(image => {
+            setSrcsetFromDataSrcset(image);
+            setSrcFromDataSrc(image);
+        });
+    }
     const options = {
         root: null,
         rootMargin: '0px 0px 300px 0px',
         threshold: 0
     }
-    /**
-     * @callback showImage
-     * @type {IntersectionObserverCallback}
-     * @param {IntersectionObserverEntry} entries List of objects
-     */
-    const showImage = entries => {
+    const observeImages = entries => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {
                 const target = entry.target;
-                setSrc(target);
+                setSrcsetFromDataSrcset(target);
+                setSrcFromDataSrc(target);
                 Observer.unobserve(target);
             }
         });
     }
-    /**
-     * @constructor IntersectionObserver
-     * @argument {IntersectionObserverCallback} showImage 
-     * @argument {IntersectionObserverInit} options
-     * @returns {IntersectionObserver} IntersectionObserver interface
-     */
-    const Observer = new IntersectionObserver(showImage, options);
-    //Using Observer to load images
-    images.forEach(image => Observer.observe(image));
+    const Observer = new IntersectionObserver(observeImages, options);
+
+    dataSrcAndDataSrcsetElements.forEach(image => Observer.observe(image));
 })();
