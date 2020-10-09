@@ -17,9 +17,8 @@ tags: pages
     </header>
     <section class="card-section">
     {% for person in ca %}
-    {% card
-    img = person.img | url,
-    alt = person.name,
+    {% cardCA
+    img = person.img,
     title = person.name,
     detail = person.ca,
     text = person.bio

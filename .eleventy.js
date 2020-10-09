@@ -1,19 +1,20 @@
-//Utility
+// Utilities
 const htmlmin = require('html-minifier');
 const sass = require('./build-process/sass-process');
-//Shortcodes
+// Shortcodes
 const card = require('./shortcode/card');
+const cardCA = require('./shortcode/card-ca');
 const contentHeader = require('./shortcode/content-header');
 const img = require('./shortcode/img');
-//Filters
+// Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
 const imgFilter = require('./filters/imgFilter');
 
 module.exports = function(config) {
-    //Pre-processing Sass and watching for changes in dev env only.
+    // Sass pre-processing
     sass('./style/index.scss', './docs/style/index.css');
-    //Passing assets as is to docs directory.
+    // Passthrough copy
     const assets = [
         'images',
         'fonts',
@@ -21,15 +22,16 @@ module.exports = function(config) {
         'politiques'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
-    //Shortcodes
+    // Shortcodes
     config.addShortcode('card', card);
+    config.addShortcode('cardCA', cardCA);
     config.addShortcode('contentHeader', contentHeader);
     config.addNunjucksAsyncShortcode('img', img);
-    //Filters
+    // Filters
     config.addFilter('timeFormat', timeFormat);
     config.addFilter('textFormat', textFormat);
-    config.addNunjucksAsyncFilter('imgFilter', imgFilter);
-    //Custom collections
+    config.addNunjucksAsyncFilter('img', imgFilter);
+    // Collections
     config.addCollection('posts', collection => collection.getFilteredByGlob('_src/posts/*.md'));
     config.addCollection('postsTags', collection => {
        const posts = collection.getFilteredByGlob('_src/posts/*.md');
@@ -55,12 +57,12 @@ module.exports = function(config) {
         });
         return [...tagSet];
     });
-    //Set libraries
+    // Libraries
     config.setFrontMatterParsingOptions({
         excerpt: true,
         excerpt_separator: '---excerpt---'
     });
-    //html-minifier
+    // Transform
     config.addTransform('htmlmin', (content, output) => {
         if(process.env.ELEVENTY_ENV === 'prod' && output.endsWith('.html')) {
             return htmlmin.minify(content, {
@@ -71,7 +73,7 @@ module.exports = function(config) {
         }
         return content
     });
-    //Layout alias
+    // Aliases
     config.addLayoutAlias('base-layout', 'layouts/base-layout.njk');
     config.addLayoutAlias('post-layout', 'layouts/post-layout.njk');
     config.addLayoutAlias('sejour-layout', 'layouts/sejour-layout.njk');
@@ -80,7 +82,7 @@ module.exports = function(config) {
     config.addLayoutAlias('formations-layout', 'layouts/formations-layout.njk');
     config.addLayoutAlias('videos-layout', 'layouts/videos-layout.njk');
     config.addLayoutAlias('conduite-layout', 'layouts/conduite-layout.njk');
-    //Config object
+    // Configuration
     return {
         dir: {
             input: '_src',
@@ -90,6 +92,6 @@ module.exports = function(config) {
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk',
-        templateFormats: ['njk', 'html', 'md', 'liquid']
+        templateFormats: ['njk', 'html', 'md']
     }
 }
