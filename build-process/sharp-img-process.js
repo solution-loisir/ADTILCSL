@@ -24,20 +24,33 @@ module.exports = ({ input, width, alt, lazy }) => {
     }
     const fallbackImagePath = composeImagePath(extension.ofInput);
     const webpImagePath = composeImagePath(extension.webp);
+    const fallbackPlaceholder = composeImagePath(extension.ofInput, true);
+    const webpPlaceholder = composeImagePath(extension.webp, true);
     const resizeImageClone = () => sharpTransform.clone().resize(width);
     const writeImageCloneToFile = outputPath => resizeImageClone().toFile(join(outputDirectory, outputPath));
+    const renderLazyImage = (imgWidth, imgHeight) => `
+<picture class="lazy">
+<source type="image/webp" srcset="${webpPlaceholder}" data-srcset="${webpImagePath}" />
+<img src="${fallbackPlaceholder}" data-src="${fallbackImagePath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
+</picture>
+<noscript>
+<picture>
+<source type="image/webp" srcset="${webpImagePath}" />
+<img src="${fallbackImagePath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
+</picture>
+</noscript>
+`;
+    const renderEagerImage = (imgWidth, imgHeight) => `
+<picture>
+<source type="image/webp" srcset="${webpImagePath}" />
+<img src="${fallbackImagePath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
+</picture>
+`;
     pipeline(readableImageInput, sharpTransform, error => {
         if(error) return console.error(error);
     });
-    /**
-     * The lazy loading implementation is enclosed in an if statement
-     * in order to write placeholder images to output directory
-     * only when lazy loading images are wanted.
-     * This is triggered with the boolean value of a "lazy" argument.
-     */
+    // Lazy loading image implementation.
     if(lazy) {
-        const fallbackPlaceholder = composeImagePath(extension.ofInput, true);
-        const webpPlaceholder = composeImagePath(extension.webp, true);
         return Promise.all([
             writeImageCloneToFile(fallbackImagePath),
             writeImageCloneToFile(webpImagePath),
@@ -50,22 +63,7 @@ module.exports = ({ input, width, alt, lazy }) => {
             .webp({quality: 1})
             .toFile(join(outputDirectory, webpPlaceholder))
         ])
-        .then(info => {
-            const imgHeight = info[0].height;
-            const imgWidth = info[0].width;
-            return `
-<picture class="lazy">
-<source type="image/webp" srcset="${webpPlaceholder}" data-srcset="${webpImagePath}" />
-<img src="${fallbackPlaceholder}" data-src="${fallbackImagePath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
-</picture>
-<noscript>
-<picture>
-<source type="image/webp" srcset="${webpImagePath}" />
-<img src="${fallbackImagePath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
-</picture>
-</noscript>
-`;
-        })
+        .then(info => renderLazyImage(info[0].width, info[0].height))
         .catch(error => console.error(error));
     }
     // Eager loading image implementation. This is the default returned value.
@@ -73,13 +71,6 @@ module.exports = ({ input, width, alt, lazy }) => {
         writeImageCloneToFile(fallbackImagePath),
         writeImageCloneToFile(webpImagePath)
     ])
-    .then(info => {
-        return `
-<picture>
-<source type="image/webp" srcset="${webpImagePath}" />
-<img src="${fallbackImagePath}" alt="${alt}" width="${info[0].width}" height="${info[0].height}" />
-</picture>
-`;
-    })
+    .then(info => renderEagerImage(info[0].width, info[0].height))
     .catch(error => console.error(error));
 }
