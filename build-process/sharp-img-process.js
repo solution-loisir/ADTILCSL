@@ -49,7 +49,6 @@ module.exports = ({ input, width, alt, lazy }) => {
     pipeline(readableImageInput, sharpTransform, error => {
         if(error) return console.error(error);
     });
-    // Lazy loading image implementation.
     if(lazy) {
         return Promise.all([
             writeImageCloneToFile(fallbackImagePath),
@@ -65,12 +64,12 @@ module.exports = ({ input, width, alt, lazy }) => {
         ])
         .then(info => renderLazyImage(info[0].width, info[0].height))
         .catch(error => console.error(error));
+    } else {
+        return Promise.all([
+            writeImageCloneToFile(fallbackImagePath),
+            writeImageCloneToFile(webpImagePath)
+        ])
+        .then(info => renderEagerImage(info[0].width, info[0].height))
+        .catch(error => console.error(error));
     }
-    // Eager loading image implementation. This is the default returned value.
-    return Promise.all([
-        writeImageCloneToFile(fallbackImagePath),
-        writeImageCloneToFile(webpImagePath)
-    ])
-    .then(info => renderEagerImage(info[0].width, info[0].height))
-    .catch(error => console.error(error));
 }
