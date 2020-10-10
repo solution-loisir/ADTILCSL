@@ -1,9 +1,9 @@
 [
     {
         "name": "Mathieu Huot",
-        "img": "/images/mathieuhuot.jpg",
         "bio": "Mathieu est technicien en loisir et programmeur autodidacte centré sur les technologies du web. Il occupe présentement le poste d'Agent de projets pour la Ville de Montréal.",
-        "ca": "Administrateur",
+        "function": "Administrateur",
+        "image": "/images/mathieuhuot.jpg",
         "lazyImage": false
     }
 ]

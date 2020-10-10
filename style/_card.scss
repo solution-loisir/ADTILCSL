@@ -40,7 +40,6 @@
     }
     img {
         border-radius: 50%;
-        width: 50%;
         margin-top: 1.6rem;
     }
 }
@@ -52,10 +51,5 @@
     align-items: flex-start;
     .card-anchor {
         align-self: center;
-    }
-}
-.admin-card-monster {
-    object {
-        visibility: visible;
     }
 }

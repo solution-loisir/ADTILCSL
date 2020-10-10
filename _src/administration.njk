@@ -16,13 +16,13 @@ tags: pages
         <hr />
     </header>
     <section class="card-section">
-    {% for person in ca %}
-    {% cardCA
-    img = person.img,
-    title = person.name,
-    detail = person.ca,
-    text = person.bio
-    %}
+    {% for member in ca %}
+    <div class="card">
+        {{ member.image | img(null, member.name, member.lazyImage) | safe }}
+        <h2>{{ member.name }}</h2>
+        <p><small>{{ member.function }}</small></p>
+        <p>{{ member.bio }}</p>
+    </div>
     {% endfor %}
     </section>
 </main>

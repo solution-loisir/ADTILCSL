@@ -1,9 +1,9 @@
 // Utilities
 const htmlmin = require('html-minifier');
 const sass = require('./build-process/sass-process');
+const imageProcess = require('./build-process/sharp-img-process');
 // Shortcodes
 const card = require('./shortcode/card');
-const cardCA = require('./shortcode/card-ca');
 const contentHeader = require('./shortcode/content-header');
 const img = require('./shortcode/img');
 // Filters
@@ -24,7 +24,6 @@ module.exports = function(config) {
     assets.forEach(asset => config.addPassthroughCopy(asset));
     // Shortcodes
     config.addShortcode('card', card);
-    config.addShortcode('cardCA', cardCA);
     config.addShortcode('contentHeader', contentHeader);
     config.addNunjucksAsyncShortcode('img', img);
     // Filters
@@ -92,6 +91,6 @@ module.exports = function(config) {
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk',
-        templateFormats: ['njk', 'html', 'md']
+        templateFormats: ['njk', 'html', 'md', '11ty.js']
     }
 }
