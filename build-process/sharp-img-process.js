@@ -14,7 +14,7 @@ module.exports = ({ input, width, alt, lazy }) => {
         ofInput: extname(input),
         webp: '.webp'
     }
-    const composeImagePath = (ext, { isPlaceholder }) => {
+    const composeImagePath = (ext, { isPlaceholder } = {}) => {
         return join(
             dirname(input),
             basename(input, extname(input))
