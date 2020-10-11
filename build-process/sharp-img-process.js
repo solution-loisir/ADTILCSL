@@ -8,13 +8,13 @@ const { createReadStream } = require('fs');
 module.exports = ({ input, width, alt, lazy }) => {
     const sharpTransform = sharp();
     const generateRandomNumber = uInt32();
-    const readableImageInput = createReadStream(join('./', input));
+    const readableInputImage = createReadStream(join('./', input));
     const outputDirectory = './docs';
     const extension = {
         ofInput: extname(input),
         webp: '.webp'
     }
-    const composeImagePath = (ext, isPlaceholder) => {
+    const composeImagePath = (ext, { isPlaceholder }) => {
         return join(
             dirname(input),
             basename(input, extname(input))
@@ -24,8 +24,8 @@ module.exports = ({ input, width, alt, lazy }) => {
     }
     const fallbackImagePath = composeImagePath(extension.ofInput);
     const webpImagePath = composeImagePath(extension.webp);
-    const fallbackPlaceholder = composeImagePath(extension.ofInput, true);
-    const webpPlaceholder = composeImagePath(extension.webp, true);
+    const fallbackPlaceholder = composeImagePath(extension.ofInput, { isPlaceholder: true });
+    const webpPlaceholder = composeImagePath(extension.webp, { isPlaceholder: true });
     const resizeImageClone = () => sharpTransform.clone().resize(width);
     const writeImageCloneToFile = outputPath => resizeImageClone().toFile(join(outputDirectory, outputPath));
     const renderLazyImage = (imgWidth, imgHeight) => `
@@ -46,7 +46,7 @@ module.exports = ({ input, width, alt, lazy }) => {
 <img src="${fallbackImagePath}" alt="${alt}" width="${imgWidth}" height="${imgHeight}" />
 </picture>
 `;
-    pipeline(readableImageInput, sharpTransform, error => {
+    pipeline(readableInputImage, sharpTransform, error => {
         if(error) return console.error(error);
     });
     if(lazy) {
