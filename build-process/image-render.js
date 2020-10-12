@@ -17,4 +17,4 @@ const eagerImage = ({ paths, alt, width, height }) => `
 </picture>
 `;
 
-module.exports = {lazyImage, eagerImage}
+module.exports = { lazyImage, eagerImage }
