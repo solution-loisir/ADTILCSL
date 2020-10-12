@@ -1,7 +1,7 @@
 // Utilities
 const htmlmin = require('html-minifier');
 const sass = require('./build-process/sass-process');
-const imageProcess = require('./build-process/sharp-img-process');
+const imageProcess = require('./build-process/image-process');
 // Shortcodes
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');

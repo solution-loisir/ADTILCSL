@@ -1,4 +1,4 @@
-const sharpProcess = require('../build-process/sharp-img-process');
+const sharpProcess = require('../build-process/image-process');
 
 module.exports = (input, width, alt, lazy, cb) => {
     return sharpProcess({ input, width, alt, lazy })
