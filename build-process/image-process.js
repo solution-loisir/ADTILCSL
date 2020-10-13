@@ -1,6 +1,4 @@
 const sharp = require('sharp');
-const generateRandomNumber = require("number-generator/lib/aleaRNGFactory");
-const { uInt32 } = generateRandomNumber(10);
 const { join } = require('path');
 const { pipeline } = require('stream');
 const { createReadStream } = require('fs');
@@ -8,50 +6,41 @@ const generateImagePath = require('./image-path');
 const render = require('./image-render');
 
 module.exports = ({ input, width, alt, lazy }) => {
-    const randomNumber = uInt32();
-    const image = generateImagePath(input, randomNumber);
+    const imagePaths = generateImagePath(input);
+    const { fallbackPath, webpPath, fallbackPlaceholder, webpPlaceholder } = imagePaths;
+    const { lazyImage, eagerImage } = render(imagePaths, alt);
     const readStream = createReadStream(join('./', input));
     const sharpTransform = sharp();
-    const outputDir = './docs';
-    const resizeClone = () => sharpTransform.clone().resize(width);
-    const writeCloneToFile = outputPath => resizeClone().toFile(join(outputDir, outputPath));
+    const writeResizeCloneToFile = quality => outputPath => (outputDir = './docs') => {
+        return sharpTransform
+        .clone()
+        .jpeg(quality)
+        .resize(width)
+        .toFile(join(outputDir, outputPath))
+    };
+    const writeImageToFile = writeResizeCloneToFile();
+    const writePlaceholderToFile = writeResizeCloneToFile({ quality: 1 });
 
     pipeline(readStream, sharpTransform, error => {
-        if(error) return console.error(error);
+        if(error) return console.error('Error in pipeline.', error);
     });
 
     if(lazy) {
         return Promise.all([
-            writeCloneToFile(image.fallbackPath),
-            writeCloneToFile(image.webpPath),
-
-            resizeClone()
-            .jpeg({quality: 1})
-            .toFile(join(outputDir, image.fallbackPlaceholder)),
-
-            resizeClone()
-            .webp({quality: 1})
-            .toFile(join(outputDir, image.webpPlaceholder))
+            writeImageToFile(fallbackPath),
+            writeImageToFile(webpPath),
+            writePlaceholderToFile(fallbackPlaceholder),
+            writePlaceholderToFile(webpPlaceholder)
         ])
-        .then(info => render.lazyImage({
-            paths: image, 
-            alt: alt, 
-            width: info[0].width, 
-            height: info[0].height
-        }))
-        .catch(error => console.error(error));
+        .then(info => lazyImage(info[0].width, info[0].height))
+        .catch(error => console.error('Error in lazy image.', error));
 
     } else {
         return Promise.all([
-            writeCloneToFile(image.fallbackPath),
-            writeCloneToFile(image.webpPath)
+            writeImageToFile(fallbackPath),
+            writeImageToFile(webpPath)
         ])
-        .then(info => render.eagerImage({
-            paths: image, 
-            alt: alt, 
-            width: info[0].width, 
-            height: info[0].height
-        }))
-        .catch(error => console.error(error));
+        .then(info => eagerImage(info[0].width, info[0].height))
+        .catch(error => console.error('Error in eager image.', error));
     }
 }

@@ -1,6 +1,9 @@
 const { join, dirname, basename, extname } = require('path');
+const generateRandomNumber = require("number-generator/lib/aleaRNGFactory");
+const { uInt32 } = generateRandomNumber(10);
 
-module.exports = (input, id) => {
+module.exports = input => {
+    const randomNumber = uInt32();
     const extension = {
         ofInput: extname(input),
         webp: '.webp'
@@ -9,7 +12,7 @@ module.exports = (input, id) => {
         return join(
             dirname(input),
             basename(input, extname(input))
-            + `${isPlaceholder ? '.placeholder.' : '.'}${id}`
+            + `${isPlaceholder ? '.placeholder.' : '.'}${randomNumber}`
             + extension
         );
     }
