@@ -1,4 +1,4 @@
-function render(paths, alt) {
+module.exports = (paths, alt) => {
     return {
         lazyImage: (width, height) => `
 <picture class="lazy">
@@ -18,5 +18,3 @@ function render(paths, alt) {
 </picture>`
     }
 }
-
-module.exports = render;

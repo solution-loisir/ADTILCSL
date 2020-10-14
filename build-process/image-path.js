@@ -8,18 +8,18 @@ module.exports = input => {
         ofInput: extname(input),
         webp: '.webp'
     }
-    const composePath = (extension, isPlaceholder) => {
+    const composePath = (ext, isPlaceholder) => {
         return join(
             dirname(input),
             basename(input, extname(input))
             + `${isPlaceholder ? '.placeholder.' : '.'}${randomNumber}`
-            + extension
+            + ext
         );
     }
     return {
-        fallbackPath: composePath(extension.ofInput),
-        webpPath: composePath(extension.webp),
-        fallbackPlaceholder: composePath(extension.ofInput, true),
+        fallbackPath: composePath(extension.ofInput ),
+        webpPath: composePath(extension.webp ),
+        fallbackPlaceholder: composePath(extension.ofInput, true ),
         webpPlaceholder: composePath(extension.webp, true)
     }
 }
