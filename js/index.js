@@ -34,7 +34,10 @@
         if(target.dataset.srcset) target.srcset = target.dataset.srcset;
     }
     if((!'IntersectionObserver' in window) || !dataSrcAndDataSrcsetElements) {
-        return dataSrcAndDataSrcsetElements.forEach(element => overrideSrcAndSrcset(element));
+        dataSrcAndDataSrcsetElements.forEach(element => {
+            overrideSrcAndSrcset(element);
+        });
+        return 'Undefined IntersectionObserver or dataSrcAndDataSrcsetElements.';
     }
     const options = {
         root: null,
@@ -52,5 +55,9 @@
     }
     const Observer = new IntersectionObserver(observeImages, options);
 
-    document.addEventListener('DOMContentLoaded', () => dataSrcAndDataSrcsetElements.forEach(element => Observer.observe(element)));
+    document.addEventListener('DOMContentLoaded', () => {
+        dataSrcAndDataSrcsetElements.forEach(element => {
+            Observer.observe(element);
+        });
+    });
 })();
