@@ -4,7 +4,7 @@ const generatePathName = require('./image-path');
 const render = require('./image-render');
 
 module.exports = ({ input, width, alt, lazy }) => {
-    const sharpBaseClone = sharp(join('./', input));
+    const sharpStream = sharp(join('./', input));
     const outputDir = './docs';
     const pathNames = generatePathName(input);
     const {
@@ -14,26 +14,34 @@ module.exports = ({ input, width, alt, lazy }) => {
         webpPlaceholder
     } = pathNames;
     const { lazyImage, eagerImage } = render(pathNames, alt);
-    function writeResizeCloneToFile({ outputPath, qualityLevel }) {
-        return sharpBaseClone
+    function resizeFallbackClone({ outputPath, qualityLevel = 70 }) {
+        return sharpStream
         .clone()
         .resize(width)
         .jpeg({ quality: qualityLevel })
         .toFile(join(outputDir, outputPath))
-        .catch(error => console.error('Error in writeResizeCloneToFile function:', error));
+        .catch(error => console.error('Error in resizeFallbackClone function:', error));
+    }
+    function resizeWebpClone({ outputPath, qualityLevel = 60 }) {
+        return sharpStream
+        .clone()
+        .resize(width)
+        .webp({ quality: qualityLevel })
+        .toFile(join(outputDir, outputPath))
+        .catch(error => console.error('Error in resizeWebpClone function:', error));
     }
     const cloneArray = [
-        writeResizeCloneToFile({ outputPath: fallbackPath }),
-        writeResizeCloneToFile({ outputPath: webpPath })
+        resizeFallbackClone({ outputPath: fallbackPath }),
+        resizeWebpClone({ outputPath: webpPath })
     ]
     if(lazy) {
         return Promise.all([
             ...cloneArray,
-            writeResizeCloneToFile({
+            resizeFallbackClone({
                 outputPath: fallbackPlaceholder,
                 qualityLevel: 1
             }),
-            writeResizeCloneToFile({
+            resizeWebpClone({
                 outputPath: webpPlaceholder,
                 qualityLevel: 1
             })
