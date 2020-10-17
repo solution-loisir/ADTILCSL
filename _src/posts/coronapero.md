@@ -74,7 +74,7 @@ alt = 'Affiche du coronapéro du 24 avril 2020.',
 lazy = true
 %}
 
-### Le 1er mai 2020
+<h3>Le 1<sup>er</sup> mai 2020</h3>
 
 {% img
 input = '/images/coronapero_2020-05-01.jpeg',
