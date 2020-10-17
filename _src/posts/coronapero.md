@@ -25,7 +25,7 @@ Passons en revue cette saison de coronapero en images grâces aux excellentes af
 {% img
 input = '/images/coronapero-affiche.png',
 width = 400,
-alt = 'Affiche du coronapéro du 27 mars 2020.',
+alt = 'Affiche du coronapéro du 20 mars 2020.',
 lazy = true
 %}
 
@@ -43,7 +43,7 @@ lazy = true
 {% img
 input = '/images/coronapero_2020-04-03_20h.jpg',
 width = 400,
-alt = 'Affiche du coronapéro du 27 mars 2020.',
+alt = 'Affiche du coronapéro du 3 avril 2020.',
 lazy = true
 %}
 
@@ -52,7 +52,7 @@ lazy = true
 {% img
 input = '/images/coronapero_2020-04-10.jpg',
 width = 400,
-alt = 'Affiche du coronapéro du 27 mars 2020.',
+alt = 'Affiche du coronapéro du 10 avril 2020.',
 lazy = true
 %}
 
@@ -61,7 +61,7 @@ lazy = true
 {% img
 input = '/images/coronapero_2020-04-17.jpg',
 width = 400,
-alt = 'Affiche du coronapéro du 27 mars 2020.',
+alt = 'Affiche du coronapéro du 17 avril 2020.',
 lazy = true
 %}
 
@@ -70,7 +70,7 @@ lazy = true
 {% img
 input = '/images/coronapero_2020-04-24.jpg',
 width = 400,
-alt = 'Affiche du coronapéro du 27 mars 2020.',
+alt = 'Affiche du coronapéro du 24 avril 2020.',
 lazy = true
 %}
 
@@ -79,7 +79,7 @@ lazy = true
 {% img
 input = '/images/coronapero_2020-05-01.jpeg',
 width = 400,
-alt = 'Affiche du coronapéro du 27 mars 2020.',
+alt = 'Affiche du coronapéro du 1er mai 2020.',
 lazy = true
 %}
 
@@ -88,6 +88,6 @@ lazy = true
 {% img
 input = '/images/coronapero_2020-05-08.jpg',
 width = 400,
-alt = 'Affiche du coronapéro du 27 mars 2020.',
+alt = 'Affiche du coronapéro du 8 mai 2020.',
 lazy = true
 %}
