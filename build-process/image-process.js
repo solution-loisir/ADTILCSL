@@ -22,7 +22,7 @@ module.exports = ({ input, width, alt, lazy }) => {
         .toFile(join(outputDir, outputPath))
         .catch(error => console.error('Error in resizeFallbackClone function:', error));
     }
-    function resizeWebpClone({ outputPath, qualityLevel = 60 }) {
+    function resizeWebpClone({ outputPath, qualityLevel = 50 }) {
         return sharpStream
         .clone()
         .resize(width)

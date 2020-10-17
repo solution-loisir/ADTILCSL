@@ -10,6 +10,7 @@
     "clean": "if [ -d docs ]; then trash docs; fi && npx @11ty/eleventy --serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "refresh-youtube": "node youtube-refresh.js",
+    "convert-webp": "node convert-webp.js",
     "test-prod": "ELEVENTY_ENV=prod npx @11ty/eleventy",
     "prod": "npx @11ty/eleventy"
   },
