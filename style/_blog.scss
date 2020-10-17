@@ -1,8 +1,9 @@
 .post-layout {
-    article {
+    article, .return-link {
         padding: 1em 1em;
         max-width: 55ch;
-        margin: auto;
+        margin-right: auto;
+        margin-left: auto;
         @media(min-width: $small) {
             padding: 1em 1.5em;
         }
@@ -10,6 +11,9 @@
             padding: 1em 2em;
         }
     }
+}
+.return-link {
+    margin-top: 3em;
 }
 .article-header {
     h1 {

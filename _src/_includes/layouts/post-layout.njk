@@ -20,7 +20,8 @@ id: article
             </div>
         </header>
         {{ content | safe }}
-        <br />
-        <a href="{{ '/blog/' | url }}">⬅ Retour à la liste des articles</a>
     </article>
+    <div class="return-link">
+        <a href="{{ '/blog/' | url }}">⬅ Retour à la liste des articles</a>
+    </div>
 </main>
