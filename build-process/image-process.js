@@ -4,7 +4,7 @@ const generatePathFrom = require('./image-path');
 const render = require('./image-render');
 
 module.exports = ({ input, width, alt, lazy }) => {
-    const sharpStream = sharp(join('./', input));
+    const inputStream = sharp(join('./', input));
     const outputDir = './docs';
     const extensions = Object.freeze({
         ofInput: extname(input),
@@ -19,7 +19,7 @@ module.exports = ({ input, width, alt, lazy }) => {
     });
     const { lazyImage, eagerImage } = render(alt, paths);
     function cloneProcessTo(outputPath, quality = { quality: 70 }) {
-        return sharpStream
+        return inputStream
         .clone()
         .resize(width)
         .jpeg(quality)
@@ -27,7 +27,7 @@ module.exports = ({ input, width, alt, lazy }) => {
         .catch(error => console.error('Error in cloneProcessTo function: ', error));
     }
     function cloneWebpProcessTo(outputPath, quality = { quality: 50 }) {
-        return sharpStream
+        return inputStream
         .clone()
         .resize(width)
         .webp(quality)
