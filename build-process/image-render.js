@@ -1,4 +1,4 @@
-module.exports = (alt, { fallbackPath, fallbackPlaceholder, webpPath, webpPlaceholder }) => ({
+module.exports = (alt, { fallbackPath, fallbackPlaceholder, webpPath, webpPlaceholder }) => Object.freeze({
         lazyImage(width, height) {
             return `
 <picture class="lazy">
