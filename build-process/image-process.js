@@ -18,35 +18,35 @@ module.exports = ({ input, width, alt, lazy }) => {
         webpPlaceholder: addExtensionToPath(extensions.webp, { isPlaceholder: true })
     });
     const { lazyImage, eagerImage } = render(alt, paths);
-    function processFallbackClone(outputPath, quality = { quality: 70 }) {
+    function cloneProcessTo(outputPath, quality = { quality: 70 }) {
         return sharpStream
         .clone()
         .resize(width)
         .jpeg(quality)
         .toFile(join(outputDir, outputPath))
-        .catch(error => console.error('Error in processFallbackClone function: ', error));
+        .catch(error => console.error('Error in cloneProcessTo function: ', error));
     }
-    function processWebpClone(outputPath, quality = { quality: 50 }) {
+    function cloneWebpProcessTo(outputPath, quality = { quality: 50 }) {
         return sharpStream
         .clone()
         .resize(width)
         .webp(quality)
         .toFile(join(outputDir, outputPath))
-        .catch(error => console.error('Error in processWebpClone function: ', error));
+        .catch(error => console.error('Error in cloneWebpProcessTo function: ', error));
     }
     if(lazy) {
         return Promise.all([
-            processFallbackClone(paths.fallbackPath),
-            processWebpClone(paths.webpPath),
-            processFallbackClone(paths.fallbackPlaceholder, { quality: 1 }),
-            processWebpClone(paths.webpPlaceholder, { quality: 1 })
+            cloneProcessTo(paths.fallbackPath),
+            cloneWebpProcessTo(paths.webpPath),
+            cloneProcessTo(paths.fallbackPlaceholder, { quality: 1 }),
+            cloneWebpProcessTo(paths.webpPlaceholder, { quality: 1 })
         ])
         .then(info => lazyImage(info[0].width, info[0].height))
         .catch(error => console.error('Error in lazy image: ', error));
     } else {
         return Promise.all([
-            processFallbackClone(paths.fallbackPath),
-            processWebpClone(paths.webpPath)
+            cloneProcessTo(paths.fallbackPath),
+            cloneWebpProcessTo(paths.webpPath)
         ])
         .then(info => eagerImage(info[0].width, info[0].height))
         .catch(error => console.error('Error in eager image: ', error));
