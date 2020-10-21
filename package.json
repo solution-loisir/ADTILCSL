@@ -11,6 +11,7 @@
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "refresh-youtube": "node youtube-refresh.js",
     "convert-webp": "node convert-webp.js",
+    "generate-favicon.ico": "png-to-ico ./images/favicon/logo.png > favicon.ico",
     "test-prod": "ELEVENTY_ENV=prod npx @11ty/eleventy",
     "prod": "npx @11ty/eleventy"
   },
