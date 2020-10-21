@@ -18,7 +18,8 @@ module.exports = function(config) {
         'images',
         'fonts',
         'js',
-        'politiques'
+        'politiques',
+        './favicon.ico'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
     // Shortcodes
