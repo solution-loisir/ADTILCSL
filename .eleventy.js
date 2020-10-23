@@ -19,7 +19,8 @@ module.exports = function(config) {
         'fonts',
         'js',
         'politiques',
-        './favicon.ico'
+        './favicon.ico',
+        './manifest.json'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
     // Shortcodes

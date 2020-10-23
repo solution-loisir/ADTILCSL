@@ -1,5 +1,5 @@
 const sharp = require('sharp');
-const data = require('./_src/_data/site');
+const data = require('./_src/_data/site')();
 const promises = [];
 const icoFile = require('png-to-ico');
 const { writeFile } = require('fs').promises;
@@ -11,15 +11,15 @@ const output = base => format({
 });
 
 const manifest = ({
-    shortName = 'ADTILCSL',
-    name = 'Association des diplômés en TIL du Cégep de Saint-Laurent',
-    description,
-    url,
-    color,
-    display
+    shortName = data.shortName,
+    longName = data.longName,
+    description =  data.description,
+    url = data.url,
+    color = data.color,
+    display = data.display
 } = {}) => JSON.stringify({
     short_name: shortName,
-    name: name,
+    name: longName,
     description: description,
     icons: [
       {
@@ -60,3 +60,5 @@ promises.push(
 Promise.all(promises)
 .then(() => icoFile(output('favicon_256.png')))
 .then(buffer => writeFile('favicon.ico', buffer))
+.then(writeFile("manifest.json", manifest()))
+.catch(error => console.error(error.stack));

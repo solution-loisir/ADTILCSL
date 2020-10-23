@@ -5,9 +5,9 @@ module.exports = () => {
     } else if(process.env.ELEVENTY_ENV === "prod") {
         data.base = "https://loisir.netlify.app";
     }
-    data.favicon = "images/favicon.png";
+    data.favicon = "./images/favicon.png";
     data.shortName = "ADTILCSL";
-    data.name = "Association des diplômés en TIL du Cégep de Saint-Laurent";
+    data.longName = "Association des diplômés en TIL du Cégep de Saint-Laurent";
     data.description = `L'Association des diplômés de la Techniques de gestion et d'intervention en loisir du Cégep de Saint-Laurent. 
     Nous mettons régulièrement des outils de gestion, formations et astuces à votre disposition. 
     Nous discutons sur notre blog des projets variés destinés à améliorer la visibilité et les conditions d'emploi des Techniciens en loisir 
