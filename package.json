@@ -12,7 +12,6 @@
     "refresh-youtube": "node youtube-refresh.js",
     "convert-webp": "node convert-webp.js",
     "generate-favicon": "node generate-favicon.js",
-    "generate-favicon.ico": "png-to-ico ./images/favicon/logo_48.png ./images/favicon/logo_32.png ./images/favicon/logo_16.png > favicon.ico",
     "test-prod": "ELEVENTY_ENV=prod npx @11ty/eleventy",
     "prod": "npx @11ty/eleventy"
   },
