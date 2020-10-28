@@ -7,6 +7,7 @@ writer: Mathieu Huot
 headerImage: /images/coronapero-affiche.png
 headerImageAlt: L'affiche du CoronApéro!
 tags:
+  - articles
   - social
   - covid-19
   - événement

@@ -34,7 +34,7 @@ module.exports = function(config) {
     // Collections
     config.addCollection('posts', collection => collection.getFilteredByGlob('_src/posts/*.md'));
     config.addCollection('postsTags', collection => {
-       const posts = collection.getFilteredByGlob('_src/posts/*.md');
+       const posts = collection.getFilteredByTag('articles');
        let tagSet = new Set();
        posts.forEach(temp => {
            if('tags' in temp.data) {

@@ -17,7 +17,7 @@ permalink: blog/{{ tag | lower | slug }}/
         defaultClass = 'listing-card',
         title = post.data.title,
         detail = post.date | timeFormat,
-        text = post.data.description,
+        text = post.data.description | truncate(180),
         link = post.url | url,
         linkText = "Lire l'article!"
         %}

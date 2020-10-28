@@ -7,7 +7,7 @@ ogImageAlt:
 date: 2019-07-22
 tags: pages
 pagination:
-  data: collections.posts
+  data: collections.articles
   size: 9
   alias: posts
   reverse: true
@@ -19,7 +19,7 @@ permalink: blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{%
         defaultClass = 'listing-card',
         title = post.data.title,
         detail = post.date | timeFormat,
-        text = post.data.description,
+        text = post.data.description | truncate(180),
         link = post.url | url,
         linkText = "Lire l'article!"
         %}
