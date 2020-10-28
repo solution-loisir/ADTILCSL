@@ -1,0 +1,55 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "q2YmVmdb2Oo36GSPipO0N4YKs0o",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "0LFtqR1vNvFoBSrqO-RkVec0SHs",
+      "id": "UExOQmcyM0RDLWRHUHVsSXdwdzExZVRZRURvdE1qaDA1Yy4yODlGNEE0NkRGMEEzMEQy",
+      "snippet": {
+        "publishedAt": "2020-05-04T14:21:46Z",
+        "channelId": "UCxl_ENVFqZJPHtUED_WPUPg",
+        "title": "Littératie physique",
+        "description": "La littératie physique consiste à développer les habiletés motrices fondamentales dont tous les enfants ont besoin afin de devenir des adultes physiquement actifs!\n- Formatrice : Marianne Parent\n- Date de la formation : 23 avril 2020",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/VpvX8mFr4o0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "diplome tilcsl",
+        "playlistId": "PLNBg23DC-dGPulIwpw11eTYEDotMjh05c",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "VpvX8mFr4o0"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 20
+  }
+}

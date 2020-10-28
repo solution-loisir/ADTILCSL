@@ -23,5 +23,6 @@ id: article
     </article>
     <div class="return-link">
         <a href="{{ '/blog/' | url }}">⬅ Retour à la liste des articles</a>
+        {% include 'partials/comments.njk' %}
     </div>
 </main>

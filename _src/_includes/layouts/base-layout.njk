@@ -21,8 +21,8 @@ eleventyComputed:
     <meta property="og:url" content="{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
-    {{  '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe if id === 'youtube' }}
-    {{ '<meta property="fb:app_id" content="1277565455782139" />' | safe if (id === 'youtube' or id === 'article') }}
+    {{  '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe if id === 'formationYoutube' }}
+    {{ '<meta property="fb:app_id" content="1277565455782139" />' | safe if (id === 'formationYoutube' or id === 'article') }}
 </head>
 <body>
     {% include 'partials/_header.njk' %}

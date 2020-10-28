@@ -1,0 +1,55 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "cKmidXRo0wUSf1Bnj2p4Uff6cgU",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "V7ZQwRQo3sfGmyCWPW5jAjzrFgE",
+      "id": "UExOQmcyM0RDLWRHT2YzcU1VUGRNaWlWQWxLaW5Jbjl2Qy41NkI0NEY2RDEwNTU3Q0M2",
+      "snippet": {
+        "publishedAt": "2020-10-27T18:47:32Z",
+        "channelId": "UCxl_ENVFqZJPHtUED_WPUPg",
+        "title": "C'est zéro (version diplômées)",
+        "description": "Il y a quelques semaines (30 août 2020), les merveilleux enseignants du programme de Gestion et intervention en loisir - Cégep de Saint-Laurent\n nous ont partagé une belle vidéo dans laquelle nous pouvions entendre leurs douces voix. Pour revoir cette vidéo, c'est par ici : https://www.youtube.com/watch?v=iPmWKLXfV0s... SURPRISE! Quelques diplômés ont décidé de créer également une petite vidéo en reprenant la chanson C'est Zéro (À Saint-Lo). Isabelle Tardif , Philippe P. Til, Suzanne Lemieux, Andrée-Anne Henrichon, Mariane Parent Til, Marie-Josée Chicoine, Rose-Marie Gil, vous êtes nos inspirations! Comme les enseignants, vous pourrez entendre nos voix siiii mélodieuses (ou encore, vous pourrez être témoins du fait que nous n'avons plus d'orgeuil). Un grand MERCI à Hugo Filiatrault pour les paroles, à Andrée-Anne Henrichon pour le montage ainsi qu'à @Sébastien Tremblay, Alex Landry, Dominique Plante & Mélanie Morand d'avoir embarqué dans cette belle petite folie! Bonne écoute!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/U7YM50vu3MY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/U7YM50vu3MY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/U7YM50vu3MY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/U7YM50vu3MY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/U7YM50vu3MY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "diplome tilcsl",
+        "playlistId": "PLNBg23DC-dGOf3qMUPdMiiVAlKinIn9vC",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "U7YM50vu3MY"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 20
+  }
+}

@@ -15,5 +15,7 @@ module.exports = () => {
     data.url = "/";
     data.color = "#bce7f7";
     data.display = "standalone";
+    data.blogList = "PLNBg23DC-dGOf3qMUPdMiiVAlKinIn9vC";
+    data.formationList = "PLNBg23DC-dGPulIwpw11eTYEDotMjh05c";
     return data;
 }
