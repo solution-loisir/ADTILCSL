@@ -16,7 +16,7 @@
 [[headers]]
     for = "/*"
     [headers.values]
-        Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-tuKyZn/3ycw/MNMDii/kvSPrelo6SCsJSecqb1n2neg=' 'unsafe-inline'; style-src 'self'; font-src 'self'; img-src 'self' d33wubrfki0l68.cloudfront.net; object-src 'self';
+        Content-Security-Policy = "default-src 'none'; script-src 'self' 'sha256-tuKyZn/3ycw/MNMDii/kvSPrelo6SCsJSecqb1n2neg=' 'unsafe-inline'; style-src 'self'; font-src 'self'; img-src 'self' d33wubrfki0l68.cloudfront.net; object-src 'self'"
         X-Frame-Options = "SAMEORIGIN"
         X-XSS-Protection = "1; mode=block"
         X-Content-Type-Options = "nosniff"
