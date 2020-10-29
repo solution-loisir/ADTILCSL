@@ -21,7 +21,3 @@
         X-Content-Type-Options = "nosniff"
         Referrer-Policy = "no-referrer"
         Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; fullscreen 'self'; payment 'none'"
-[[headers]]
-    for = "/formations/*"
-    [headers.values]
-        Content-Security-Policy = "default-src 'self' 'unsafe-inline'; img-src 'self' https://*.cloudfront.net https://www.google-analytics.com; script-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://facebook.com; media-src 'self' https://www.youtube.com; frame-src 'self' https://www.youtube.com https://www.facebook.com https://m.facebook.com; form-action https:"
