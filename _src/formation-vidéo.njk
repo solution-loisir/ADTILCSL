@@ -8,7 +8,7 @@ pagination:
   alias: video
   addAllPagesToCollections: true
 eleventyComputed:
-  title: Formations {{ video.snippet.title }}
+  title: Formation {{ video.snippet.title }}
   description: "{{ video.snippet.description }}"
   publishedat: "{{ video.snippet.publishedAt }}"
 permalink: "/formations/{{ video.snippet.title | textFormat | slug }}/"
