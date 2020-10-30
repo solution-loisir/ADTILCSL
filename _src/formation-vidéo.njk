@@ -15,14 +15,7 @@ permalink: "/formations/{{ video.snippet.title | textFormat | slug }}/"
 ---
 <main class="post-layout default-blog-theme">
     <article>
-        <header class="article-header">
-            <h1>{{ video.snippet.title }}</h1>
-            <p><small>{{ video.snippet.publishedAt | timeFormat }}</small></p>
-        </header>
-        <div class="youtube">
-            <iframe src="https://www.youtube.com/embed/{{ video.snippet.resourceId.videoId }}?rel=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <p>{{ video.snippet.description }}</p>
+        {% include "partials/video-and-info.njk" %}
         <br />
         <a href="{{ '/formations/' | url }}">⬅ Retour à la liste des formations</a>
         {% include 'partials/comments.njk' %}
