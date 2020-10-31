@@ -16,7 +16,7 @@
     "prod": "npx @11ty/eleventy"
   },
   "author": "Mathieu Huot",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "dotenv": "^8.2.0",
