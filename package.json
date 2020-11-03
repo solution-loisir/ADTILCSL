@@ -13,7 +13,7 @@
     "convert-webp": "node convert-webp.js",
     "generate-favicon": "node generate-favicon.js",
     "test-prod": "ELEVENTY_ENV=prod npx @11ty/eleventy",
-    "prod": "npx @11ty/eleventy"
+    "prod": "node youtube-refresh.js && node convert-webp.js && node generate-favicon.js && npx @11ty/eleventy"
   },
   "author": "Mathieu Huot",
   "license": "Apache 2.0",
