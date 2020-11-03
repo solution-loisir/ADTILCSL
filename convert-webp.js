@@ -1,10 +1,10 @@
 const sharp = require('sharp');
-const fs = require('fs');
+const { readdir } = require('fs').promises;
 const { format, basename, extname } = require('path');
 
 const readdirInput = './images/webp/';
 
-fs.promises.readdir(readdirInput)
+readdir(readdirInput)
 .then(files => {
     files.forEach(file => {
         const sharpInput = format({
@@ -22,4 +22,4 @@ fs.promises.readdir(readdirInput)
         .catch(error => console.error(`Error with ${sharpInput} or ${output} in sharp: `, error));
     });
 })
-.catch(error => console.error('Error in readdir: ', error));
+.catch(error => console.error('Error in convert-webp readdir: ', error));
