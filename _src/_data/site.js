@@ -17,5 +17,7 @@ module.exports = () => {
     data.display = "standalone";
     data.blogList = "PLNBg23DC-dGOf3qMUPdMiiVAlKinIn9vC";
     data.formationList = "PLNBg23DC-dGPulIwpw11eTYEDotMjh05c";
+    data.facebook = "https://www.facebook.com/assoloisirsaintlaurent/";
+    data.youtube = "https://www.youtube.com/channel/UCxl_ENVFqZJPHtUED_WPUPg";
     return data;
 }
