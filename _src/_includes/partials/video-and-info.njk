@@ -3,6 +3,13 @@
     <p><small>{{ video.snippet.publishedAt | timeFormat }}</small></p>
 </header>
 <div class="youtube">
-    <iframe src="https://www.youtube.com/embed/{{ video.snippet.resourceId.videoId }}?rel=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe
+    src="https://www.youtube.com/embed/{{ video.snippet.resourceId.videoId }}?rel=0" 
+    srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img{position:absolute;top:0;bottom:0;margin:auto}img{width:100%;}object{position:absolute;top:35%;left:40%;pointer-events: none;}</style><a href=https://www.youtube.com/embed/{{ video.snippet.resourceId.videoId }}?rel=0&autoplay=1><img src={{ video.snippet.thumbnails.standard.url }} alt={{ video.snippet.title }} width={{ video.snippet.thumbnails.standard.width }} height={{ video.snippet.thumbnails.standard.height }}><object type=image/svg+xml data=/images/youtube.svg>YouTube play logo</object></a>" 
+    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen 
+    frameborder="0"
+    title="{{ video.snippet.title }}">
+    </iframe>
 </div>
 <p>{{ video.snippet.description }}</p>
