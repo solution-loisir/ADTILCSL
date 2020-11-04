@@ -13,14 +13,14 @@ eleventyComputed:
     <link rel="icon" type="image/png" href="{{ site.base }}/images/favicon/favicon_192.png" sizes="192x192" />
     <script defer src="{{ '/js/index.js' | url }}"></script>
     <link rel="canonical" href="{{ site.base }}{{ page.url | url }}" />
-    <title>ADTILCSL | {{ title }}</title>
+    <title>ADTILCSL{{ ' | ' + title if title else '' }}</title>
     <meta name="description" content="{{ description if description else site.description }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ description if description else site.description }}" />
-    <meta property="og:url" content="{{ page.url | url }}" />
-    <meta property="og:image" content="{{ ogImage | url }}" />
-    <meta property="og:image:alt" content="{{ ogImageAlt }}" />
+    <meta property="og:url" content="{{ site.base }}{{ page.url | url }}" />
+    <meta property="og:image" content="{{ ogImage | url if ogImage else '/images/sejour-plein-air.jpg' | url }}" />
+    <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
     {{ '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe if (id === 'formationYoutube' or id === 'blogYoutube') }}
     {{ '<meta property="fb:app_id" content="1277565455782139" />' | safe if (id === 'formationYoutube' or id === 'article' or id === 'blogYoutube') }}
 </head>
