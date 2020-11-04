@@ -3,12 +3,12 @@ module.exports = (alt, { fallbackPath, fallbackPlaceholder, webpPath, webpPlaceh
             return `
 <picture class="lazy">
 <source type="image/webp" srcset="${webpPlaceholder}" data-srcset="${webpPath}" />
-<img src="${fallbackPlaceholder}" data-src="${fallbackPath}" alt="${alt}" width="${width}" height="${height}" />
+<img src="${fallbackPlaceholder}" data-src="${fallbackPath}" alt="${alt}" width="${width}" height="${height}" title="${alt}" />
 </picture>
 <noscript>
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
-<img src="${fallbackPath}" alt="${alt}" width="${width}" height="${height}" />
+<img src="${fallbackPath}" alt="${alt}" width="${width}" height="${height}" title="${alt}" />
 </picture>
 </noscript>`;
         },
@@ -16,7 +16,7 @@ module.exports = (alt, { fallbackPath, fallbackPlaceholder, webpPath, webpPlaceh
             return `
 <picture>
 <source type="image/webp" srcset="${webpPath}" />
-<img src="${fallbackPath}" alt="${alt}" width="${width}" height="${height}" />
+<img src="${fallbackPath}" alt="${alt}" width="${width}" height="${height}" title="${alt}" />
 </picture>`;
         }
 });
