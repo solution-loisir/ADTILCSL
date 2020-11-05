@@ -1,0 +1,6 @@
+{% macro articleFooter(link = '/blog/', text = '⬅ Retour à la liste des articles') %}
+<footer class="article-footer">
+<a href="{{ link | url }}">{{ text }}</a>
+{% include 'partials/comments.njk' %}
+</footer>
+{% endmacro %}

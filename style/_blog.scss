@@ -1,5 +1,5 @@
 .post-layout {
-    article, .return-link {
+    article {
         padding: 1em 1em;
         max-width: 55ch;
         margin-right: auto;
@@ -12,9 +12,6 @@
         }
     }
 }
-.return-link {
-    margin-top: 3em;
-}
 .article-header {
     h1 {
         margin-top: 0;
@@ -23,6 +20,9 @@
     img {
         margin-bottom: 1.6rem;
     }
+}
+.article-footer {
+    margin-top: 1.6em;
 }
 .article-credit {
     img {

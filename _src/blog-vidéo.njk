@@ -18,8 +18,7 @@ permalink: "blog/posts/{{ video.snippet.title | textFormat }}/"
 <main class="post-layout default-blog-theme">
     <article>
         {% include "partials/video-and-info.njk" %}
-        <br />
-        <a href="{{ '/blog/' | url }}">⬅ Retour à la liste des articles</a>
-        {% include 'partials/comments.njk' %}
+        {% from "partials/article-footer.njk" import articleFooter %}
+        {{ articleFooter() }}
     </article>
 </main>

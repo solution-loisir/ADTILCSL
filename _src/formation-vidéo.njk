@@ -16,8 +16,7 @@ permalink: "/formations/{{ video.snippet.title | textFormat }}/"
 <main class="post-layout default-blog-theme">
     <article>
         {% include "partials/video-and-info.njk" %}
-        <br />
-        <a href="{{ '/formations/' | url }}">⬅ Retour à la liste des formations</a>
-        {% include 'partials/comments.njk' %}
+        {% from "partials/article-footer.njk" import articleFooter %}
+        {{ articleFooter('/formations/', '⬅ Retour à la liste des formations') }}
     </article>
 </main>
