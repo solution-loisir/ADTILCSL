@@ -14,14 +14,17 @@ pagination:
 permalink: blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}index.html
 ---
 <section class="listing-section">
-    {% for post in posts %}
-        {% card
-        defaultClass = 'listing-card',
-        title = post.data.title,
-        detail = post.date | timeFormat,
-        text = post.data.description | truncate(180),
-        link = post.url | url,
-        linkText = "Lire l'article!"
-        %}
-    {% endfor %}
+  {% for post in posts %}
+    {% set postDate %}
+      {{ post.data.publishedat | timeFormat if post.data.publishedat else post.date | timeFormat }}
+    {% endset %}
+    {% card
+    defaultClass = 'listing-card',
+    title = post.data.title,
+    detail = postDate,
+    text = post.data.description | truncate(180),
+    link = post.url | url,
+    linkText = "Lire l'article!"
+    %}
+  {% endfor %}
 </section>
