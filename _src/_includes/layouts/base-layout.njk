@@ -13,7 +13,7 @@ eleventyComputed:
     <link rel="icon" type="image/png" href="{{ site.base }}/images/favicon/favicon_192.png" sizes="192x192" />
     <script defer src="{{ '/js/index.js' | url }}"></script>
     <link rel="canonical" href="{{ site.base }}{{ page.url | url }}" />
-    <title>ADTILCSL{{ ' | ' + title if title else '' }}</title>
+    <title>ADTILCSL{{ ' | ' + title | replace("&#39;", "'") if title else '' }}</title>
     <meta name="description" content="{{ description if description else site.description }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />

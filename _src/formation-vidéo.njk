@@ -11,7 +11,7 @@ eleventyComputed:
   title: Formation {{ video.snippet.title }}
   description: "{{ video.snippet.description }}"
   publishedat: "{{ video.snippet.publishedAt }}"
-permalink: "/formations/{{ video.snippet.title | textFormat | slug }}/"
+permalink: "/formations/{{ video.snippet.title | textFormat }}/"
 ---
 <main class="post-layout default-blog-theme">
     <article>
