@@ -3,7 +3,7 @@ const { join, extname } = require('path');
 const generatePathFrom = require('./image-path');
 const render = require('./image-render');
 
-module.exports = ({ input, width, alt, lazy }) => {
+module.exports = ({ input, width, alt, lazy, className = 'shadow-black-transparent' }) => {
     const inputStream = sharp(join('./', input));
     const outputDir = './docs';
     const extensions = Object.freeze({
@@ -17,7 +17,7 @@ module.exports = ({ input, width, alt, lazy }) => {
         fallbackPlaceholder: addExtensionToPath(extensions.ofInput, { isPlaceholder: true }),
         webpPlaceholder: addExtensionToPath(extensions.webp, { isPlaceholder: true })
     });
-    const { lazyImage, eagerImage } = render(alt, paths);
+    const { lazyImage, eagerImage } = render(alt, className, paths);
     function cloneProcessTo(outputPath, quality = { quality: 70 }) {
         return inputStream
         .clone()

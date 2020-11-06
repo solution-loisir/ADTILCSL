@@ -23,6 +23,7 @@ $black: #241c15;
 $gray20: lighten($black, 20%);
 $gray40: lighten($black, 40%);
 $gray60: lighten($black, 60%);
+$gray70: lighten($black, 70%);
 $gray80: lighten($black, 80%); 
 
 *, *::before, *::after {
@@ -78,7 +79,7 @@ a, a:active {
     justify-items: center;
     align-items: center;
 }
-.shadow {
+.shadow-black-transparent {
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
 }
 .content {
