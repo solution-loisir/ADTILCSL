@@ -14,6 +14,14 @@
 .header-btn {
     margin: 5px 20px;
     padding: 0.2em 0.6em;
+    border: 1px solid var(--text-color, #241c15);
+    border-radius: 1em;
+    background-color: var(--white, #fdfefe);
+    outline: none;
+    &:focus {
+        color: var(--white, #fdfefe);
+        background-color: var(--text-color, #241c15);
+    }
     @media(min-width: $top-nav-break) {
         display: none;
     }
