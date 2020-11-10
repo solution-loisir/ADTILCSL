@@ -11,7 +11,7 @@ description = "Accédez à l'information spécifique pour l'année de déploieme
 <nav>
     <ul class="tags-container">
         <li class="tags sejour-tags"><a href="{{ '/sejour-plein-air/' | url }}" class="sejour-nav {{ 'active' if page.url === '/sejour-plein-air/' | url }}">Information générale</a></li>
-        {% for sejour in collections.sejours %}
+        {% for sejour in collections.sejours | reverse %}
         <li class="tags sejour-tags"><a href="{{ sejour.url | url }}" class="sejour-nav {{ 'active' if page.url === sejour.url | url }}">{{ sejour.data.year }}</a></li>
         {% endfor %}
     </ul>
