@@ -44,35 +44,3 @@
         background-color: #fff;
     }
 }
-.article-tags {
-    color: inherit;
-    background-color: $gray80;
-    margin-bottom: 1em;
-    padding: 0.5rem 1rem;
-    border: 1px solid $gray60;
-    border-radius: $fontsize;
-    text-decoration: none;
-    &:hover {
-        text-decoration: underline;
-    }
-    &.active {
-        text-decoration: underline;
-        &:hover {
-            text-decoration: none;
-        }
-    }
-}
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    z-index: 1;
-    max-width: 50ch;
-    padding-top: 1rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    margin: auto;
-    @media(min-width: $top-nav-break) {
-        top: 86px;
-    }
-}

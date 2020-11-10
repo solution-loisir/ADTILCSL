@@ -10,7 +10,7 @@ layout: base-layout
     <div class="tags-container">
     {% for tag in collections.postsTags %}
     {% set tagUrl %}/blog/{{ tag | lower | slug }}/{% endset %}
-    <a href="/blog/{{ tag | lower | slug | url }}/" class="article-tags {{ tag | lower | slug }} {{ 'active' if page.url === tagUrl | url }}">#{{ tag | lower | slug }}</a>
+    <a href="/blog/{{ tag | lower | slug | url }}/" class="tags article-tags {{ tag | lower | slug }} {{ 'active' if page.url === tagUrl | url }}">#{{ tag | lower | slug }}</a>
     {% endfor %}
     </div>
     {{ content | safe }}
