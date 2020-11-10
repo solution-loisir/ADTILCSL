@@ -18,6 +18,11 @@
     background-color: $gray80;
     border: 1px solid $gray60;
 }
+.sejour-tags {
+    color: inherit;
+    background-color: $bluelight10;
+    border: 2px solid $bluedark40;
+}
 .tags-container {
     display: flex;
     flex-wrap: wrap;

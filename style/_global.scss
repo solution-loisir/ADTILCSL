@@ -24,7 +24,14 @@ $gray20: lighten($black, 20%);
 $gray40: lighten($black, 40%);
 $gray60: lighten($black, 60%);
 $gray70: lighten($black, 70%);
-$gray80: lighten($black, 80%); 
+$gray80: lighten($black, 80%);
+$maincolor: #bce7f7;
+$bluelight20: lighten($maincolor, 20%);
+$bluelight15: lighten($maincolor, 15%);
+$bluelight10: lighten($maincolor, 10%);
+$bluedark40: darken($maincolor, 40%);
+$bluedark50: darken($maincolor, 50%);
+$bluedark60: darken($maincolor, 60%); 
 
 *, *::before, *::after {
     box-sizing: inherit;
