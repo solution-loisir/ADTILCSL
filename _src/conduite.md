@@ -2,6 +2,7 @@
 layout: conduite-layout
 title: Code de conduite
 description: énoncé du code de conduite en ce qui a trait à l'utilisation du site web, de la page Facebook ou de toutes autres plateformes composant la communauté de l'Association des diplômé-es de la Techniques de gestion et d'intervention en loisir du Cégep de Saint-Laurent (ADTILCSL). 
+eleventyExcludeFromCollections: true
 ---
 Bonjour à tous
 
