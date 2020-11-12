@@ -2,4 +2,5 @@
 {% for h in collections.pages %}
 <li><a href="{{ h.url | url }}" {% if page.url === h.url %}class="active"{% endif %}>{{ h.data.title }}</a></li>
 {% endfor %}
+<li><a href="/search/" id="search-btn">🔍</a></li>
 </ul>
