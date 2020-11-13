@@ -2,19 +2,9 @@
 layout: base-layout
 eleventyExcludeFromCollections: true
 ---
-<form action="https://www.google.ca/search" method="get" class="search" name="search">
-    <input type="hidden" name="query" value="site:https://loisir.netlify.app" />
-    <label for="search-string">
-        <h2>
-            Effectuez une recherche
-        </h2>
-        <p>Le résultat s'affichera dans Google.</p>
-    </label>
-    <p>
-        <input type="text" name="query" id="search-string" />
-    </p>
-    <button type="submit" class="submit-search">Recherchez ADTILCSL</button>
-</form>
+<main>
+{% searchForm className = "search" %}
+</main>
 {#[
     {% for search in collections.all %}
     {
