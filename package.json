@@ -16,7 +16,7 @@
     "prod": "node youtube-refresh.js && node convert-webp.js && node generate-favicon.js && npx @11ty/eleventy"
   },
   "author": "Mathieu Huot",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@toycode/markdown-it-class": "^1.2.4",
