@@ -17,6 +17,10 @@
   },
   "author": "Mathieu Huot",
   "license": "Apache-2.0",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/solution-loisir/ADTILCSL"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@toycode/markdown-it-class": "^1.2.4",
