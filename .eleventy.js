@@ -80,15 +80,15 @@ module.exports = function(config) {
         permalink: true,
         permalinkClass: 'title-link',
         permalinkSymbol: '#',
-        level: [1, 2]
+        level: [2, 3]
     }).use(markdownItTocDoneRight, {
         slugify: uslugify,
         listType: 'ul',
-        level: [1, 2],
+        level: [2, 3],
         containerClass: 'auto-toc'
     }).use(markdownItClass, {
-        h1: 'anchors',
-        h2: 'anchors'   
+        h2: 'anchors',
+        h3: 'anchors'   
     }));
     // Transform
     config.addTransform('htmlmin', (content, output) => {

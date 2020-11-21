@@ -112,3 +112,20 @@ a, a:active {
     border-radius: 1em;
     padding: 1em;
 }
+.anchors {
+    @media(min-width: $top-nav-break) {
+        padding-top: 80px;
+        margin-top: -60px;
+    }
+    &:hover > .title-link {
+        visibility: visible;
+        color: inherit;
+    }
+}
+.title-link {
+    color: inherit;
+    visibility: hidden;
+    &:hover {
+        text-decoration: none;
+    }
+}
