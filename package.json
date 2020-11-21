@@ -19,13 +19,17 @@
   "license": "Apache 2.0",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@toycode/markdown-it-class": "^1.2.4",
     "dotenv": "^8.2.0",
     "fibers": "^5.0.0",
     "fs-extra": "^8.1.0",
     "html-minifier": "^4.0.0",
+    "markdown-it-anchor": "^6.0.1",
+    "markdown-it-toc-done-right": "^4.2.0",
     "number-generator": "^4.0.4",
     "png-to-ico": "^2.1.1",
     "sass": "^1.26.3",
-    "sharp": "^0.26.0"
+    "sharp": "^0.26.0",
+    "uslug": "^1.0.4"
   }
 }

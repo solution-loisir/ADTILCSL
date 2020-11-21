@@ -10,6 +10,11 @@ const searchForm = require('./shortcode/search-form');
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
 const imgFilter = require('./filters/imgFilter');
+// Markdown
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+const markdownItTocDoneRight = require('markdown-it-toc-done-right');
+const markdownItClass = require('@toycode/markdown-it-class');
 
 module.exports = function(config) {
     // Sass pre-processing
@@ -64,6 +69,27 @@ module.exports = function(config) {
         excerpt: true,
         excerpt_separator: '---excerpt---'
     });
+    //Markdown settings with plugins
+    const uslugify = s => require('uslug')(s);
+    config.setLibrary('md', markdownIt ({
+        html: true,
+        breaks: true,
+        linkify: true
+    }).use(markdownItAnchor, {
+        slugify: uslugify,
+        permalink: true,
+        permalinkClass: 'title-link',
+        permalinkSymbol: '#',
+        level: [1, 2]
+    }).use(markdownItTocDoneRight, {
+        slugify: uslugify,
+        listType: 'ul',
+        level: [1, 2],
+        containerClass: 'auto-toc'
+    }).use(markdownItClass, {
+        h1: 'anchors',
+        h2: 'anchors'   
+    }));
     // Transform
     config.addTransform('htmlmin', (content, output) => {
         if(process.env.ELEVENTY_ENV === 'prod' && output.endsWith('.html')) {
