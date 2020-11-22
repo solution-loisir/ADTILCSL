@@ -123,6 +123,9 @@ a, a:active {
     }
 }
 .title-link {
+    @media(max-width: $small) {
+        display: none;
+    }
     color: inherit;
     visibility: hidden;
     &:hover {
