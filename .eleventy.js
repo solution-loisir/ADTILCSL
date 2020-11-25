@@ -1,7 +1,7 @@
 // Utilities
 const htmlmin = require('html-minifier');
 const uslugify = s => require('uslug')(s);
-const sass = require('./build-process/sass-process');
+const sassProcess = require('./build-process/sass-process');
 const imageProcess = require('./build-process/image-process');
 // Shortcodes
 const card = require('./shortcode/card');
@@ -19,7 +19,7 @@ const markdownItClass = require('@toycode/markdown-it-class');
 
 module.exports = function(config) {
     // Sass pre-processing
-    sass('./style/index.scss', './docs/style/index.css');
+    sassProcess('./style/index.scss', './docs/style/index.css');
     config.setBrowserSyncConfig({
         files: './docs/style/index.css'
     });

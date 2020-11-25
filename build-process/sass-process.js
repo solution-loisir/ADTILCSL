@@ -1,4 +1,4 @@
-const { writeFile } = require('fs-extra');
+const { writeFile, watch } = require('fs-extra');
 const { dirname } = require('path');
 const sassRender = require('./sass-render');
 const mkdirIfNotExist = require('./mkdir-if-not-exist');
@@ -10,7 +10,7 @@ module.exports = (scssPath, cssPath) => {
     .catch(error => console.error(error.stack));
 
     if(process.env.ELEVENTY_ENV === 'dev') {
-        fs.watch(dirname(scssPath), () => {
+        watch(dirname(scssPath), () => {
             sassRender(scssPath, cssPath)
             .then(result => writeFile(cssPath, result.css.toString()))
             .catch(error => console.error(error.stack));
