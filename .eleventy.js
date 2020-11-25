@@ -19,6 +19,9 @@ const markdownItClass = require('@toycode/markdown-it-class');
 module.exports = function(config) {
     // Sass pre-processing
     sass('./style/index.scss', './docs/style/index.css');
+    config.setBrowserSyncConfig({
+        files: './docs/style/index.css'
+    });
     // Passthrough copy
     const assets = [
         'images',
