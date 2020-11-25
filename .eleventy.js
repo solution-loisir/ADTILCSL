@@ -1,5 +1,6 @@
 // Utilities
 const htmlmin = require('html-minifier');
+const uslugify = s => require('uslug')(s);
 const sass = require('./build-process/sass-process');
 const imageProcess = require('./build-process/image-process');
 // Shortcodes
@@ -72,8 +73,6 @@ module.exports = function(config) {
         excerpt: true,
         excerpt_separator: '---excerpt---'
     });
-    //Markdown settings with plugins
-    const uslugify = s => require('uslug')(s);
     config.setLibrary('md', markdownIt ({
         html: true,
         breaks: true,
