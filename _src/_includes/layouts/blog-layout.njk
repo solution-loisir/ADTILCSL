@@ -1,5 +1,6 @@
 ---
 layout: base-layout
+id: blog-layout
 ---
 <main>
     {% contentHeader
@@ -13,7 +14,7 @@ layout: base-layout
 
     <a href="/blog/{{ tag | lower | slug | url }}/" 
     class="tags article-tags {{ tag | lower | slug }}{{ ' active' if page.url === tagUrl | url }}" 
-    data-template-id="{{ tag | lower | slug }}" 
+    data-id="{{ tag | lower | textFormat }}" 
     data-title="Blog - {{ tag | lower | slug }}">
     #{{ tag | lower | slug }}
     </a>
@@ -24,7 +25,7 @@ layout: base-layout
 
     {% for tag in collections.postsTags %}
     {% set posts = collections[tag] | reverse %}
-    <template id="{{ tag }}">
+    <template id="{{ tag | lower | textFormat }}">
         {% for post in posts %}
             {% set postDate %}
                 {{ post.data.publishedat | timeFormat if post.data.publishedat else post.date | timeFormat }}
