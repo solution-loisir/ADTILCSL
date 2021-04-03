@@ -14,7 +14,7 @@ id: blog-layout
 
     <a href="/blog/{{ tag | lower | slug | url }}/" 
     class="tags article-tags {{ tag | lower | slug }}{{ ' active' if page.url === tagUrl | url }}" 
-    data-id="{{ tag | lower | textFormat }}" 
+    data-id="{{ tag | lower | slug }}" 
     data-title="ADTILCSL | Blog - {{ tag | lower | slug }}">
     #{{ tag | lower | slug }}
     </a>
@@ -25,7 +25,7 @@ id: blog-layout
 
     {% for tag in collections.postsTags %}
     {% set posts = collections[tag] | reverse %}
-    <template id="{{ tag | lower | textFormat }}">
+    <template id="{{ tag | lower | slug }}">
         {% for post in posts %}
             {% set postDate %}
                 {{ post.data.publishedat | timeFormat if post.data.publishedat else post.date | timeFormat }}
