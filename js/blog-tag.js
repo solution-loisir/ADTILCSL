@@ -26,7 +26,9 @@ function renderTemplate(event, container) {
     }
 }
 
-tagContainer.addEventListener("click", event => {
-    event.preventDefault();
-    renderTemplate(event, listingSection);
-});
+if ("content" in document.createElement("template")) {
+    tagContainer.addEventListener("click", event => {
+        event.preventDefault();
+        renderTemplate(event, listingSection);
+    });
+}
