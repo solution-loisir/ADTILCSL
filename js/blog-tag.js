@@ -16,7 +16,7 @@ function renderTemplate(event, container) {
 
         document.querySelector("title").textContent = title;
 
-        const template = document.querySelector(`#${templateId}`);
+        const template = document.querySelector(templateId);
         const clone = template.content.cloneNode(true);
 
         history.pushState(templateId, title, target.href);
