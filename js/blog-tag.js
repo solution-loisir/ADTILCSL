@@ -5,7 +5,7 @@ const tagContainer = document.querySelector(".tags-container");
 
 const clean = element => element.innerHTML = "";
 
-function renderTemplate(event, element) {
+function renderTemplate(event, container) {
     const target = event.target;
     if(target.classList.contains("tags")) {
         document.querySelectorAll(".tags").forEach(tag => tag.classList.remove("active"));
@@ -14,14 +14,14 @@ function renderTemplate(event, element) {
         const title = target.dataset.title;
         document.querySelector("title").textContent = title;
 
-        history.pushState(templateId, title, target.href);
-
         const templateId = target.dataset.id;
         const template = document.querySelector(`#${templateId}`);
         const clone = template.content.cloneNode(true);
-        
-        clean(element);
-        element.appendChild(clone);
+
+        history.pushState(templateId, title, target.href);
+
+        clean(container);
+        container.appendChild(clone);
     }
 }
 
