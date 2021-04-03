@@ -13,7 +13,7 @@ function renderTemplate(event, element) {
         const templateId = target.dataset.id;
         const template = document.querySelector(`#${templateId}`);
         const title = target.dataset.title;
-        document.querySelector("title").textContent = `ADTILCSL | ${title}`;
+        document.querySelector("title").textContent = title;
         const url = target.href;
         history.pushState(templateId, title, url);
         const clone = template.content.cloneNode(true);
