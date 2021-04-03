@@ -10,13 +10,16 @@ function renderTemplate(event, element) {
     if(target.classList.contains("tags")) {
         document.querySelectorAll(".tags").forEach(tag => tag.classList.remove("active"));
         target.classList.add("active");
-        const templateId = target.dataset.id;
-        const template = document.querySelector(`#${templateId}`);
+
         const title = target.dataset.title;
         document.querySelector("title").textContent = title;
-        const url = target.href;
-        history.pushState(templateId, title, url);
+
+        history.pushState(templateId, title, target.href);
+
+        const templateId = target.dataset.id;
+        const template = document.querySelector(`#${templateId}`);
         const clone = template.content.cloneNode(true);
+        
         clean(element);
         element.appendChild(clone);
     }
