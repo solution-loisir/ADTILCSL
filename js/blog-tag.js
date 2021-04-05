@@ -19,7 +19,7 @@ function renderTemplate(event, container) {
         const template = document.querySelector(templateId);
         const clone = template.content.cloneNode(true);
 
-        history.pushState(templateId, title, target.href);
+        history.pushState({ id: templateId }, title, target.href);
 
         clean(container);
         container.appendChild(clone);
