@@ -34,7 +34,7 @@ if("content" in document.createElement("template")) {
         manageTemplateState(event, listingSection);
     });
     window.addEventListener("popstate", event => {
-        if(!event.state) window.location = "/blog/";
+        if(!event.state) return window.location = "/blog/";
         const target = document.querySelector(`[data-title="${event.state.title}"]`);
         manageTagState(target, event.state.title);
         renderTemplate(event.state.id, listingSection);
