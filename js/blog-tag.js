@@ -22,8 +22,8 @@ if("content" in document.createElement("template")) {
         if(target.classList.contains("tags")) {
             const title = target.dataset.title;
             const templateId = target.dataset.id;
-            manageTagState(target, title);
             history.pushState({ id: templateId, title: title }, title, target.href);
+            manageTagState(target, title);
             renderTemplate(templateId, listingSection);
         }
     });
