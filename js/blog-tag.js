@@ -1,11 +1,9 @@
 "use strict";
 
-const clean = element => element.innerHTML = "";
-
 const renderTemplate = (templateId, container) => {
     const template = document.querySelector(templateId);
     const clone = template.content.cloneNode(true);
-    clean(container);
+    container.innerHTML = "";
     container.appendChild(clone);
 }
 const manageTagState = (target, title) => {
