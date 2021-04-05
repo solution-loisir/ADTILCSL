@@ -11,19 +11,6 @@ const manageTagState = (target, title) => {
     target.classList.add("active");
     document.querySelector("title").textContent = title;
 }
-function manageTemplateState(event, container) {
-    const target = event.target;
-    if(target.classList.contains("tags")) {
-        const title = target.dataset.title;
-        const templateId = target.dataset.id;
-
-        manageTagState(target, title);
-
-        history.pushState({ id: templateId, title: title }, title, target.href);
-
-        renderTemplate(templateId, container);
-    }
-}
 
 if("content" in document.createElement("template")) {
     const listingSection = document.querySelector(".listing-section");
@@ -31,7 +18,14 @@ if("content" in document.createElement("template")) {
 
     tagContainer.addEventListener("click", event => {
         event.preventDefault();
-        manageTemplateState(event, listingSection);
+        const target = event.target;
+        if(target.classList.contains("tags")) {
+            const title = target.dataset.title;
+            const templateId = target.dataset.id;
+            manageTagState(target, title);
+            history.pushState({ id: templateId, title: title }, title, target.href);
+            renderTemplate(templateId, listingSection);
+        }
     });
     window.addEventListener("popstate", event => {
         if(!event.state) return window.location = "/blog/";
