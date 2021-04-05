@@ -28,7 +28,7 @@ if("content" in document.createElement("template")) {
         }
     });
     window.addEventListener("popstate", event => {
-        if(!event.state) return window.location = "/blog/";
+        if(!event.state) return history.go();
         const target = document.querySelector(`[data-title="${event.state.title}"]`);
         manageTagState(target, event.state.title);
         renderTemplate(event.state.id, listingSection);
