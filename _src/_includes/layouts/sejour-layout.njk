@@ -14,7 +14,7 @@ description = "Accédez à l'information spécifique pour l'année de déploieme
         <li class="tags sejour-tags">
 
         <a href="{{ '/sejour-plein-air/' | url }}" 
-        class="tags sejour-nav {{ 'active' if page.url === '/sejour-plein-air/' | url }}"
+        class="tags {{ 'active' if page.url === '/sejour-plein-air/' | url }}"
         data-id="#general"
         data-title="ADTILCSL | Séjour plein air"
         data-heading="Séjour plein air">Information générale
@@ -26,7 +26,7 @@ description = "Accédez à l'information spécifique pour l'année de déploieme
         <li class="tags sejour-tags">
 
         <a href="{{ sejour.url | url }}" 
-        class="tags sejour-nav {{ 'active' if page.url === sejour.url | url }}"
+        class="tags {{ 'active' if page.url === sejour.url | url }}"
         data-id="#y{{ sejour.data.year }}"
         data-title="ADTILCSL | {{ sejour.data.title }}"
         data-heading="{{ sejour.data.title }}">
