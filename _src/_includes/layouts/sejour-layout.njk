@@ -2,6 +2,7 @@
 layout: base-layout
 ogImage: /images/sejour-plein-air.jpg
 ogImageAlt: Photo du Séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent
+id: sejour-plein-air
 ---
 <main>
 {% contentHeader
@@ -10,13 +11,41 @@ description = "Accédez à l'information spécifique pour l'année de déploieme
 %}
 <nav>
     <ul class="tags-container">
-        <li class="tags sejour-tags"><a href="{{ '/sejour-plein-air/' | url }}" class="sejour-nav {{ 'active' if page.url === '/sejour-plein-air/' | url }}">Information générale</a></li>
+        <li class="tags sejour-tags">
+
+        <a href="{{ '/sejour-plein-air/' | url }}" 
+        class="tags sejour-nav {{ 'active' if page.url === '/sejour-plein-air/' | url }}"
+        data-id="#general"
+        data-title="ADTILCSL | Séjour plein air"
+        data-heading="Séjour plein air">Information générale
+        </a>
+
+        </li>
+
         {% for sejour in collections.sejours | reverse %}
-        <li class="tags sejour-tags"><a href="{{ sejour.url | url }}" class="sejour-nav {{ 'active' if page.url === sejour.url | url }}">{{ sejour.data.year }}</a></li>
+        <li class="tags sejour-tags">
+
+        <a href="{{ sejour.url | url }}" 
+        class="tags sejour-nav {{ 'active' if page.url === sejour.url | url }}"
+        data-id="#y{{ sejour.data.year }}"
+        data-title="ADTILCSL | {{ sejour.data.title }}"
+        data-heading="{{ sejour.data.title }}">
+        {{ sejour.data.year }}
+        </a>
+
+        </li>
         {% endfor %}
     </ul>
 </nav>
-<div class="content">
+<div class="content-section content">
     {{ content | safe }}
 </div>
+{% for sejour in collections.sejours | reverse %}
+    <template id="y{{ sejour.data.year }}">
+        {{ sejour.templateContent | safe }}
+    </template>
+{% endfor %}
+    <template id="general">
+        {{ collections.sejourInformationGeneral[0].templateContent | safe }}
+    </template>
 </main>

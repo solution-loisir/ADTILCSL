@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx @11ty/eleventy --serve",
+    "start": "webpack --mode development --watch & npx @11ty/eleventy --serve",
     "code": "code && npx @11ty/eleventy --serve",
     "clean": "if [ -d docs ]; then trash docs; fi && npx @11ty/eleventy --serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
@@ -13,7 +13,7 @@
     "convert-webp": "node convert-webp.js",
     "generate-favicon": "node generate-favicon.js",
     "test-prod": "ELEVENTY_ENV=prod node youtube-refresh.js && node convert-webp.js && node generate-favicon.js && npx @11ty/eleventy",
-    "prod": "node youtube-refresh.js && node convert-webp.js && node generate-favicon.js && npx @11ty/eleventy"
+    "prod": "node youtube-refresh.js && node convert-webp.js && node generate-favicon.js && webpack --mode production && npx @11ty/eleventy"
   },
   "author": "Mathieu Huot",
   "license": "Apache-2.0",
@@ -22,7 +22,7 @@
     "url": "https://github.com/solution-loisir/ADTILCSL"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.12.1",
     "@toycode/markdown-it-class": "^1.2.4",
     "dotenv": "^8.2.0",
     "fibers": "^5.0.0",
@@ -34,6 +34,8 @@
     "png-to-ico": "^2.1.1",
     "sass": "^1.26.3",
     "sharp": "^0.26.0",
-    "uslug": "^1.0.4"
+    "uslug": "^1.0.4",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
   }
 }

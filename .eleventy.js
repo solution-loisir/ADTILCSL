@@ -28,7 +28,6 @@ module.exports = function(config) {
     const assets = [
         'images',
         'fonts',
-        'js',
         'politiques',
         './favicon.ico',
         './manifest.json'

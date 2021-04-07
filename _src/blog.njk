@@ -13,7 +13,7 @@ pagination:
   reverse: true
 permalink: blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}index.html
 ---
-<section class="listing-section">
+<section class="content-section listing-section">
   {% for post in posts %}
     {% set postDate %}
       {{ post.data.publishedat | timeFormat if post.data.publishedat else post.date | timeFormat }}
