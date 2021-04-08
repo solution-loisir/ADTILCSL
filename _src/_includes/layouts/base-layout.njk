@@ -12,7 +12,7 @@ eleventyComputed:
     <link rel="icon" type="image/x-icon" href="{{ site.base }}/favicon.ico" sizes="16x16 32x32 48x48 256x256" />
     <link rel="icon" type="image/png" href="{{ site.base }}/images/favicon/favicon_192.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="{{ site.base }}/images/favicon/favicon_192.png" />
-    <script defer src="{{ '/js/index.js' | url }}"></script>
+    <script defer src="/js/index.js"></script>
     {{ '<script defer src="/js/blog.js"></script>' | safe if id === "blog-layout" }}
     {{ '<script defer src="/js/sejour.js"></script>' | safe if id === "sejour-plein-air" }}
     <link rel="canonical" href="{{ site.base }}{{ page.url | url }}" />

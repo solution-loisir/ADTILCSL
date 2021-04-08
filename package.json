@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode development --watch & npx @11ty/eleventy --serve",
-    "code": "code && npx @11ty/eleventy --serve",
-    "clean": "if [ -d docs ]; then trash docs; fi && npx @11ty/eleventy --serve",
+    "code": "code && webpack --mode development --watch & npx @11ty/eleventy --serve",
+    "clean": "if [ -d docs ]; then trash docs; fi && webpack --mode development --watch & npx @11ty/eleventy --serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "refresh-youtube": "node youtube-refresh.js",
     "convert-webp": "node convert-webp.js",
