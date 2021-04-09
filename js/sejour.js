@@ -1,5 +1,5 @@
-import { renderTemplate, manageTagState, updateHeading } from "./template-utility";
-import { contentSection, tagContainer, headerTitle } from "./elements";
+import { renderTemplate, manageTagState, updateHeading, overrideSrcAndSrcset } from "./template-utility";
+import { contentSection, tagContainer, headerTitle, images } from "./elements";
 
 if("content" in document.createElement("template")) {
     tagContainer.addEventListener("click", event => {
@@ -16,6 +16,9 @@ if("content" in document.createElement("template")) {
             updateHeading(headerTitle, heading);
             manageTagState(target, title);
             renderTemplate(templateId, contentSection);
+            [...images].forEach(image => {
+                overrideSrcAndSrcset(image); 
+            });
         }
     });
     window.addEventListener("popstate", event => {
@@ -25,5 +28,8 @@ if("content" in document.createElement("template")) {
         updateHeading(headerTitle, event.state.heading);
         manageTagState(target, title);
         renderTemplate(event.state.id, contentSection);
+        [...images].forEach(image => {
+            overrideSrcAndSrcset(image); 
+        });
     });
 }
