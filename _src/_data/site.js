@@ -19,5 +19,6 @@ module.exports = () => {
     data.formationList = "PLNBg23DC-dGPulIwpw11eTYEDotMjh05c";
     data.facebook = "https://www.facebook.com/assoloisirsaintlaurent/";
     data.youtube = "https://www.youtube.com/channel/UCxl_ENVFqZJPHtUED_WPUPg";
+    data.eleventyEnv = process.env.ELEVENTY_ENV;
     return data;
 }

@@ -33,6 +33,7 @@ module.exports = function(config) {
         './manifest.json'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
+    if(process.env.ELEVENTY_ENV !== "prod") config.addPassthroughCopy("js");
     // Shortcodes
     config.addShortcode('card', card);
     config.addShortcode('contentHeader', contentHeader);
@@ -66,27 +67,6 @@ module.exports = function(config) {
                 }
             }
         });
-        /*[...tagSet].forEach(tag => {
-            writeFile(`./_src/${tag}/${tag}.njk`, `
-            ---
-            layout: base-layout
-            pagination:
-                data: collections.${tag}
-                size: 6
-                alias: tag
-                addAllPagesToCollections: true
-            eleventyComputed:
-                title: "{{ tag | lower | slug }}"
-            permalink: ${tag}/{{ tag | lower | slug }}/
-            ---
-            {% set posts = collections[tag] %}
-            
-            {% for post in posts %}
-                <h1>{{ post.data.title }}</h1>
-                <a href="{{ post.url }}"</a>
-            {% endfor %}`)
-            .catch(error => console.error(`Tag template error: `, error));
-        });*/
         return [...tagSet];
     });
     // Libraries

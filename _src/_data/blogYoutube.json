@@ -1,10 +1,10 @@
 {
   "kind": "youtube#playlistItemListResponse",
-  "etag": "0dWPAqSrUX1I7nspUX1I5uw6yTI",
+  "etag": "NnuYqWbiCDK0ZXr9mOe_c38E4H8",
   "items": [
     {
       "kind": "youtube#playlistItem",
-      "etag": "V7ZQwRQo3sfGmyCWPW5jAjzrFgE",
+      "etag": "4kjJlJT9ckYQCU54HGDUqhzmU_I",
       "id": "UExOQmcyM0RDLWRHT2YzcU1VUGRNaWlWQWxLaW5Jbjl2Qy41NkI0NEY2RDEwNTU3Q0M2",
       "snippet": {
         "publishedAt": "2020-10-27T18:47:32Z",
@@ -44,7 +44,9 @@
         "resourceId": {
           "kind": "youtube#video",
           "videoId": "U7YM50vu3MY"
-        }
+        },
+        "videoOwnerChannelTitle": "diplome tilcsl",
+        "videoOwnerChannelId": "UCxl_ENVFqZJPHtUED_WPUPg"
       }
     }
   ],

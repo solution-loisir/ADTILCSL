@@ -1,5 +1,5 @@
-import { renderTemplate, manageTagState, updateHeading, overrideSrcAndSrcset } from "./template-utility";
-import { contentSection, tagContainer, headerTitle, images } from "./elements";
+import { renderTemplate, manageTagState, updateHeading, overrideSrcAndSrcset } from "./template-utility.js";
+import { contentSection, tagContainer, headerTitle, images } from "./elements.js";
 
 if("content" in document.createElement("template")) {
     tagContainer.addEventListener("click", event => {

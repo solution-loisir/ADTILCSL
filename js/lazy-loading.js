@@ -1,5 +1,5 @@
-import { overrideSrcAndSrcset } from "./template-utility";
-import { images } from "./elements";
+import { overrideSrcAndSrcset } from "./template-utility.js";
+import { images } from "./elements.js";
 
 export default function loadingLazyImages() {
 

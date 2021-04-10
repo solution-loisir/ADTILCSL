@@ -7,25 +7,39 @@ eleventyComputed:
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
-    <script>document.documentElement.classList.remove('no-js');</script>
-    <link rel="stylesheet" type="text/css" href="{{ '/style/index.css' | url }}" />
+    <title>ADTILCSL{{ ' | ' + title | replace("&#39;", "'") if title else '' }}</title>
+    <meta name="description" content="{{ description if description else site.description }}" />
     <link rel="icon" type="image/x-icon" href="{{ site.base }}/favicon.ico" sizes="16x16 32x32 48x48 256x256" />
     <link rel="icon" type="image/png" href="{{ site.base }}/images/favicon/favicon_192.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="{{ site.base }}/images/favicon/favicon_192.png" />
-    <script defer src="/js/index.js"></script>
-    {{ '<script defer src="/js/blog.js"></script>' | safe if id === "blog-layout" }}
-    {{ '<script defer src="/js/sejour.js"></script>' | safe if id === "sejour-plein-air" }}
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <link rel="stylesheet" type="text/css" href="{{ '/style/index.css' | url }}" />
     <link rel="canonical" href="{{ site.base }}{{ page.url | url }}" />
-    <title>ADTILCSL{{ ' | ' + title | replace("&#39;", "'") if title else '' }}</title>
-    <meta name="description" content="{{ description if description else site.description }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ description if description else site.description }}" />
     <meta property="og:url" content="{{ site.base }}{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage | url if ogImage else '/images/sejour-plein-air.jpg' | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
-    {{ '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe if (id === 'formationYoutube' or id === 'blogYoutube') }}
-    {{ '<meta property="fb:app_id" content="1277565455782139" />' | safe if (id === 'formationYoutube' or id === 'article' or id === 'blogYoutube') }}
+    <script defer{{ ' type="module" ' | safe if site.eleventyEnv !== "prod" else " " }}src="/js/index.js"></script>
+
+    {{ '<script defer type="module" src="/js/blog.js"></script>' | safe 
+    if id === "blog-layout" and  site.eleventyEnv !== "prod" }}
+
+    {{ '<script defer src="/js/blog.js"></script>' | safe 
+    if id === "blog-layout" and  site.eleventyEnv === "prod" }}
+
+    {{ '<script defer type="module" src="/js/sejour.js"></script>' | safe 
+    if id === "sejour-plein-air" and  site.eleventyEnv !== "prod" }}
+
+    {{ '<script defer src="/js/sejour.js"></script>' | safe 
+    if id === "sejour-plein-air" and  site.eleventyEnv === "prod" }}
+
+    {{ '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe 
+    if (id === 'formationYoutube' or id === 'blogYoutube') }}
+    
+    {{ '<meta property="fb:app_id" content="1277565455782139" />' | safe 
+    if (id === 'formationYoutube' or id === 'article' or id === 'blogYoutube') }}
 </head>
 <body>
     {% include 'partials/_header.njk' %}

@@ -1,5 +1,5 @@
-import { renderTemplate, manageTagState } from "./template-utility";
-import { contentSection, tagContainer } from "./elements";
+import { renderTemplate, manageTagState } from "./template-utility.js";
+import { contentSection, tagContainer } from "./elements.js";
 
 if("content" in document.createElement("template")) {
     tagContainer.addEventListener("click", event => {

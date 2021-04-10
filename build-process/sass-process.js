@@ -8,7 +8,7 @@ module.exports = function(scssPath, cssPath) {
     .then(result => writeFile(cssPath, result[1].css.toString()))
     .catch(error => console.error(error.stack));
 
-    if(process.argv.includes('--serve')) {
+    if(process.env.ELEVENTY_ENV !== "prod") {
         watch(dirname(scssPath), () => sassRender(scssPath, cssPath)
             .then(result => writeFile(cssPath, result.css.toString()))
             .catch(error => console.error(error.stack))
