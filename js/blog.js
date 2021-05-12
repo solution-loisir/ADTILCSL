@@ -1,4 +1,4 @@
-import { renderTemplate, manageTagState } from "./template-utility.js";
+import { renderTemplate, manageTagState, updateTitle } from "./template-utility.js";
 import { contentSection, tagContainer } from "./elements.js";
 
 if("content" in document.createElement("template")) {
@@ -9,7 +9,8 @@ if("content" in document.createElement("template")) {
             const title = target.dataset.title;
             const templateId = target.dataset.id;
             history.pushState({ id: templateId, title: title }, title, target.href);
-            manageTagState(target, title);
+            manageTagState(target);
+            updateTitle(title);
             renderTemplate(templateId, contentSection);
         }
     });
@@ -17,7 +18,8 @@ if("content" in document.createElement("template")) {
         if(!event.state) return history.go();
         const title = event.state.title;
         const target = document.querySelector(`[data-title="${title}"]`);
-        manageTagState(target, title);
+        manageTagState(target);
+        updateTitle(title);
         renderTemplate(event.state.id, contentSection);
     });
 }

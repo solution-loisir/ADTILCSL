@@ -1,4 +1,4 @@
-import { renderTemplate, manageTagState, updateHeading, overrideSrcAndSrcset } from "./template-utility.js";
+import { renderTemplate, manageTagState, updateHeading, updateTitle, overrideSrcAndSrcset } from "./template-utility.js";
 import { contentSection, tagContainer, headerTitle, images } from "./elements.js";
 
 if("content" in document.createElement("template")) {
@@ -14,7 +14,8 @@ if("content" in document.createElement("template")) {
                 title: title, 
                 heading: heading }, title, target.href);
             updateHeading(headerTitle, heading);
-            manageTagState(target, title);
+            manageTagState(target);
+            updateTitle(title);
             renderTemplate(templateId, contentSection);
             [...images].forEach(image => {
                 overrideSrcAndSrcset(image); 
@@ -26,7 +27,8 @@ if("content" in document.createElement("template")) {
         const title = event.state.title;
         const target = document.querySelector(`[data-title="${title}"]`);
         updateHeading(headerTitle, event.state.heading);
-        manageTagState(target, title);
+        manageTagState(target);
+        updateTitle(title);
         renderTemplate(event.state.id, contentSection);
         [...images].forEach(image => {
             overrideSrcAndSrcset(image); 

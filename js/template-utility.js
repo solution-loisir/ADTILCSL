@@ -3,12 +3,13 @@ const renderTemplate = (templateId, container) => {
     const clone = template.content.cloneNode(true);
     container.innerHTML = "";
     container.appendChild(clone);
+    return clone;
 }
-const manageTagState = (target, title) => {
+const manageTagState = target => {
     document.querySelectorAll(".tags").forEach(tag => tag.classList.remove("active"));
     target.classList.add("active");
-    document.querySelector("title").textContent = title;
 }
+const updateTitle = title => document.querySelector("title").textContent = title;
 const updateHeading = (heading, text) => heading.textContent = text;
 
 const overrideSrcAndSrcset = target => {
@@ -20,5 +21,6 @@ export {
     renderTemplate, 
     manageTagState,
     updateHeading,
+    updateTitle,
     overrideSrcAndSrcset
 }
