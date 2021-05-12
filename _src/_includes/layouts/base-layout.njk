@@ -21,20 +21,26 @@ eleventyComputed:
     <meta property="og:url" content="{{ site.base }}{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage | url if ogImage else '/images/sejour-plein-air.jpg' | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
-    <script defer{{ ' type="module" ' | safe if site.eleventyEnv !== "prod" else " " }}src="/js/index.js"></script>
+    
+    {%- scriptTag
+    src = "/js/index.js",
+    moduleIf = site.eleventyEnv !== "prod" 
+    -%}
 
-    {{ '<script defer type="module" src="/js/blog.js"></script>' | safe 
-    if id === "blog-layout" and  site.eleventyEnv !== "prod" }}
+    {%- if id === "blog-layout" %}
+      {% scriptTag
+      src = "/js/blog.js",
+      moduleIf = site.eleventyEnv !== "prod"
+      %}
+    {% endif -%}
 
-    {{ '<script defer src="/js/blog.js"></script>' | safe 
-    if id === "blog-layout" and  site.eleventyEnv === "prod" }}
-
-    {{ '<script defer type="module" src="/js/sejour.js"></script>' | safe 
-    if id === "sejour-plein-air" and  site.eleventyEnv !== "prod" }}
-
-    {{ '<script defer src="/js/sejour.js"></script>' | safe 
-    if id === "sejour-plein-air" and  site.eleventyEnv === "prod" }}
-
+    {%- if id === "sejour-plein-air" %}
+      {% scriptTag
+      src = "/js/sejour.js",
+      moduleIf = site.eleventyEnv !== "prod"
+      %}
+    {% endif -%}
+    
     {{ '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe 
     if (id === 'formationYoutube' or id === 'blogYoutube') }}
     

@@ -8,6 +8,7 @@ const { writeFile } = require('fs').promises;
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
 const searchForm = require('./shortcode/search-form');
+const scriptTag = require("./shortcode/script-tag");
 // Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
@@ -38,6 +39,7 @@ module.exports = function(config) {
     config.addShortcode('card', card);
     config.addShortcode('contentHeader', contentHeader);
     config.addShortcode('searchForm', searchForm);
+    config.addShortcode("scriptTag", scriptTag);
     config.addNunjucksAsyncShortcode('img', imageProcess);
     // Filters
     config.addFilter('timeFormat', timeFormat);
