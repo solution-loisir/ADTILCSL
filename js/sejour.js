@@ -1,5 +1,6 @@
-import { renderTemplate, manageTagState, updateHeading, updateTitle, overrideSrcAndSrcset } from "./template-utility.js";
+import { renderTemplate, cloneTemplate, manageTagState, updateHeading, updateTitle } from "./template-utility.js";
 import { contentSection, tagContainer, headerTitle, images } from "./elements.js";
+import loadingLazyImages from "./lazy-loading.js";
 
 if("content" in document.createElement("template")) {
     tagContainer.addEventListener("click", event => {
@@ -16,10 +17,8 @@ if("content" in document.createElement("template")) {
             updateHeading(headerTitle, heading);
             manageTagState(target);
             updateTitle(title);
-            renderTemplate(templateId, contentSection);
-            [...images].forEach(image => {
-                overrideSrcAndSrcset(image); 
-            });
+            renderTemplate(cloneTemplate(templateId), contentSection);
+            loadingLazyImages(images);
         }
     });
     window.addEventListener("popstate", event => {
@@ -29,9 +28,7 @@ if("content" in document.createElement("template")) {
         updateHeading(headerTitle, event.state.heading);
         manageTagState(target);
         updateTitle(title);
-        renderTemplate(event.state.id, contentSection);
-        [...images].forEach(image => {
-            overrideSrcAndSrcset(image); 
-        });
+        renderTemplate(cloneTemplate(event.state.id), contentSection);
+        loadingLazyImages(images);
     });
 }

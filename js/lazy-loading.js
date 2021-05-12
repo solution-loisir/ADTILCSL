@@ -1,7 +1,9 @@
-import { overrideSrcAndSrcset } from "./template-utility.js";
-import { images } from "./elements.js";
+const overrideSrcAndSrcset = target => {
+  if(target.dataset.src) target.src = target.dataset.src;
+  if(target.dataset.srcset) target.srcset = target.dataset.srcset;
+}
 
-export default function loadingLazyImages() {
+export default function loadingLazyImages(targetList) {
 
   if('IntersectionObserver' in window) {
     const options = {
@@ -19,11 +21,11 @@ export default function loadingLazyImages() {
       }), options
     });
     
-    [...images].forEach(element => Observer.observe(element));
+    [...targetList].forEach(image => Observer.observe(image));
 
   } else {
 
-    [...images].forEach(image => overrideSrcAndSrcset(image));
+    [...targetList].forEach(image => overrideSrcAndSrcset(image));
 
   }
 }

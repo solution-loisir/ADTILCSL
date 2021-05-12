@@ -5,7 +5,7 @@ const images = document.getElementsByClassName("lazy");
 
 export {
     contentSection, 
-    tagContainer, 
-    headerTitle,
-    images
+    tagContainer,
+    images,
+    headerTitle
 }

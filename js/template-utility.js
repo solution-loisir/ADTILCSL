@@ -1,8 +1,10 @@
-const renderTemplate = (templateId, container) => {
-    const template = document.querySelector(templateId);
-    const clone = template.content.cloneNode(true);
+const renderTemplate = (clone, container) => {
     container.innerHTML = "";
     container.appendChild(clone);
+}
+const cloneTemplate = templateId => {
+    const template = document.querySelector(templateId);
+    const clone = template.content.cloneNode(true);
     return clone;
 }
 const manageTagState = target => {
@@ -12,15 +14,10 @@ const manageTagState = target => {
 const updateTitle = title => document.querySelector("title").textContent = title;
 const updateHeading = (heading, text) => heading.textContent = text;
 
-const overrideSrcAndSrcset = target => {
-    if(target.dataset.src) target.src = target.dataset.src;
-    if(target.dataset.srcset) target.srcset = target.dataset.srcset;
-}
-
 export { 
-    renderTemplate, 
+    renderTemplate,
+    cloneTemplate, 
     manageTagState,
     updateHeading,
-    updateTitle,
-    overrideSrcAndSrcset
+    updateTitle
 }
