@@ -4,7 +4,7 @@ pagination:
   data: collections.postsTags
   size: 1
   alias: tag
-addAllPagesToCollections: true
+  addAllPagesToCollections: true
 eleventyComputed:
   title: Blog - {{ tag | lower | slug }}
 permalink: blog/{{ tag | lower | slug }}/
