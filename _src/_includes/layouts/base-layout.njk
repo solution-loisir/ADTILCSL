@@ -22,7 +22,7 @@ eleventyComputed:
     <meta property="og:image" content="{{ ogImage | url if ogImage else '/images/sejour-plein-air.jpg' | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
     
-    {%- scriptTag src = "/js/index.js" -%}
+    {% scriptTag src = "/js/index.js" -%}
 
     {%- if id === "blog-layout" %}
       {% scriptTag src = "/js/blog.js" %}
