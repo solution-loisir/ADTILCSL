@@ -11,7 +11,7 @@ permalink: blog/{{ tag | lower | slug }}/
 ---
 {% set posts = collections[tag] | reverse %}
 
-<section class="listing-section">
+<section class="content-section listing-section">
   {% for post in posts %}
     {% set postDate %}
       {{ post.data.publishedat | timeFormat if post.data.publishedat else post.date | timeFormat }}
