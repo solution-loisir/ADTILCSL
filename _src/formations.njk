@@ -10,6 +10,7 @@ pagination:
   data: collections.formationVidéo
   size: 9
   alias: videos
+  reverse: true
 permalink: formations/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}index.html
 ---
 <section class="listing-section">
@@ -18,7 +19,7 @@ permalink: formations/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
     defaultClass = 'listing-card',
     title = video.data.title,
     detail = video.data.publishedat | timeFormat,
-    text = video.data.description,
+    text = video.data.description | truncate(180),
     link = video.url | url,
     linkText = 'Participe à la formation!'
     %}
