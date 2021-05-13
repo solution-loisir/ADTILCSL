@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = () => {
     const data = {}
     if(process.env.ELEVENTY_ENV === "dev") {
