@@ -1,4 +1,4 @@
-import { renderTemplate, cloneTemplate, manageTagState, updateTitle } from "./template-utility.js";
+import { renderTemplate, manageTagState, updateTitle } from "./template-utility.js";
 import { contentSection, tagContainer } from "./elements.js";
 
 if("content" in document.createElement("template")) {
@@ -11,7 +11,7 @@ if("content" in document.createElement("template")) {
             history.pushState({ id: templateId, title: title }, title, target.href);
             manageTagState(target);
             updateTitle(title);
-            renderTemplate(cloneTemplate(templateId), contentSection);
+            renderTemplate(templateId, contentSection);
         }
     });
     window.addEventListener("popstate", event => {
@@ -20,6 +20,6 @@ if("content" in document.createElement("template")) {
         const target = document.querySelector(`[data-title="${title}"]`);
         manageTagState(target);
         updateTitle(title);
-        renderTemplate(cloneTemplate(event.state.id), contentSection);
+        renderTemplate(event.state.id, contentSection);
     });
 }

@@ -1,4 +1,4 @@
-import { renderTemplate, cloneTemplate, manageTagState, updateHeading, updateTitle } from "./template-utility.js";
+import { renderTemplate, manageTagState, updateHeading, updateTitle } from "./template-utility.js";
 import { contentSection, tagContainer, headerTitle, images } from "./elements.js";
 import loadingLazyImages from "./lazy-loading.js";
 
@@ -17,7 +17,7 @@ if("content" in document.createElement("template")) {
             updateHeading(headerTitle, heading);
             manageTagState(target);
             updateTitle(title);
-            renderTemplate(cloneTemplate(templateId), contentSection);
+            renderTemplate(templateId, contentSection);
             loadingLazyImages(images);
         }
     });
@@ -28,7 +28,7 @@ if("content" in document.createElement("template")) {
         updateHeading(headerTitle, event.state.heading);
         manageTagState(target);
         updateTitle(title);
-        renderTemplate(cloneTemplate(event.state.id), contentSection);
+        renderTemplate(event.state.id, contentSection);
         loadingLazyImages(images);
     });
 }
