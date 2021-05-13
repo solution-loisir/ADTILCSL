@@ -22,30 +22,23 @@ eleventyComputed:
     <meta property="og:image" content="{{ ogImage | url if ogImage else '/images/sejour-plein-air.jpg' | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
     
-    {%- scriptTag
-    src = "/js/index.js",
-    moduleIf = site.eleventyEnv !== "prod" 
-    -%}
+    {%- scriptTag src = "/js/index.js" -%}
 
     {%- if id === "blog-layout" %}
-      {% scriptTag
-      src = "/js/blog.js",
-      moduleIf = site.eleventyEnv !== "prod"
-      %}
+      {% scriptTag src = "/js/blog.js" %}
     {% endif -%}
 
     {%- if id === "sejour-plein-air" %}
-      {% scriptTag
-      src = "/js/sejour.js",
-      moduleIf = site.eleventyEnv !== "prod"
-      %}
+      {% scriptTag src = "/js/sejour.js" %}
     {% endif -%}
-    
-    {{ '<link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />' | safe 
-    if (id === 'formationYoutube' or id === 'blogYoutube') }}
-    
-    {{ '<meta property="fb:app_id" content="1277565455782139" />' | safe 
-    if (id === 'formationYoutube' or id === 'article' or id === 'blogYoutube') }}
+
+    {%- if id === "formationYoutube" or id === "blogYoutube" %}
+      <link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />
+    {% endif -%}
+
+    {%- if id === "formationYoutube" or id === "article" or id === "blogYoutube" %}
+      <meta property="fb:app_id" content="1277565455782139" />
+    {% endif -%}
 </head>
 <body>
     {% include 'partials/_header.njk' %}
