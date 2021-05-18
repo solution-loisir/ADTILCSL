@@ -7,28 +7,23 @@ if("content" in document.createElement("template")) {
         event.preventDefault();
         const target = event.target;
         if(target.classList.contains("tags")) {
-            const title = target.dataset.title;
-            const templateId = target.dataset.id;
-            const heading = target.dataset.heading;
-            history.pushState({ 
-                id: templateId, 
-                title: title, 
-                heading: heading }, title, target.href);
-            updateHeading(headerTitle, heading);
+            const state = {...target.dataset};
+            history.pushState(state, state.title, target.href);
+            headerTitle && updateHeading(headerTitle, state.heading);
             manageTagState(target);
-            updateTitle(title);
-            renderTemplate(templateId, contentSection);
-            loadingLazyImages(images);
+            updateTitle(state.title);
+            renderTemplate(state.id, contentSection);
+            images && loadingLazyImages(images);
         }
     });
     window.addEventListener("popstate", event => {
-        if(!event.state) return history.go();
-        const title = event.state.title;
-        const target = document.querySelector(`[data-title="${title}"]`);
-        updateHeading(headerTitle, event.state.heading);
+        const state = event.state;
+        if(!state) return history.go();
+        const target = document.querySelector(`[data-title="${state.title}"]`);
+        headerTitle && updateHeading(headerTitle, state.heading);
         manageTagState(target);
-        updateTitle(title);
-        renderTemplate(event.state.id, contentSection);
-        loadingLazyImages(images);
+        updateTitle(state.title);
+        renderTemplate(state.id, contentSection);
+        images && loadingLazyImages(images);
     });
 }
