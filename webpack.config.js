@@ -3,8 +3,7 @@ const path = require("path");
 module.exports = {
     entry: {
         index: "./js/index.js",
-        blog: "./js/blog.js",
-        sejour: "./js/sejour.js"
+        tagRender: "./js/tagRender.js"
     },
     output: {
         filename: "[name].js",

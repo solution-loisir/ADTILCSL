@@ -5,46 +5,48 @@ ogImageAlt: Photo du Séjour plein air de la Techniques en loisir du Cégep de S
 id: sejour-plein-air
 ---
 <main>
-{% contentHeader
-heading = title,
-description = "Accédez à l'information spécifique pour l'année de déploiement"
-%}
+	
+	{% contentHeader
+	heading = title,
+	description = "Accédez à l'information spécifique pour l'année de déploiement"
+	%}
+	
 	<nav>
-  	<tags-container>
+  	
     	<ul class="tags-container">
-      	<li class="sejour-tags">
-      		<a href="{{ '/sejour-plein-air/' | url }}" 
-      		class="tags {{ 'active' if page.url === '/sejour-plein-air/' | url }}"
-      		data-id="#general"
-      		data-title="ADTILCSL | Séjour plein air"
-      		data-heading="Séjour plein air">Information générale
-      		</a>
-      	</li>
-      	{% for sejour in collections.sejours | reverse %}
-        	<li class="sejour-tags">
-        		<a href="{{ sejour.url | url }}" 
-        		class="tags {{ 'active' if page.url === sejour.url | url }}"
-        		data-id="#y{{ sejour.data.year }}"
-        		data-title="ADTILCSL | {{ sejour.data.title }}"
-        		data-heading="{{ sejour.data.title }}">
-        		{{ sejour.data.year }}
-        		</a>
-        	</li>
-      	{% endfor %}
+    		<li class="sejour-tags">
+      			<a href="{{ '/sejour-plein-air/' | url }}" 
+      			class="tags {{ 'active' if page.url === '/sejour-plein-air/' | url }}"
+      			data-id="#general"
+      			data-title="ADTILCSL | Séjour plein air"
+      			data-heading="Séjour plein air">Information générale
+      			</a>
+    		</li>
+    		{% for sejour in collections.sejours | reverse %}
+        		<li class="sejour-tags">
+        			<a href="{{ sejour.url | url }}" 
+        			class="tags {{ 'active' if page.url === sejour.url | url }}"
+        			data-id="#y{{ sejour.data.year }}"
+        			data-title="ADTILCSL | {{ sejour.data.title }}"
+        			data-heading="{{ sejour.data.title }}">
+        			{{ sejour.data.year }}
+        			</a>
+        		</li>
+    		{% endfor %}
     	</ul>
-  	</tags-container>
+  	
 	</nav>
-	<content-section data-state="default">
+	
 	<div class="content-section content">
-    {{ content | safe }}
+    	{{ content | safe }}
 	</div>
 	{% for sejour in collections.sejours | reverse %}
-  	<template id="y{{ sejour.data.year }}">
-    	{{ sejour.templateContent | safe }}
-  	</template>
+  		<template id="y{{ sejour.data.year }}">
+    		{{ sejour.templateContent | safe }}
+  		</template>
 	{% endfor %}
-  <template id="general">
-    {{ collections.sejourInformationGeneral[0].templateContent | safe }}
-  </template>
-	</content-section>
+  	<template id="general">
+    	{{ collections.sejourInformationGeneral[0].templateContent | safe }}
+  	</template>
+	
 </main>

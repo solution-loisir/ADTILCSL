@@ -21,7 +21,7 @@ export default function loadingLazyImages(targetList) {
       }), options
     });
     
-    [...targetList].forEach(image => Observer.observe(image));
+  [...targetList].forEach(image => Observer.observe(image));
 
   } else {
 
