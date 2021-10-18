@@ -1,9 +1,9 @@
-*~
-*.map
-*.sass-cache
+dist/
 node_modules
+package-lock.json
 .cache
 .vscode/
 .env
 docs
 .DS_Store
+.parcel-cache
