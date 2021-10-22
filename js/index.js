@@ -7,3 +7,9 @@ const images = document.getElementsByClassName("lazy");
 loadingLazyImages(images);
 activateResponsiveMainNav();
 showSearch();
+
+if(document.querySelector('[data-title]')) {
+    import("./tagRender.js")
+    .then(module => module.default())
+    .catch(error => console.error(error.message));
+}

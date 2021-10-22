@@ -14,20 +14,22 @@ eleventyComputed:
     <link rel="apple-touch-icon" href="{{ site.base }}/images/favicon/favicon_192.png" />
     <script>document.documentElement.classList.remove('no-js');</script>
     <link rel="stylesheet" type="text/css" href="{{ '/style/index.css' | url }}" />
-    <link rel="canonical" href="{{ site.base }}{{ page.url | url }}" />
+    <link rel="canonical" href="{{ site.base }}{% if page.url | url not in page.url | url %}{{ page.url | url }}{% endif %}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ description if description else site.description }}" />
-    <meta property="og:url" content="{{ site.base }}{{ page.url | url }}" />
-    <meta property="og:image" content="{{ ogImage | url if ogImage else '/images/sejour-plein-air.jpg' | url }}" />
+    <meta property="og:url" content="{{ site.base }}{% if page.url | url not in page.url | url %}{{ page.url | url }}{% endif %}" />
+    <meta property="og:image" content="{{ ogImage | url if ogImage else 'images/sejour-plein-air.jpg' | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
+    <script type="module" src="/js/index.js"></script>
     
+    {#
     {%- if id === "blog-layout" or id === "sejour-plein-air" %}
       {% scriptTag src = "/js/tagRender.js" %}
     {% endif -%}
     
     {% scriptTag src = "/js/index.js" -%}
-
+    #}
     {%- if id === "formationYoutube" or id === "blogYoutube" %}
       <link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />
     {% endif -%}
@@ -38,7 +40,7 @@ eleventyComputed:
 </head>
 <body>
     {% include 'partials/_header.njk' %}
-    {% if page.url !== '/search/' %}
+    {% if page.url !== 'search/' %}
     {% searchForm
     className = "search-shown-with-js hide",
     id = "search-shown-with-js",

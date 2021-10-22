@@ -1,7 +1,7 @@
 // Utilities
 const htmlmin = require('html-minifier');
 const uslugify = s => require('uslug')(s);
-const sassProcess = require('./build-process/sass-process');
+//const sassProcess = require('./build-process/sass-process');
 const imageProcess = require('./build-process/image-process');
 const { writeFile } = require('fs').promises;
 // Shortcodes
@@ -31,12 +31,13 @@ module.exports = function(config) {
     const assets = [
         'images',
         'fonts',
+        'js',
         'politiques',
         './favicon.ico',
         './manifest.json'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
-    if(process.env.ELEVENTY_ENV !== "prod") config.addPassthroughCopy("js");
+    
     // Shortcodes
     config.addShortcode('card', card);
     config.addShortcode('contentHeader', contentHeader);
@@ -99,7 +100,7 @@ module.exports = function(config) {
     }));
     // Transform
     config.addTransform('htmlmin', (content, output) => {
-        if(process.env.ELEVENTY_ENV === 'prod' && output.endsWith('.html')) {
+        if(output && process.env.ELEVENTY_ENV === 'prod' && output.endsWith('.html')) {
             return htmlmin.minify(content, {
                 useShortDoctype: true,
 				removeComments: true,

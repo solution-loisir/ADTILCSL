@@ -20,7 +20,7 @@ const manageTagState = target => {
 const updateTitle = title => document.querySelector("title").textContent = title;
 const updateHeading = (heading, text) => heading.textContent = text;
 
-if("content" in document.createElement("template")) {
+export default function tagRender() {
     DOM.tagContainer.addEventListener("click", event => {
         event.preventDefault();
         const target = event.target;
