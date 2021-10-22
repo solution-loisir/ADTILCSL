@@ -12,10 +12,12 @@
     "code": "run-s code start",
     "clean": "if [ -d docs ]; then trash docs; fi",
     "debug-11ty": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "refresh-youtube": "node youtube-refresh.js",
-    "convert-webp": "node convert-webp.js",
-    "generate-favicon": "node generate-favicon.js",
-    "prod": "node youtube-refresh.js && node convert-webp.js && node generate-favicon.js && npx @11ty/eleventy && parcel build"
+    "prod:refresh-youtube": "node youtube-refresh.js",
+    "prod:convert-webp": "node convert-webp.js",
+    "prod:generate-favicon": "node generate-favicon.js",
+    "prod:sass": "sass style:docs/style",
+    "prod:eleventy": "npx @11ty/eleventy",
+    "prod": "npm-run-all prod:*"
   },
   "author": "Mathieu Huot",
   "license": "Apache-2.0",
