@@ -19,7 +19,7 @@ d'isolement nécessaires entourant le COVID-19, le coronApéro est une mesure cr
 Nous étions une douzaine de membres lors de cette première édition qui fût couronnée d'un franc succès. Nous avons répété l'expérience à chaque semaine entre le 20 mars et le 8 mai 2020 en s'instituant presque comme une tradition.
 
 ## Les affiches promotionelles
-Passons en revue cette saison de coronapero en images grâces aux excellentes affiches créées par notre présiente ; la radieuse Mélanie Morand.
+Passons en revue cette saison de coronapero en images grâces aux excellentes affiches créées par notre présiente; la radieuse Mélanie Morand.
 
 ### Le 20 mars 2020
 
