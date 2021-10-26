@@ -7,7 +7,7 @@ id: sejour-plein-air
 <main>
 	
 	{% contentHeader
-	heading = title,
+	heading = "Séjour plein air",
 	description = "Accédez à l'information spécifique pour l'année de déploiement"
 	%}
 	
@@ -18,8 +18,8 @@ id: sejour-plein-air
       			<a href="{{ '/sejour-plein-air/' | url }}" 
       			class="tags {{ 'active' if page.url === '/sejour-plein-air/' | url }}"
       			data-id="#general"
-      			data-title="ADTILCSL | Séjour plein air"
-      			data-heading="Séjour plein air">Information générale
+      			data-title="ADTILCSL | Séjour plein air">
+				Information générale
       			</a>
     		</li>
     		{% for sejour in collections.sejours | reverse %}
@@ -27,8 +27,7 @@ id: sejour-plein-air
         			<a href="{{ sejour.url | url }}" 
         			class="tags {{ 'active' if page.url === sejour.url | url }}"
         			data-id="#y{{ sejour.data.year }}"
-        			data-title="ADTILCSL | {{ sejour.data.title }}"
-        			data-heading="{{ sejour.data.title }}">
+        			data-title="ADTILCSL | {{ sejour.data.title }}">
         			{{ sejour.data.year }}
         			</a>
         		</li>
@@ -36,17 +35,26 @@ id: sejour-plein-air
     	</ul>
   	
 	</nav>
-	
-	<div class="content-section content">
-    	{{ content | safe }}
-	</div>
+
+		<section class="content-section content">
+		
+    		{{ content | safe }}
+
+		</section>
+
 	{% for sejour in collections.sejours | reverse %}
   		<template id="y{{ sejour.data.year }}">
+		  
+			<h1>Séjour {{ sejour.data.year }}</h1>
+
     		{{ sejour.templateContent | safe }}
+		  
   		</template>
 	{% endfor %}
   	<template id="general">
+
     	{{ collections.sejourInformationGeneral[0].templateContent | safe }}
+
   	</template>
 	
 </main>

@@ -7,7 +7,7 @@ tags:
   - pages
   - sejourInformationGeneral
 ---
-## Information générale
+# Information générale
 {{ description }}
 ## Comment se rendre
 *À venir...*

@@ -74,6 +74,7 @@ module.exports = function(config) {
         });
         return [...tagSet];
     });
+
     // Libraries
     config.setFrontMatterParsingOptions({
         excerpt: true,
