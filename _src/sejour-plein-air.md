@@ -10,7 +10,7 @@ tags:
 # Information générale
 À chaque année au mois d'octobre, le Séjour plein air a lieu au [Camp Bruchési](https://www.campbruchesi.ca/ "Site web du Camp Bruchési") situé à Saint-Hippolyte dans les laurentides. c'est l'occasion pour les étudiants du cours l'Adulte le sport et le plein air de réaliser leurs projets.
 
-Le Séjour c'est aussi un événement qui mets en relation étudiants, enseignants, collaborateurs et diplômés dans un environnement naturel d'une grande beauté et un contexte favorisant les interactions d'une grande richesse.
+Le Séjour c'est aussi un événement qui mets en relation étudiants, enseignants, collaborateurs et diplômés dans un environnement naturel d'une grande beauté et dans un contexte favorisant les interactions d'une grande richesse.
 
 Le Séjour plein air est d'abord et avant tout une célébration du loisir pour tous ceux qui ont la chance d'y participer!
 
