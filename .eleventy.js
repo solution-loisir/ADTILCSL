@@ -1,14 +1,13 @@
+const cssOutput = "./docs/style/index.css";
 // Utilities
 const htmlmin = require('html-minifier');
 const uslugify = s => require('uslug')(s);
 //const sassProcess = require('./build-process/sass-process');
 const imageProcess = require('./build-process/image-process');
-const { writeFile } = require('fs').promises;
 // Shortcodes
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
 const searchForm = require('./shortcode/search-form');
-const scriptTag = require("./shortcode/script-tag");
 // Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
@@ -20,14 +19,11 @@ const markdownItTocDoneRight = require('markdown-it-toc-done-right');
 const markdownItClass = require('@toycode/markdown-it-class');
 
 module.exports = function(config) {
-    // Sass pre-processing
-    /*
-    sassProcess('./style/index.scss', './docs/style/index.css');
+    // Refreshes Browser on style change.
     config.setBrowserSyncConfig({
-        files: './docs/style/index.css'
+        files: cssOutput
     });
-    */
-    // Passthrough copy
+
     const assets = [
         'images',
         'fonts',
@@ -42,7 +38,6 @@ module.exports = function(config) {
     config.addShortcode('card', card);
     config.addShortcode('contentHeader', contentHeader);
     config.addShortcode('searchForm', searchForm);
-    config.addShortcode("scriptTag", scriptTag);
     config.addNunjucksAsyncShortcode('img', imageProcess);
     // Filters
     config.addFilter('timeFormat', timeFormat);

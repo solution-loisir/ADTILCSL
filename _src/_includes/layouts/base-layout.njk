@@ -22,19 +22,11 @@ eleventyComputed:
     <meta property="og:image" content="{{ ogImage | url if ogImage else 'images/sejour-plein-air.jpg' | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
     <script type="module" src="/js/index.js"></script>
-    
-    {#
-    {%- if id === "blog-layout" or id === "sejour-plein-air" %}
-      {% scriptTag src = "/js/tagRender.js" %}
-    {% endif -%}
-    
-    {% scriptTag src = "/js/index.js" -%}
-    #}
     {%- if id === "formationYoutube" or id === "blogYoutube" %}
       <link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />
     {% endif -%}
 
-    {%- if id === "formationYoutube" or id === "article" or id === "blogYoutube" %}
+    {%- if id === "formationYoutube" or id === "article" or id === "blogYoutube" or id === "sejours" %}
       <meta property="fb:app_id" content="1277565455782139" />
     {% endif -%}
 </head>

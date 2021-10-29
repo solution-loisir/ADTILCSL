@@ -1,1 +1,0 @@
-module.exports = ({ src }) => `<script defer${ process.env.ELEVENTY_ENV !== "prod" ? ` type="module" ` : " "}src="${src}"></script>`;

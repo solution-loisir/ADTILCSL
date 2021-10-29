@@ -5,6 +5,8 @@ eleventyComputed:
   title: "Séjour plein air {{ year }}"
 tags:
   - sejours
+id: sejours
 ---
 # Séjour {{ year }}
 {{ content | safe }}
+{% include 'partials/comments.njk' %}
