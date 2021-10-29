@@ -32,6 +32,9 @@
     object-fit: cover;
     vertical-align: bottom;
   }
+  li:last-child {
+    flex-grow: 10;
+  }
   @media (max-aspect-ratio: 1/1) {
     li {
       height: 30vh;
