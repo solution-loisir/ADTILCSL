@@ -12,6 +12,7 @@
     "vscode": "code",
     "code": "run-s vscode start",
     "clean": "if [ -d docs ]; then trash docs; fi",
+    "clean:start": "run-s clean start",
     "debug-11ty": "DEBUG=Eleventy* npx @11ty/eleventy",
     "prod:refresh-youtube": "node youtube-refresh.js",
     "prod:convert-webp": "node convert-webp.js",
