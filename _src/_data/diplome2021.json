@@ -1,0 +1,26 @@
+[
+    {
+      "input": "/images/groupe-diplome-sejour_2021.jpg",
+      "width": 572,
+      "alt": "Photo de groupe des diplômés 2021!",
+      "lazy": true
+    },
+    {
+      "input": "/images/groupe-diplome-sejour-folle.jpg",
+      "width": 572,
+      "alt": "Photo de groupe des diplômés folles 2021!",
+      "lazy": true  
+    },
+    {
+      "input": "/images/henrichon.jpg",
+      "width": 572,
+      "alt": "Andrée-Anne Henrichon",
+      "lazy": true  
+    },
+    {
+      "input": "/images/diplomés2021-01596.jpg",
+      "width": 572,
+      "alt": "Diplômée au Séjour plein air 2021",
+      "lazy": true  
+    }
+]
