@@ -16,6 +16,7 @@ export default function loadingLazyImages(targetList) {
         const target = entry.target;
         if(entry.isIntersecting) {
           overrideSrcAndSrcset(target);
+          target.parentNode.dataset.lazyState = "seen";
           observer.unobserve(target);
         }
       }), options

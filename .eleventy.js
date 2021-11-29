@@ -8,6 +8,7 @@ const imageProcess = require('./build-process/image-process');
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
 const searchForm = require('./shortcode/search-form');
+const picture = require("./shortcode/picture");
 // Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
@@ -38,6 +39,7 @@ module.exports = function(config) {
     config.addShortcode('card', card);
     config.addShortcode('contentHeader', contentHeader);
     config.addShortcode('searchForm', searchForm);
+    config.addAsyncShortcode("picture", picture);
     config.addNunjucksAsyncShortcode('img', imageProcess);
     // Filters
     config.addFilter('timeFormat', timeFormat);

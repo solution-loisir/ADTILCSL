@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .hero {
     position: relative;
     background-image: linear-gradient(15deg, lighten(#bce7f7, 10%), darken(#bce7f7, 10%));
@@ -5,8 +7,8 @@
 }
 .hero__img-container {
     height: 0;
-    padding-bottom: 9 / 16 * 350px;
-    grid-column: 3 /12;
+    padding-bottom: math.div(9, 16) * 350px;
+    grid-column: 3 / 12;
     grid-row: 2;
     margin-bottom: 7rem;
     @media(min-width: $medium) {

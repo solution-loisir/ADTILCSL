@@ -11,7 +11,7 @@
     "start": "npm-run-all --parallel dev:*",
     "vscode": "code",
     "code": "run-s vscode start",
-    "clean": "if [ -d docs ]; then trash docs; fi",
+    "clean": "if [ -d docs ]; then rm -rf docs; fi",
     "clean:start": "run-s clean start",
     "debug-11ty": "DEBUG=Eleventy* npx @11ty/eleventy",
     "prod:refresh-youtube": "node youtube-refresh.js",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-img": "^1.0.0",
     "@toycode/markdown-it-class": "^1.2.4",
     "dotenv": "^8.2.0",
     "fibers": "^5.0.0",
@@ -38,9 +39,10 @@
     "markdown-it-toc-done-right": "^4.2.0",
     "npm-run-all": "^4.1.5",
     "number-generator": "^4.0.4",
+    "outdent": "^0.8.0",
     "png-to-ico": "^2.1.1",
     "sass": "^1.26.3",
-    "sharp": "^0.26.0",
+    "sharp": "^0.29.1",
     "uslug": "^1.0.4"
   }
 }

@@ -2,7 +2,7 @@ module.exports = (alt, className, overflow, { fallbackPath, fallbackPlaceholder,
         lazyImage(width, height) {
             return `
 ${overflow ? `<figure class="overflow-auto${className ? ` ${className}` : ''}"><div style="width: ${width}px;">`: ""}
-<picture class="lazy-picture">
+<picture class="lazy-picture" data-lazy-state="unseen">
 <source type="image/webp" srcset="${webpPlaceholder}" data-srcset="${webpPath}" class="lazy" />
 <img src="${fallbackPlaceholder}" data-src="${fallbackPath}" alt="${alt}" width="${width}" height="${height}" title="${alt}" class="lazy${className ? ` ${className}` : ''}" />
 </picture>

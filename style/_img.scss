@@ -14,6 +14,13 @@
 .no-js .lazy-picture {
   display: none;
 }
+.lazy-picture[data-lazy-state="unseen"] > img {
+  filter: blur(8px);
+  transition: filter 0.3s ease-in;
+}
+.lazy-picture[data-lazy-state="seen"] > img {
+  filter: unset;
+}
 .masonry {
   ul {
     list-style: none;
