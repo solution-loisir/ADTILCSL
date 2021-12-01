@@ -1,6 +1,7 @@
 const overrideSrcAndSrcset = target => {
   if(target.dataset.src) target.src = target.dataset.src;
   if(target.dataset.srcset) target.srcset = target.dataset.srcset;
+  target.parentNode.dataset.lazyState = "seen";
 }
 
 export default function loadingLazyImages(targetList) {
@@ -13,11 +14,9 @@ export default function loadingLazyImages(targetList) {
     }
     const Observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        const target = entry.target;
         if(entry.isIntersecting) {
-          overrideSrcAndSrcset(target);
-          target.parentNode.dataset.lazyState = "seen";
-          observer.unobserve(target);
+          overrideSrcAndSrcset(entry.target);
+          observer.unobserve(entry.target);
         }
       }), options
     });
