@@ -6,7 +6,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:eleventy": "npx @11ty/eleventy --serve",
+    "dev:eleventy": "npx @11ty/eleventy --serve --incremental",
     "dev:sass": "sass --watch style:docs/style",
     "start": "npm-run-all --parallel dev:*",
     "vscode": "code",
