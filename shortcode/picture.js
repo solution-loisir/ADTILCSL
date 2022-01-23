@@ -31,7 +31,7 @@ module.exports = async ({
       return outdent`
     <picture class="lazy-picture" data-lazy-state="unseen">
     ${Object.values(metadata).map(entry => {
-      return `<source type="${entry[0].sourceType}" srcset="${entry[0].srcset}" data-srcset="${entry.filter(imageObject => imageObject.width !== 1).map(filtered => filtered.srcset).join(", ")}" sizes="${sizes}" class="lazy">`;
+      return `<source type="${entry[0].sourceType}" srcset="${entry[0].srcset}" data-srcset="${entry.filter((imageObject, index) => index !== 0).map(filtered => filtered.srcset).join(", ")}" sizes="${sizes}" class="lazy">`;
     }).join("\n")}
     <img
       src="${lowSrc.url}"
@@ -46,7 +46,7 @@ module.exports = async ({
     <noscript>
     <picture>
     ${Object.values(metadata).map(entry => {
-      return `<source type="${entry[0].sourceType}" srcset="${entry.filter(imageObject => imageObject.width !== 1).map(filtered => filtered.srcset).join(", ")}" sizes="${sizes}">`;
+      return `<source type="${entry[0].sourceType}" srcset="${entry.filter((imageObject, index) => index !== 0).map(filtered => filtered.srcset).join(", ")}" sizes="${sizes}">`;
     }).join("\n")}
     <img
       src="${highSrc.url}"
@@ -61,7 +61,7 @@ module.exports = async ({
       return outdent`
       <picture>
       ${Object.values(metadata).map(entry => {
-        return `<source type="${entry[0].sourceType}" srcset="${entry.filter(imageObject => imageObject.width !== 1).map(filtered => filtered.srcset).join(", ")}" sizes="${sizes}">`;
+        return `<source type="${entry[0].sourceType}" srcset="${entry.filter((imageObject, index) => index !== 0).map(filtered => filtered.srcset).join(", ")}" sizes="${sizes}">`;
       }).join("\n")}
       <img
         src="${highSrc.url}"
