@@ -14,9 +14,8 @@ Le Séjour c'est aussi un événement qui mets en relation étudiants, enseignan
 
 Le Séjour plein air est d'abord et avant tout une célébration du loisir pour tous ceux qui ont la chance d'y participer!
 
-{% img 
+{% picture 
 input = '/images/sejour-plein-air.jpg',
-width = 555,
 alt = 'Photo de groupe au Séjour plein air 2019',
 lazy = true
 %}
