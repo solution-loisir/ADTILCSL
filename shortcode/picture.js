@@ -68,7 +68,7 @@ module.exports = async ({
         width="${highSrc.width}"
         height="${highSrc.height}"
         alt="${alt}"
-        class="${className.join(" ")}"
+        class="${className.join(" ")}">
       </picture>`;
     }
 }
