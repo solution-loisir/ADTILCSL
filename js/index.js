@@ -13,3 +13,4 @@ if(document.querySelector('[data-title]')) {
     .then(module => module.default())
     .catch(error => console.error(error.message));
 }
+
