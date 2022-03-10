@@ -50,11 +50,22 @@ Vous voudrez probablement [consulter la météo](https://www.accuweather.com/fr/
 </div>
 
 <template id="create-todo-form">
-<input type="text" v-model="todoName" @keyup.enter="createNewTodo" placeholder="Inscrivez un nouvel item">
+<input 
+type="text" 
+v-model="todoName" 
+@keyup.enter="createNewTodo" 
+placeholder="Inscrivez un nouvel item"  
+autofocus 
+autocomplete="off">
 <button @click="createNewTodo">Nouvel item</button>
 </template>
 
 <template id="todo-item">
-<input type="checkbox" :id="todo.uid" @change="todo.isChecked = !todo.isChecked" name="todoListItem" :checked="todo.isChecked">
+<input 
+type="checkbox" 
+:id="todo.uid" 
+@change="todo.isChecked = !todo.isChecked" 
+name="todoListItem" 
+:checked="todo.isChecked">
 <label :for="todo.uid" v-text="todo.name" :class="{'line-through': todo.isChecked}"></label>
 </template>
