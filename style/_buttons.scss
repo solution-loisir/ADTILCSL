@@ -37,3 +37,13 @@
         background-color: var(--white, #fdfefe);
     }
 }
+.todo-remove-btn {
+    font-size: 1em;
+    background: #eeeeee;
+    border: var(--white, #fdfefe);
+    border-radius: 5px;
+}
+.todo-remove-btn:hover {
+    cursor: pointer;
+    background: var(--white, #fdfefe);
+}
