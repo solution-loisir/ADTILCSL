@@ -61,8 +61,13 @@ img, object, footer, header {
     max-width: 100%;
     height: auto;
 }
-figure {margin: 0;}
-nav ul {list-style-type: none;}
+figure {
+    margin: 0;
+}
+ul[role="list"],
+nav ul {
+    list-style-type: none;
+}
 nav a {
     color: inherit;
     text-decoration: none;
@@ -134,4 +139,14 @@ a, a:active {
 }
 .overflow-auto {
     overflow: auto;
+}
+.line-through {
+    text-decoration: line-through;
+}
+[v-cloak] {
+    visibility: hidden;
+}
+input {
+    font-size: inherit;
+    font-family: inherit;
 }

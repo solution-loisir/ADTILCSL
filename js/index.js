@@ -14,3 +14,8 @@ if(document.querySelector('[data-title]')) {
     .catch(error => console.error(error.message));
 }
 
+if(window.location.pathname === "/sejour-plein-air/") {
+    import("./what-to-bring-todo-list.js")
+    .then(module => module)
+    .catch(error => console.error(error));
+}
