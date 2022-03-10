@@ -50,7 +50,7 @@ Vous voudrez probablement [consulter la météo](https://www.accuweather.com/fr/
 </div>
 
 <template id="create-todo-form">
-<input type="text" v-model="todoName">
+<input type="text" v-model="todoName" @keyup.enter="createNewTodo" placeholder="Inscrivez un nouvel item">
 <button @click="createNewTodo">Nouvel item</button>
 </template>
 
