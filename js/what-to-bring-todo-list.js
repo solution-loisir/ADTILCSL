@@ -54,7 +54,10 @@ createApp({
   TodoItem,
 
   createNewTodo() {
-    if(!this.todoName) return;
+    if(!this.todoName.trim()) {
+      this.todoName = "";
+      return;
+    };
     const newTodo = {
       uid: generateUid(),
       name: this.todoName,
