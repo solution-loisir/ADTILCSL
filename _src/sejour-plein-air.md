@@ -36,7 +36,7 @@ Vous voudrez probablement [consulter la météo](https://www.accuweather.com/fr/
 <li v-show="!todos.length"><p>Il n'y a aucun item.</p></li>
 <li v-for="todo in filteredTodos(item => !item.isChecked)" :key="todo.uid">
 <span v-scope="TodoItem()"></span>
-<button @click="removeTodo(todo)" title="Supprimer">❌</button>
+<button @click="removeTodo(todo)" title="Supprimer" class="todo-remove-btn">❌</button>
 </li>
 </ul>
 
@@ -55,8 +55,7 @@ type="text"
 v-model="todoName" 
 @keyup.enter="createNewTodo" 
 placeholder="Inscrivez un nouvel item"  
-autofocus 
-autocomplete="off">
+/>
 <button @click="createNewTodo">Nouvel item</button>
 </template>
 
@@ -66,6 +65,7 @@ type="checkbox"
 :id="todo.uid" 
 @change="todo.isChecked = !todo.isChecked" 
 name="todoListItem" 
-:checked="todo.isChecked">
-<label :for="todo.uid" v-text="todo.name" :class="{'line-through': todo.isChecked}"></label>
+:checked="todo.isChecked"
+/>
+<label :for="todo.uid" :class="{'line-through': todo.isChecked}">${ todo.name }</label>
 </template>
