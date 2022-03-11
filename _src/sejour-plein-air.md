@@ -27,7 +27,7 @@ Vous voudrez probablement [consulter la météo](https://www.accuweather.com/fr/
 ## Quoi apporter
 
 <div id="what-to-bring-todo-list" v-scope v-effect="save()">
-<form @submit.prevent v-scope="CreateTodoForm()"></form>
+<form @submit.prevent @click="keepInputFocused" v-scope="CreateTodoForm()"></form>
 <br>
 <button @click="removeTodoStorage">Réinitialiser la liste par défault</button>
 

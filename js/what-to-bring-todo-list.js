@@ -58,6 +58,7 @@ createApp({
       this.todoName = "";
       return;
     };
+
     const newTodo = {
       uid: generateUid(),
       name: this.todoName,
@@ -72,6 +73,10 @@ createApp({
     this.createNewTodo();
     event.target.focus();
     event.target.value = "";
+  },
+
+  keepInputFocused(event) {
+    event.currentTarget.querySelector("input[type=text]").focus();
   },
 
   filteredTodos(condition) {
