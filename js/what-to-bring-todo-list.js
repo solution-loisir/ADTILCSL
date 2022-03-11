@@ -71,6 +71,7 @@ createApp({
     event.target.blur();
     this.createNewTodo();
     event.target.focus();
+    event.target.value = "";
   },
 
   filteredTodos(condition) {
