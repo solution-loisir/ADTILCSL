@@ -70,6 +70,7 @@ createApp({
   submitTodoWithEnterKey(event) {
     event.target.blur();
     this.createNewTodo();
+    event.target.focus();
   },
 
   filteredTodos(condition) {
