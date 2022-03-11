@@ -67,8 +67,8 @@ createApp({
     this.todoName = "";
   },
 
-  submitTodoWithEnterKey() {
-    this.$el.value = this.todoName;
+  submitTodoWithEnterKey(event) {
+    event.target.blur();
     this.createNewTodo();
   },
 
