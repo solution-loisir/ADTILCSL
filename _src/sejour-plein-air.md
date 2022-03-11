@@ -53,7 +53,7 @@ Vous voudrez probablement [consulter la météo](https://www.accuweather.com/fr/
 <input 
 type="text" 
 v-model="todoName" 
-@keyup.enter="createNewTodo" 
+@keyup.enter="submitTodoWithEnterKey" 
 placeholder="Inscrivez un nouvel item"  
 />
 <button @click="createNewTodo">Nouvel item</button>

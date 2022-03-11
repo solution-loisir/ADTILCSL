@@ -67,6 +67,11 @@ createApp({
     this.todoName = "";
   },
 
+  submitTodoWithEnterKey() {
+    this.$el.value = this.todoName;
+    this.createNewTodo();
+  },
+
   filteredTodos(condition) {
     return this.todos.filter(condition);
   },
