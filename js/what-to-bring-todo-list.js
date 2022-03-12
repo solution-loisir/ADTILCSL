@@ -34,24 +34,10 @@ const todoStorage = {
   }
 }
 
-function CreateTodoForm() {
-  return {
-    $template: "#create-todo-form"
-  }
-}
-
-function TodoItem() {
-  return {
-    $template: "#todo-item"
-  }
-}
-
 createApp({
-  $delimiters: ['${', '}'],
+  $delimiters: ['#{', '}'],
   todos: todoStorage.fetch(),
   todoName: "",
-  CreateTodoForm,
-  TodoItem,
 
   createNewTodo() {
     if(!this.todoName.trim()) {

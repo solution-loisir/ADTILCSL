@@ -1,0 +1,9 @@
+<form @submit.prevent @click="keepInputFocused">
+  <input 
+  type="text" 
+  v-model="todoName" 
+  @keyup.enter="submitTodoWithEnterKey" 
+  placeholder="Inscrivez un nouvel item"  
+  />
+  <button @click="createNewTodo">Nouvel item</button>
+</form>
