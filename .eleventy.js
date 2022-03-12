@@ -76,6 +76,7 @@ module.exports = function(config) {
         excerpt: true,
         excerpt_separator: '---excerpt---'
     });
+
     config.setLibrary('md', markdownIt ({
         html: true,
         breaks: true,
@@ -94,7 +95,8 @@ module.exports = function(config) {
     }).use(markdownItClass, {
         h2: 'anchors',
         h3: 'anchors'   
-    }));
+    }).disable("code"));
+
     // Transform
     config.addTransform('htmlmin', (content, output) => {
         if(output && process.env.ELEVENTY_ENV === 'prod' && output.endsWith('.html')) {
@@ -106,6 +108,7 @@ module.exports = function(config) {
         }
         return content
     });
+
     // Aliases
     config.addLayoutAlias('base-layout', 'layouts/base-layout.njk');
     config.addLayoutAlias('post-layout', 'layouts/post-layout.njk');
@@ -115,6 +118,7 @@ module.exports = function(config) {
     config.addLayoutAlias('formations-layout', 'layouts/formations-layout.njk');
     config.addLayoutAlias('videos-layout', 'layouts/videos-layout.njk');
     config.addLayoutAlias('conduite-layout', 'layouts/conduite-layout.njk');
+    
     // Configuration
     return {
         dir: {
