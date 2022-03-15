@@ -21,7 +21,7 @@ eleventyComputed:
     <meta property="og:url" content="{{ site.base }}{% if page.url | url not in page.url | url %}{{ page.url | url }}{% endif %}" />
     <meta property="og:image" content="{{ ogImage | url if ogImage else 'images/sejour-plein-air.jpg' | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt if ogImageAlt else 'Photo de groupe prise au séjour plein air de la Techniques en loisir du Cégep de Saint-Laurent.' }}" />
-    <script type="module" src="/js/index.js"></script>
+    <script defer src="/js/index.js"></script>
     {%- if id === "formationYoutube" or id === "blogYoutube" %}
       <link rel="preconnect" href="https://www.youtube.com" crossorigin="anonymous" />
     {% endif -%}

@@ -1,13 +1,13 @@
-import loadingLazyImages from "./lazy-loading.js";
-import activateResponsiveMainNav from "./responsive-nav.js";
-import showSearch from "./search.js";
+import loadingLazyImages from "./dependencies/lazy-loading.js";
+import activateResponsiveMainNav from "./dependencies/responsive-nav.js";
+import showSearch from "./dependencies/search.js";
 
 const images = document.getElementsByClassName("lazy");
 
 loadingLazyImages(images);
 activateResponsiveMainNav();
 showSearch();
-
+/*
 if(document.querySelector('[data-title]')) {
     import("./tagRender.js")
     .then(module => module.default())
@@ -19,3 +19,4 @@ if(window.location.pathname === "/sejour-plein-air/") {
     .then(module => module)
     .catch(error => console.error(error));
 }
+*/

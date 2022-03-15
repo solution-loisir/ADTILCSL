@@ -1,10 +1,10 @@
 {
   "kind": "youtube#playlistItemListResponse",
-  "etag": "NnuYqWbiCDK0ZXr9mOe_c38E4H8",
+  "etag": "mlSMstfDzVSH-V92ghocIlMpbm0",
   "items": [
     {
       "kind": "youtube#playlistItem",
-      "etag": "4kjJlJT9ckYQCU54HGDUqhzmU_I",
+      "etag": "nQOWniaGDIDZvetEBGD9KFeWl4s",
       "id": "UExOQmcyM0RDLWRHT2YzcU1VUGRNaWlWQWxLaW5Jbjl2Qy41NkI0NEY2RDEwNTU3Q0M2",
       "snippet": {
         "publishedAt": "2020-10-27T18:47:32Z",

@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:eleventy": "npx @11ty/eleventy --serve --incremental",
     "dev:sass": "sass --watch style:docs/style",
-    "dev:esbuild": "node esbuild/dev-esbuild.js",
+    "dev:esbuild": "node esbuild/esbuild.js",
     "start": "npm-run-all --parallel dev:*",
     "vscode": "code",
     "code": "run-s vscode start",
@@ -20,7 +20,7 @@
     "prod:generate-favicon": "node generate-favicon.js",
     "prod:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy",
     "prod:sass": "sass --style=compressed style:docs/style",
-    "prod:esbuild": "node esbuild/prod-esbuild.js",
+    "prod:esbuild": "ELEVENTY_ENV=prod node esbuild/esbuild.js",
     "prod": "npm-run-all prod:*"
   },
   "author": "Mathieu Huot",
