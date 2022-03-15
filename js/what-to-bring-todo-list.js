@@ -86,4 +86,4 @@ createApp({
     }
   }
   
-}).mount("#what-to-bring-todo-list");
+}).mount("#what-to-bring-check-list");

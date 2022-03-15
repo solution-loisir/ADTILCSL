@@ -4,6 +4,9 @@ const htmlmin = require('html-minifier');
 const uslugify = s => require('uslug')(s);
 //const sassProcess = require('./build-process/sass-process');
 const imageProcess = require('./build-process/image-process');
+// Plugins
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 // Shortcodes
 const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
@@ -20,6 +23,9 @@ const markdownItTocDoneRight = require('markdown-it-toc-done-right');
 const markdownItClass = require('@toycode/markdown-it-class');
 
 module.exports = function(config) {
+    config.addPlugin(UpgradeHelper);
+    config.addPlugin(EleventyRenderPlugin);
+
     // Refreshes Browser on style change.
     config.setBrowserSyncConfig({
         files: cssOutput

@@ -1,0 +1,47 @@
+{% set CheckboxesAndLabels %}
+<input 
+type="checkbox" 
+:id="todo.uid" 
+@change="todo.isChecked = !todo.isChecked" 
+name="todoListItem" 
+:checked="todo.isChecked" 
+/>
+<label :for="todo.uid" :class="{'line-through': todo.isChecked}">#{ todo.name }</label>
+{% endset %}
+
+<div id="what-to-bring-check-list" v-scope v-effect="save()">
+
+  <form @submit.prevent @click="keepInputFocused">
+    <input 
+    type="text" 
+    v-model="todoName" 
+    @keyup.enter="submitTodoWithEnterKey" 
+    placeholder="Inscrivez un nouvel item"  
+    />
+    <button @click="createNewTodo">Nouvel item</button>
+  </form>
+
+  <br>
+  <button @click="removeTodoStorage">Réinitialiser la liste par défault</button>
+  
+  <ul role="list" v-cloak>
+    <li v-show="!filteredTodos(item => !item.isChecked).length && todos.length"><p>Vous êtes prêts!</p></li>
+    <li v-show="!todos.length"><p>Il n'y a aucun item.</p></li>
+    <template v-for="todo in filteredTodos(item => !item.isChecked)" :key="todo.uid">
+      <li>
+        {{- CheckboxesAndLabels | safe -}}
+        <button @click="removeTodo(todo)" title="Supprimer" class="todo-remove-btn">❌</button>
+      </li>
+    </template>
+  </ul>
+
+  <hr v-show="filteredTodos(item => item.isChecked).length">
+
+  <ul role="list" v-cloak>
+    <template v-for="todo in filteredTodos(item => item.isChecked)" :key="todo.uid">
+      <li>
+        {{- CheckboxesAndLabels | safe -}}
+      </li>
+    </template>
+  </ul>
+</div>

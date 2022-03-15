@@ -1,8 +1,0 @@
-<input 
-type="checkbox" 
-:id="todo.uid" 
-@change="todo.isChecked = !todo.isChecked" 
-name="todoListItem" 
-:checked="todo.isChecked"
-/>
-<label :for="todo.uid" :class="{'line-through': todo.isChecked}">#{ todo.name }</label>

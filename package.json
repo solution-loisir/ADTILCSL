@@ -30,7 +30,6 @@
     "url": "https://github.com/solution-loisir/ADTILCSL"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^1.0.0",
     "@toycode/markdown-it-class": "^1.2.4",
     "dotenv": "^8.2.0",
@@ -48,6 +47,8 @@
     "uslug": "^1.0.4"
   },
   "dependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-upgrade-help": "^1.0.1",
     "petite-vue": "^0.4.1"
   }
 }

@@ -26,4 +26,4 @@ Le Camp Bruchési est situé au : [50 365e avenue, Saint-Hippolyte (Québec) J8A
 Vous voudrez probablement [consulter la météo](https://www.accuweather.com/fr/ca/saint-hippolyte/j8a/hourly-weather-forecast/56156 "Météo pour Saint-Hippolyte sur AccuWeather") avant de vous rendre au séjour. Ne serait-ce que pour savoir quel type de vêtement apporter ou choisir l'épaisseur de votre sac de couchage (la literie n'est pas fourni).
 ## Quoi apporter
 
-{% include "todo-list-component/what-to-bring-todo-list.njk" %}
+{% renderFile "./_src/Apps/what-to-bring-check-list.njk" %}
