@@ -31,6 +31,8 @@
   },
   "devDependencies": {
     "@11ty/eleventy-img": "^1.0.0",
+    "@swc/cli": "^0.1.55",
+    "@swc/core": "^1.2.158",
     "@toycode/markdown-it-class": "^1.2.4",
     "dotenv": "^8.2.0",
     "esbuild": "^0.14.13",
