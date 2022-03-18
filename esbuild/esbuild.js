@@ -3,7 +3,6 @@ const fs = require("fs");
 const path = require("path");
 
 const jsInputFolder = "js";
-console.log(jsInputFolder);
 
 const scripts = fs.readdirSync(jsInputFolder)
 .map(scriptPath => path.join(jsInputFolder, scriptPath))
