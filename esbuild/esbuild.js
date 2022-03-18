@@ -1,7 +1,10 @@
 const esbuild = require("esbuild");
 const fs = require("fs");
+const path = require("path");
 
-const scripts = fs.readdirSync("./js/").map(scriptPath => `js/${scriptPath}`).filter(scriptPath => scriptPath !== "js/dependencies");
+const jsInputFolder = path.dirname("js/*");
+
+const scripts = fs.readdirSync(jsInputFolder).map(scriptPath => path.join(jsInputFolder, scriptPath)).filter(scriptPath => scriptPath !== path.join(jsInputFolder, "dependencies"));
 
 const isProd = process.env.ELEVENTY_ENV === "prod";
 
