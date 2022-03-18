@@ -34,6 +34,7 @@
     "@swc/cli": "^0.1.55",
     "@swc/core": "^1.2.158",
     "@toycode/markdown-it-class": "^1.2.4",
+    "chokidar": "^3.5.3",
     "dotenv": "^8.2.0",
     "esbuild": "^0.14.13",
     "fs-extra": "^8.1.0",
