@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const indir = "js";
-const outdir = "docs/js";
+const outdir = "_temp/js";
 
 const scripts = fs.readdirSync(indir)
 .map(scriptPath => path.join(indir, scriptPath))
