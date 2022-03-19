@@ -22,7 +22,7 @@
     "prod:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy",
     "prod:sass": "sass --style=compressed style:docs/style",
     "prod:esbuild": "ELEVENTY_ENV=prod node esbuild/esbuild.js",
-    "prod:swc": "npx swc _temp/js -w -d docs",
+    "prod:swc": "npx swc _temp/js -d docs",
     "prod": "npm-run-all prod:*"
   },
   "author": "Mathieu Huot",

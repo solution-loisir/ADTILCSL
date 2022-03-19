@@ -16,6 +16,6 @@ esbuild.build({
   bundle: true,
   format: "iife",
   watch: !isProd,
-  minify: isProd,
+  minify: false,
   outdir
 }).catch(() => process.exit(1));
