@@ -12,7 +12,6 @@ const card = require('./shortcode/card');
 const contentHeader = require('./shortcode/content-header');
 const searchForm = require('./shortcode/search-form');
 const picture = require("./shortcode/picture");
-const conditionalScript = require("./shortcode/conditionalScript");
 // Filters
 const timeFormat = require('./filters/readable-time');
 const textFormat = require('./filters/text-format');
@@ -47,7 +46,6 @@ module.exports = function(config) {
     config.addShortcode('searchForm', searchForm);
     config.addAsyncShortcode("picture", picture);
     config.addNunjucksAsyncShortcode('img', imageProcess);
-    config.addShortcode("conditionalScript", conditionalScript);
     // Filters
     config.addFilter('timeFormat', timeFormat);
     config.addFilter('textFormat', textFormat);

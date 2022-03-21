@@ -1,0 +1,7 @@
+{
+  "minify": true,
+  "env": {
+    "mode": "entry",
+    "coreJs": 3.21
+  }
+}

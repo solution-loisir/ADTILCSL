@@ -1,21 +1,27 @@
 const esbuild = require("esbuild");
-const fs = require("fs");
-const path = require("path");
 
-const indir = "js";
-const outdir = "_temp/js";
-
-const scripts = fs.readdirSync(indir)
-.map(scriptPath => path.join(indir, scriptPath))
-.filter(scriptPath => scriptPath !== path.join(indir, "dependencies"));
+const modernEntryPoint = "js/index.js";
+const legacyEntryPoint = "js/legacy.js";
+const modernOutdir = "docs/js";
+const tempDir = "_temp/js";
 
 const isProd = process.env.ELEVENTY_ENV === "prod";
 
 esbuild.build({
-  entryPoints: scripts,
+  entryPoints: [modernEntryPoint],
   bundle: true,
-  format: "iife",
+  format: "esm",
+  splitting: true,
   watch: !isProd,
-  minify: false,
-  outdir
+  minify: isProd,
+  outdir: modernOutdir
 }).catch(() => process.exit(1));
+
+if(isProd) {
+  esbuild.build({
+    entryPoints: [legacyEntryPoint],
+    bundle: true,
+    format: "iife",
+    outdir: tempDir
+  }).catch(() => process.exit(1));
+}
