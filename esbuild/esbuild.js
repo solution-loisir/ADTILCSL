@@ -21,6 +21,7 @@ if(isProd) {
   esbuild.build({
     entryPoints: [legacyEntryPoint],
     bundle: true,
+    target: require("browserslist-to-esbuild")(),
     format: "iife",
     outdir: tempDir
   }).catch(() => process.exit(1));

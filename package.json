@@ -38,6 +38,7 @@
     "@swc/core": "^1.2.158",
     "@toycode/markdown-it-class": "^1.2.4",
     "browserslist": "^4.20.2",
+    "browserslist-to-esbuild": "^1.1.1",
     "chokidar": "^3.5.3",
     "core-js": "^3.21.1",
     "dotenv": "^8.2.0",
