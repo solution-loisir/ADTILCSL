@@ -24,7 +24,7 @@ eleventyComputed:
 
     <script type="module" src="/js/index.js"></script>
     {% if site.eleventyEnv === "prod" %}
-      <script nomodule src="/js/legacy.js"></script>
+      <script defer nomodule src="/js/legacy.js"></script>
     {% endif %}
     
     {%- if id === "formationYoutube" or id === "blogYoutube" %}
