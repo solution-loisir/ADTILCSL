@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "ADTILCSL official website.",
   "source": "docs/index.html",
-  "browserslist": "defaults",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:eleventy": "npx @11ty/eleventy --serve --incremental",
