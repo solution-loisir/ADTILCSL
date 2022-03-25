@@ -6,8 +6,8 @@ const tempLegacyEntryPoint = "_temp/js/legacy.js";
 const outdir = "docs/js";
 
 const isProd = process.env.ELEVENTY_ENV === "prod";
-const isBundlingPolyfills = process.env.ESBUILD_ENV === "bundle_polyfills";
 const isBundlingLegacy = process.env.ESBUILD_ENV === "bundle_legacy";
+const isBundlingPolyfills = process.env.ESBUILD_ENV === "bundle_polyfills";
 
 if(!isBundlingPolyfills) {
   esbuild.build({
