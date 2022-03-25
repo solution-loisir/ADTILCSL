@@ -2,9 +2,8 @@ const esbuild = require("esbuild");
 const browserslist = require("browserslist-to-esbuild")();
 
 const modernEntryPoint = "js/index.js";
-const legacyOutfile = "js/legacy.js";
-const modernOutdir = "docs/js";
 const tempLegacyEntryPoint = "_temp/js/legacy.js";
+const outdir = "docs/js";
 
 const isProd = process.env.ELEVENTY_ENV === "prod";
 const isBundlingPolyfills = process.env.ESBUILD_ENV === "bundle_polyfills";
@@ -19,7 +18,7 @@ if(!isBundlingPolyfills) {
     splitting: true,
     watch: !isProd,
     minify: isProd,
-    outdir: modernOutdir
+    outdir
   }).catch(() => process.exit(1));
 }
 
@@ -38,6 +37,6 @@ if(isBundlingPolyfills) {
     bundle: true,
     target: browserslist,
     format: "iife",
-    outdir: "docs/js"
+    outdir
   }).catch(() => process.exit(1));
 }
