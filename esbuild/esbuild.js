@@ -37,6 +37,7 @@ if(isBundlingPolyfills) {
     bundle: true,
     target: browserslist,
     format: "iife",
+    minify: true,
     outdir
   }).catch(() => process.exit(1));
 }
