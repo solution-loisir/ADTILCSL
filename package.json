@@ -51,7 +51,7 @@
     "outdent": "^0.8.0",
     "png-to-ico": "^2.1.1",
     "sass": "^1.26.3",
-    "sharp": "^0.29.1",
+    "sharp": "^0.34.5",
     "uslug": "^1.0.4"
   },
   "dependencies": {
