@@ -1,4 +1,0 @@
-[tools]
-    python = "python@3.10.12"
-    ruby = "ruby@3.4.8"
-    go = "go@1.25.5"
